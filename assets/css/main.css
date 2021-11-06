@@ -226,7 +226,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.jpg") bottom left;
+		background: #088f8f url("images/bg.jpg") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -554,9 +554,9 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			font-family: Georgia, Times, "Times New Roman", serif;
-			font-size: 4.35em;
-			letter-spacing: -0.035em;
+			font-family: 'Stingker Jack', sans-serif;
+			font-size: 4.7em;
+			letter-spacing: 0.05em;
 			font-style: normal;
 			font-variant: normal;
 			font-weight: 900;
@@ -1081,4 +1081,5 @@ input, select, textarea {
 
 		#header nav {
 			padding: 0 1em;
-		} }
+		} 
+	}
