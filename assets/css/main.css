@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("fontawesome-all.min.css");
 
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -549,9 +550,9 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			font-family: 'Stingker Jack', sans-serif;
+			font-family: 'Caveat', cursive;
 			font-size: 4.7em;
-			letter-spacing: 0.05em;
+			letter-spacing: 0.0em;
 			font-style: normal;
 			font-variant: normal;
 			font-weight: 900;
@@ -977,13 +978,7 @@ input, select, textarea {
 	/* Header */
 
 		#header h1 {
-			font-family: 'Stingker Jack', sans-serif;
-			font-size: 4.7em;
-			letter-spacing: 0.05em;
-			font-style: normal;
-			font-variant: normal;
-			font-weight: 900;
-			line-height: 1em;
+			font-size: 2.5em;
 		}
 
 		#header p {
