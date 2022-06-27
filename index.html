@@ -1,37 +1,61 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<html>
-	<!-- 	Font: StingkerJack
- 		Color(black): R(13);G(17);B(23)
-		Color(Grey): R(99);G(99);B(99)
-		Color(blue): R(8);G(143);B(143) = 0x088F8F -->
-
-	<!-- Tag del explorer (pestaña del navegador) -->
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-		<link href="http://fonts.cdnfonts.com/css/stingker-jack" rel="stylesheet">                
+<head>           
                 
-		<title>Víctor Asenjo Carvajal</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="shortcut icon" href="assets/css/images/webicon.svg">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			
-			<!-- filtro Rayas inclinadas -->
-			<div id="overlay"></div>
-			
-			<div id="main">
+  <title>Víctor Asenjo Carvajal</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Víctor Asenjo web and presentation">
+  <meta name="keywords" content="Victor, Víctor, Asenjo, Victor Asenjo Carvajal, Víctor Asenjo Carvajal, software engineer, UPC, FIB, FIB UPC, computer engineer, referee, fcbq, monitor de lleure">
+	<meta name="author" content="https://github.com/victor-asenjo">
 
-				<!-- Header -->
-					<header id="header">
-						<img src="assets/css/images/profilephoto.png" style="max-width: 22%;"> 
+  <link rel="shortcut icon" href="assets/images/webicon.svg">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/stingker-jack" rel="stylesheet">   
+  <!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- Font Awesome CSS -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<!-- Animate css -->
+  <link href="assets/css/animate.css" rel="stylesheet">
+  <!-- Magnific css -->
+	<link href="assets/css/magnific-popup.css" rel="stylesheet">
+	<!-- Custom styles CSS -->
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+  <!-- Responsive CSS -->
+  <link href="assets/css/responsive.css" rel="stylesheet">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  <!-- Preloader -->
+	<div id="tt-preloader">
+		<div id="pre-status">
+			<div class="preload-placeholder"></div>
+		</div>
+	</div>
+	
+
+	<!-- Home Section -->
+  <section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+		
+    
+    <div class="intro">
+			<img src="assets/images/profilephoto.png" style="max-width: 22%;"> 
 						<h1>Víctor Asenjo Carvajal</h1>
 						<p>Computer Engineering &nbsp;&bull;&nbsp; Monitor de lleure &nbsp;&bull;&nbsp; Àrbitre FCBQ&nbsp;&bull;&nbsp; Auxiliar de taula FEB</p>
 						<nav>
@@ -43,20 +67,428 @@
 								<li><a href="https://telegram.me/victorasenjo" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
 								<li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=victorasenj@gmail.com&subject=MISSED%20CALL%20EZTRADER&body=Hey Víctor, I'm [name]" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
-						</nav>
-					</header>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Víctor Asenjo Carvajal 2022</a>.</span>
-					</footer>
-
-			</div>
+						</nav> <!-- /.social-icons -->
 		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+
+    <!-- Scroll-down -->
+    <a href="#about">
+		<div class="mouse-icon">
+			<div class="wheel"></div>
+		</div></a>
+	</section><!-- End Home Section -->
+
+
+	<!-- Navigation -->
+	<header class="header">
+		<nav class="navbar navbar-custom" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1 class="navbar-brand">Víctor Asenjo Carvajal</h1>
+				</div>
+
+				<div class="collapse navbar-collapse" id="custom-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#resume">Resume</a></li>
+						<li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div><!-- .container -->
+		</nav>
+	</header><!-- End Navigation -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <h2 class="section-title wow fadeInUp">About Me</h2>
+
+        <div class="row">
+
+          <div class="col-md-4 col-md-push-8">
+            <div class="biography">
+                <img src="assets/images/profilephoto.png" alt="">
+              <ul>
+                <li><strong>Name:</strong> Víctor Asenjo</li>
+                <li><strong>Date of birth:</strong> 16 May 2001</li>
+                <li><strong>Address:</strong> Spain, Catalonia, BCN</li>
+                <li><strong>Email:</strong> victorasenj@gmail.com</li>
+              </ul>
+            </div>
+          </div> <!-- col-md-4 -->
+
+          <div class="col-md-8 col-md-pull-4">
+            <div class="short-info wow fadeInUp">
+              <h3>Objective</h3>
+              <p>An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my solid experience in Data analytics. I hope to develop skills in backend and continue and continue expanding my knowledge.</p>
+            </div>
+
+            <div class="short-info wow fadeInUp">
+              <h3>What I Do ?</h3>
+              <p>Hi, I'm Víctor Asenjo, a passionate software engineer student from Catalonia, Spain. My passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I take great care in the experience, architecture, and code quality of the things I build. I would love to end up being a full-stack developer.
+                In my free time I give private reinforcement classes, I am a youth leisure and free time monitor, I am a basketball referee and point scorer.
+              </p>
+
+              <ul class="list-check">
+                <li>Software engineer</li>
+                <li>Basketball referee</li>
+                <li>Data analyst</li>
+                <li>Monitor de lleure</li>
+              </ul>
+            </div>
+
+            <div class="download-button">
+              <a class="btn btn-info btn-lg" href="https://telegram.me/victorasenjo"><i class="fa fa-paper-plane"></i>Send me message</a>
+              <a class="btn btn-primary btn-lg" href="assets/VictorAsenjoCarvajalCV.pdf"><i class="fa fa-download"></i>download my cv</a>
+            </div>
+          </div>
+
+
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </section><!-- End About Section -->
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">Resume</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="resume-title">
+                        <h3>Education</h3>
+                    </div>
+                    <div class="resume">
+                        <ul class="timeline">
+
+                              <li>
+                                <div class="posted-date">
+                                  <span class="month">2019-Currently</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Secondary school certificate</h3>
+                                            <span>Creative Arts, Julius Jr. school, USA</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>I was awesome at arts, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+
+                            <li class="timeline-inverted">
+                                <div class="posted-date">
+                                    <span class="month">2017-2019</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Bachelor degree certificate</h3>
+                                            <span>INS Mercè Rodoreda, 08907, L'Hospitalet de Llobregat, Barcelona</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>I have completed Technological scientist Bachelor at INS Mercè Rodoreda.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+
+                            <li>
+                                <div class="posted-date">
+                                    <span class="month">2013-2017</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Higher Secondary certificate</h3>
+                                            <span>INS Mercè Rodoreda, 08907, L'Hospitalet de Llobregat, Barcelona </span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>I did my Compulsory Secondary Education studies at IES Mercè Rodoreda with the best teachers I could have had.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div> <!-- /timeline-panel -->
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="resume-title">
+                        <h3>Experience</h3>
+                    </div>
+                    <div class="resume">
+                        <ul class="timeline">
+
+                                <li class="timeline-inverted">
+                                  <div class="posted-date">
+                                    <span class="month">2022-2023</span>
+                                  </div><!-- /posted-date -->
+
+                                  <div class="timeline-panel wow fadeInUp">
+                                      <div class="timeline-content">
+                                          <div class="timeline-heading">
+                                              <h3>Analyst interships</h3>
+                                              <span>SDG group</span>
+                                          </div><!-- /timeline-heading -->
+
+                                          <div class="timeline-body">
+                                              <p>I did an internship at SDG group giving me the opportunity to learn in the data analysis sector.</p>
+                                          </div><!-- /timeline-body -->
+                                      </div> <!-- /timeline-content -->
+                                  </div> <!-- /timeline-panel -->
+                              </li>
+
+                              <li>
+                                <div class="posted-date">
+                                  <span class="month">Summer 2022</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Monitor y dinamizador de actividades infantiles y juveniles</h3>
+                                            <span>Fundesplai; Fundació Cellnex;</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>During the summer of 2022 I was in a TIC summer camp energizing, organizing and directing children's and youth leisure activities.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div> <!-- /timeline-panel -->
+                            </li>
+
+                            <li class="timeline-inverted">
+                                <div class="posted-date">
+                                  <span class="month">Summer 2021</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Monitor y dinamizador de actividades infantiles y juveniles</h3>
+                                            <span>Fundesplai; Xanascat; Generalitat de Catalunya;</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>During the summer of 2021 I was in several summer camps energizing, organizing and directing children's and youth leisure activities of ingenuity and technology.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div> <!-- /timeline-panel -->
+                            </li>
+
+                            <li>
+                                <div class="posted-date">
+                                  <span class="month">2018-Currently</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Basketball referee & Point scorer</h3>
+                                            <span>Federació Catalana de Basquetbol (FCBQ)</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>Since 2018 I have been a basketball referee on weekends.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /.container -->
+    </section><!-- End Resume Section -->
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <h2 class="section-title wow fadeInUp">Certificates & Skills</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="skill-progress">
+              <div class="skill-title"><h3>UX Design</h3></div> 
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+
+            <div class="skill-progress">
+              <div class="skill-title"><h3>Visual Design</h3></div> 
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" ><span>80%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+            <div class="skill-progress">
+              <div class="skill-title"><h3>Business Design</h3></div>  
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" ><span>75%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+          </div><!-- /.col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="skill-progress">
+              <div class="skill-title"><h3>Branding Design</h3></div> 
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+            <div class="skill-progress">
+              <div class="skill-title"><h3>Motion Graphic</h3></div> 
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" ><span>80%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+            <div class="skill-progress">
+              <div class="skill-title"><h3>Flyers Designing</h3></div>  
+              <div class="progress">
+                <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" ><span>75%</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.skill-progress -->
+          </div><!-- /.col-md-6 -->
+        </div><!-- /.row -->
+
+        <div class="skill-chart text-center">
+          <h3>More skills</h3>
+        </div>
+          
+        <div class="row more-skill text-center">
+          <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="91" data-color="e74c3c">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>leadership</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="23" data-color="2ecc71">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>Creativity</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="68" data-color="3498db">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>Management</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="68" data-color="3498db">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>Branding</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="68" data-color="3498db">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>Marketing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+              <div class="chart" data-percent="68" data-color="3498db">
+                    <span class="percent"></span>
+                    <div class="chart-text">
+                      <span>Motivation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section><!-- End Skills Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <h2 class="section-title wow fadeInUp">Get in touch</h2>
+        <center>
+            <div class="download-button">
+              <a class="btn btn-mail btn-lg" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=victorasenj@gmail.com&subject=MISSED%20CALL%20EZTRADER&body=Hey Víctor, I'm [name]"><i class="fa fa-envelope"></i>Send me a mail</a>
+              <a class="btn btn-info btn-lg" href="https://telegram.me/victorasenjo"><i class="fa fa-paper-plane"></i>Send me message</a>
+              <a class="btn btn-linkedin btn-lg" href="https://www.linkedin.com/in/victorasenjo/"><i class="icon brands fa-linkedin-in"></i>Add me on Linkedin</a>
+              <a class="btn btn-primary btn-lg" href="assets/VictorAsenjoCarvajalCV.pdf"><i class="fa fa-download"></i>download my cv</a>
+            </div>
+          </center>
+      </div>
+
+
+    </section><!-- End Contact Section -->
+
+
+
+	<!-- Footer Section -->
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright text-center">
+              <span class="copyright">&copy; Víctor Asenjo Carvajal 2022</a>.</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer><!-- End Footer Section -->
+
+
+	<!-- Scroll-up -->
+	<div class="scroll-up">
+		<a href="#home"><i class="fa fa-angle-up"></i></a>
+	</div>
+
+	<!-- Javascript files -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+	<script src="assets/js/jquery.sticky.js"></script>
+  <script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/jquery.countTo.js"></script>
+  <script src="assets/js/jquery.inview.min.js"></script> 
+  <script src="assets/js/jquery.easypiechart.js"></script>
+  <script src="assets/js/jquery.shuffle.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <script src="assets/js/jquery.fitvids.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
 </html>
