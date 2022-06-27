@@ -302,3 +302,14 @@ if (ischrome) {
     ssc_addEvent("mousewheel", ssc_wheel);
     ssc_addEvent("load", ssc_init)
 }
+
+    // -------------------------------------------------------------
+    // Copy to clipboard
+    // -------------------------------------------------------------
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+      };
