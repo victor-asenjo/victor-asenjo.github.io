@@ -56,26 +56,16 @@
     z-index: 9999;
   }
   
-  #preloader .loading-text {
-    font-size: 24px;
-    font-family: monospace;
-    color: #000;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #000;
-    animation: typing 1.5s steps(20, end) infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  #preloader img {
+    max-width: 15%;
+    max-height: 100%;
   }
 </style>
 
 <body>
   <!-- Preloader -->
 	<div id="preloader">
-    <span class="loading-text">Loading...</span>
+    <img src="assets/images/duck-preloader.gif" alt="Loading...">
   </div>
 
   <script>
