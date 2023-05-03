@@ -43,13 +43,19 @@
 </head>
 
 <body>
-  <!-- Preloader
-	<div id="tt-preloader">
-		<div id="pre-status">
-			<div class="preload-placeholder"></div>
-		</div>
-	</div>
-   -->
+  <!-- Preloader -->
+	<div id="preloader">
+    <img src="assets/images/preloader.gif" alt="Loading...">
+  </div>
+
+  <script>
+    // Wait for the page to fully load before hiding the preloader
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      preloader.style.display = 'none';
+    });
+  </script>
+   
 	
 
 	<!-- Home Section -->
