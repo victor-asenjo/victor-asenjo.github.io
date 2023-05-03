@@ -42,42 +42,36 @@
 
   <style>
     #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      z-index: 9999;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 9999;
+  }
     
     #preloader .loading-text {
-      font-size: 24px;
-      font-family: monospace;
-      color: #000;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid #000;
-      animation: typing 3s linear, typing-end .5s forwards;
-    }
-    
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
+    font-size: 24px;
+    font-family: monospace;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #000;
+    animation: typing 1.5s steps(20, end) infinite;
+  }
   
-    @keyframes typing-end {
-      from { width: 100% }
-      to { width: 100% }
-    }
-  
-    #preloader.loaded {
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  #preloader.loaded {
       display: none;
     }
-  </style>
+</style>
 </head>
 
 
