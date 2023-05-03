@@ -56,6 +56,12 @@
     z-index: 9999;
   }
   
+  #preloader .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   #preloader .loading-text {
     font-size: 24px;
     font-family: monospace;
@@ -64,15 +70,6 @@
     overflow: hidden;
     border-right: .15em solid #000;
     animation: typing 1.5s steps(20, end) infinite;
-    animation-iteration-count: infinite;
-  }
-
-  #preloader .extra-text {
-    font-size: 16px;
-    font-family: monospace;
-    color: #888;
-    margin-top: 1em;
-    text-align: center;
   }
   
   @keyframes typing {
@@ -84,8 +81,10 @@
 <body>
   <!-- Preloader -->
 	<div id="preloader">
-    <span class="loading-text">Loading...</span>
-    <div class="extra-text">Please wait while we load the page. This may take a few moments depending on your connection speed.</div>
+    <div class="loading-container">
+      <span class="loading-text">Loading...</span>
+      <p>Welcome to my portfolio website! My name is Víctor Asenjo, and I am a Computer Engineer. This site showcases my work experience, skills, and projects that I have completed over the years. Thank you for taking the time to check out my work, and I hope you find my portfolio informative and engaging. If you have any questions or comments, please feel free to contact me. Enjoy your visit!</p>
+    </div>
   </div>
 
   <script>
