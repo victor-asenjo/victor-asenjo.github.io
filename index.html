@@ -53,7 +53,7 @@
       background-color: #fff;
       z-index: 9999;
     }
-  
+    
     #preloader .loading-text {
       font-size: 24px;
       font-family: monospace;
@@ -61,16 +61,21 @@
       white-space: nowrap;
       overflow: hidden;
       border-right: .15em solid #000;
-      animation: typing 1.5s steps(20, end) infinite;
+      animation: typing 3s steps(20, end), typing-end .5s forwards;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
     }
   
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 20%;
-      }
+    @keyframes typing-end {
+      from { width: 100% }
+      to { width: 100% }
+    }
+  
+    #preloader.loaded {
+      display: none;
     }
   </style>
 </head>
@@ -84,35 +89,10 @@
 </div>
 
 <script>
-  // Wait for the page to finish loading
-  window.addEventListener("load", function () {
-    // Hide the preloader
-    document.querySelector("#preloader").style.display = "none";
-    // Show the main content
-    document.querySelector("#main-content").style.display = "block";
+  window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    preloader.classList.add('loaded');
   });
-
-  // Start the preloader animation again if the page is reloaded
-  if (performance.navigation.type === 1) {
-    // Page has been reloaded
-    // Reset the flag to indicate that the preloader has not been shown before
-    sessionStorage.setItem("preloaderShown", "");
-  }
-
-  // Check if the preloader has been shown before
-  if (!sessionStorage.getItem("preloaderShown")) {
-    // Preloader has not been shown before
-    // Set the flag to indicate that the preloader has been shown
-    sessionStorage.setItem("preloaderShown", "true");
-  } else {
-    // Preloader has been shown before
-    // Start the animation again
-    var loadingText = document.querySelector(".loading-text");
-    loadingText.style.width = "0";
-    setTimeout(function () {
-      loadingText.style.width = "100%";
-    }, 100);
-  }
 </script>
    
 	
