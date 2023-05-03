@@ -40,59 +40,80 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <style>
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      z-index: 9999;
+    }
+  
+    #preloader .loading-text {
+      font-size: 24px;
+      font-family: monospace;
+      color: #000;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid #000;
+      animation: typing 1.5s steps(20, end) infinite;
+    }
+  
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
-<style>
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    z-index: 9999;
-  }
-  
-  #preloader .loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #preloader .loading-text {
-    font-size: 24px;
-    font-family: monospace;
-    color: #000;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #000;
-    animation: typing 1.5s steps(25, end) infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-</style>
+
 
 <body>
-  <!-- Preloader -->
-	<div id="preloader">
-    <div class="loading-container">
-      <span class="loading-text">{Víctor Asenjo . load }</span>
-    </div>
-  </div>
+<!-- Preloader -->
+<div id="preloader">
+  <span class="loading-text">{Víctor Asenjo . load }</span>
+</div>
 
-  <script>
-    // Wait for the page to fully load before hiding the preloader
-    window.addEventListener('load', function() {
-      const preloader = document.getElementById('preloader');
-      preloader.style.display = 'none';
-    });
-  </script>
+<script>
+  // Wait for the page to finish loading
+  window.addEventListener("load", function () {
+    // Hide the preloader
+    document.querySelector("#preloader").style.display = "none";
+    // Show the main content
+    document.querySelector("#main-content").style.display = "block";
+  });
+
+  // Start the preloader animation again if the page is reloaded
+  if (performance.navigation.type === 1) {
+    // Page has been reloaded
+    // Reset the flag to indicate that the preloader has not been shown before
+    sessionStorage.setItem("preloaderShown", "");
+  }
+
+  // Check if the preloader has been shown before
+  if (!sessionStorage.getItem("preloaderShown")) {
+    // Preloader has not been shown before
+    // Set the flag to indicate that the preloader has been shown
+    sessionStorage.setItem("preloaderShown", "true");
+  } else {
+    // Preloader has been shown before
+    // Start the animation again
+    var loadingText = document.querySelector(".loading-text");
+    loadingText.style.width = "0";
+    setTimeout(function () {
+      loadingText.style.width = "100%";
+    }, 100);
+  }
+</script>
    
 	
 
