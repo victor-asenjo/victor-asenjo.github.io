@@ -72,6 +72,91 @@
       display: none;
     }
 </style>
+
+<script>
+    // Función para cambiar la imagen al pasar el ratón por encima
+    function changeImage(element) {
+      var originalImage = element.querySelector('.original-image');
+      var hoverImage = element.querySelector('.hover-image');
+      
+      originalImage.style.display = 'none';
+      hoverImage.style.display = 'block';
+    }
+    
+    // Función para restaurar la imagen original al quitar el ratón de encima
+    function restoreImage(element) {
+      var originalImage = element.querySelector('.original-image');
+      var hoverImage = element.querySelector('.hover-image');
+      
+      originalImage.style.display = 'block';
+      hoverImage.style.display = 'none';
+    }
+  </script>
+
+
+
+<style>
+  /* Agrega un estilo para el contenedor de las imágenes */
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Proporción de aspecto 16:9 */
+    overflow: hidden;
+  }
+
+  /* Agrega estilos para las imágenes */
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 50%; /* Hace que la imagen tenga forma de círculo */
+  }
+
+  /* Muestra solo la imagen activa */
+  .carousel-image.active {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Carrusel de imágenes
+  document.addEventListener("DOMContentLoaded", function() {
+    var carouselImages = document.querySelectorAll(".carousel-image");
+    var currentImageIndex = 0;
+
+    // Muestra la imagen activa y oculta las demás
+    function showCurrentImage() {
+      carouselImages.forEach(function(image, index) {
+        if (index === currentImageIndex) {
+          image.classList.add("active");
+        } else {
+          image.classList.remove("active");
+        }
+      });
+    }
+
+    // Cambia a la siguiente imagen
+    function nextImage() {
+      currentImageIndex++;
+      if (currentImageIndex >= carouselImages.length) {
+        currentImageIndex = 0;
+      }
+      showCurrentImage();
+    }
+
+    // Cambia a la siguiente imagen automáticamente cada 3 segundos
+    setInterval(nextImage, 3000);
+
+    // Muestra la imagen activa al cargar la página
+    showCurrentImage();
+  });
+</script>
 </head>
 
 
@@ -96,7 +181,7 @@
 		
     
     <div class="intro">
-			<img src="assets/images/profilephoto.png" style="max-width: 22%;"> 
+			<img id="myImage" src="assets/images/profilephoto.png" style="max-width: 22%;"> 
 						<h1>Víctor Asenjo Carvajal</h1>
 						<p>Computer Engineering &nbsp;&bull;&nbsp; Monitor de lleure &nbsp;&bull;&nbsp; Àrbitre FCBQ&nbsp;&bull;&nbsp; Auxiliar de taula FEB</p>
 						<nav>
@@ -156,7 +241,12 @@
 
           <div class="col-md-4 col-md-push-8">
             <div class="biography">
-                <img src="assets/images/profilephoto.png" alt="">
+                <div class="image-container">
+                  <img class="carousel-image active" src="assets/images/profilephoto.png">
+                  <img class="carousel-image" src="assets/images/orlaPhotoSquare.jpg">
+                  <img class="carousel-image" src="assets/images/refereeImage.jpg">
+                  <img class="carousel-image" src="assets/images/profile2.jpg">
+                </div>
               <ul>
                 <li><strong>Name:</strong> Víctor Asenjo</li>
                 <li><strong>Date of birth:</strong> 16 May 2001</li>
@@ -524,6 +614,6 @@
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
   <script src="assets/js/jquery.fitvids.js"></script>
-  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>  
 </body>
 </html>
