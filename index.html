@@ -157,6 +157,58 @@
     showCurrentImage();
   });
 </script>
+
+<script>
+  // JavaScript para manejar el cambio de idioma y la clase activa
+document.addEventListener('DOMContentLoaded', function() {
+  // Establecer el idioma predeterminado (ESP)
+  changeLanguage('es');
+
+  // Agregar el evento clic a los botones de cambio de idioma
+  document.querySelectorAll('.btn-language').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var language = this.dataset.lang;
+      changeLanguage(language);
+      // Remover la clase .active de todos los botones de idioma
+      document.querySelectorAll('.btn-language').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      // Agregar la clase .active al botón de idioma actual
+      this.classList.add('active');
+    });
+  });
+});
+
+// Función para cambiar el idioma
+function changeLanguage(language) {
+  // Ocultar todo el contenido en todos los idiomas
+  document.querySelectorAll('.lang').forEach(function(element) {
+    element.style.display = 'none';
+  });
+
+  // Mostrar el contenido específico del idioma seleccionado
+  document.querySelectorAll('.lang-' + language).forEach(function(element) {
+    element.style.display = 'block';
+  });
+}
+
+// Función para ocultar los botones de idioma al hacer scroll hacia abajo
+function hideLanguageButtonsOnScroll() {
+  var languageButtons = document.querySelector('.language-buttons');
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition > 100) { // Cambia este valor según cuándo deseas ocultar los botones
+    languageButtons.style.display = 'none';
+  } else {
+    languageButtons.style.display = 'block';
+  }
+}
+
+// Detectar el evento de desplazamiento y llamar a la función para ocultar los botones
+window.addEventListener('scroll', hideLanguageButtonsOnScroll);
+
+
+</script>
 </head>
 
 
@@ -173,7 +225,15 @@
     preloader.classList.add('loaded');
   });
 </script>
-   
+
+<!-- Botones para cambiar el idioma -->
+<!-- Botones de cambio de idioma -->
+<div class="language-buttons">
+  <button class="btn btn-language active" data-lang="es">ESP</button>
+  <button class="btn btn-language" data-lang="en">EN</button>
+  <button class="btn btn-language" data-lang="cat">CAT</button>
+</div>
+ 
 	
 
 	<!-- Home Section -->
@@ -183,8 +243,10 @@
     <div class="intro">
 			<img id="myImage" src="assets/images/profilephoto.png" style="max-width: 22%;"> 
 						<h1>Víctor Asenjo Carvajal</h1>
-						<p>Computer Engineering &nbsp;&bull;&nbsp; Monitor de lleure &nbsp;&bull;&nbsp; Àrbitre FCBQ&nbsp;&bull;&nbsp; Auxiliar de taula FEB</p>
-						<nav>
+						<div class="lang lang-en"><p>Software Engineer &nbsp;&bull;&nbsp; Youth camps monitor &nbsp;&bull;&nbsp; Basketball Referee FCBQ&nbsp;&bull;&nbsp; National Wheelchair Referee FEDDF</p></div>
+            <div class="lang lang-es"><p>Ingenirero Informático &nbsp;&bull;&nbsp; Monitor de ocio &nbsp;&bull;&nbsp; Árbitro FCBQ&nbsp;&bull;&nbsp; Árbitro nacional de baloncesto en silla de ruedas FEDDF</p></div>
+						<div class="lang lang-cat"><p>Enginyer Informàtic &nbsp;&bull;&nbsp; Monitor de lleure &nbsp;&bull;&nbsp; Àrbitre FCBQ&nbsp;&bull;&nbsp; Àrbitre nacional de bàsquet en cadira de rodes FEDDF</p></div>
+            <nav>
 							<ul>
 								<li><a href="https://github.com/victor-asenjo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								<li><a href="https://www.instagram.com/victorasenjo22/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -220,11 +282,23 @@
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#resume">Resume</a></li>
-						<li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a class="lang lang-en" href="#home">Home</a></li>
+            <li><a class="lang lang-en" href="#about">About</a></li>
+            <li><a class="lang lang-en" href="#resume">Resume</a></li>
+            <li><a class="lang lang-en" href="#skills">Skills</a></li>
+            <li><a class="lang lang-en" href="#contact">Contact</a></li>
+
+            <li><a class="lang lang-es" href="#home">Home</a></li>
+            <li><a class="lang lang-es" href="#about">About</a></li>
+            <li><a class="lang lang-es" href="#resume">Currículum</a></li>
+            <li><a class="lang lang-es" href="#skills">Habilidades</a></li>
+            <li><a class="lang lang-es" href="#contact">Contacto</a></li>
+
+            <li><a class="lang lang-cat" href="#home">Inici</a></li>
+            <li><a class="lang lang-cat" href="#about">Coneix-me</a></li>
+            <li><a class="lang lang-cat" href="#resume">Currículum</a></li>
+            <li><a class="lang lang-cat" href="#skills">Habilitats</a></li>
+            <li><a class="lang lang-cat" href="#contact">Contacte</a></li>
 					</ul>
 				</div>
 			</div><!-- .container -->
@@ -235,8 +309,15 @@
     <!-- About Section -->
     <section id="about" class="about-section section-padding">
       <div class="container">
-        <h2 class="section-title wow fadeInUp">About Me</h2>
-
+        <div class="lang lang-en">
+          <h2 class="section-title wow fadeInUp">About Me</h2>
+        </div>
+        <div class="lang lang-es">
+          <h2 class="section-title wow fadeInUp">Sobre mí</h2>
+        </div>
+        <div class="lang lang-cat">
+          <h2 class="section-title wow fadeInUp">Sobre mi</h2>
+        </div>
         <div class="row">
 
           <div class="col-md-4 col-md-push-8">
