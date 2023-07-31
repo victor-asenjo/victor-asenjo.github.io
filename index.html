@@ -41,6 +41,28 @@
   <![endif]-->
 
   <style>
+    /* Estilo para el enlace */
+    /* Solución 1: Regla simple */
+    a {
+      text-decoration: none !important;
+    }
+
+    /* Solución 2: Regla más específica */
+    a.footer-link {
+      text-decoration: none !important;
+    }
+
+    /* Solución 3: Prevenir estilos heredados */
+    .footer-wrapper a {
+      text-decoration: none !important;
+    }
+
+    /* Estilo para el enlace al pasar el ratón por encima */
+    a:hover {
+      color: turquoise; /* Color del texto del enlace al pasar el ratón por encima (turquesa en este ejemplo) */
+    }
+
+
     /* Dropdown Language Menu Styles */
 .dropdown-circle-menu {
   position: relative;
@@ -874,6 +896,7 @@ function changeLanguage(language) {
             <div class="copyright text-center">
               <span class="copyright">&copy; Víctor Asenjo Carvajal 2023</a>.</span>
 
+              <a href="https://linktr.ee/victorasenjo" style="text-decoration: none !important;"><i class="fas fa-egg" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
