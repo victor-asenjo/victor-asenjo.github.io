@@ -61,26 +61,31 @@
   margin-top: 10px;
 }
 
+/* Estilo para el menú desplegable */
 .dropdown-menu {
-  position: absolute;
+  /* position: absolute;  -> Elimina esta propiedad */
   top: 100%;
-  left: 0;
+  /* left: 0;  -> Elimina esta propiedad */
   list-style: none;
   display: none;
-  padding: 0;
+  /* padding: 0; -> Puedes eliminar esta propiedad o ajustarla según tus necesidades */
   margin: 5px 0;
   background-color: #fff;
   border: 1px solid #333;
+  /* Ajusta el ancho del menú según el contenido de los elementos */
+  width: fit-content;
 }
 
 .dropdown-menu li {
   display: block;
+  margin: none;
+
 }
 
 .dropdown-menu li a {
   display: block;
   padding: 5px 10px;
-  text-decoration: none;
+  text-decoration:none;
   color: #333;
   cursor: pointer;
 }
