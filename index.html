@@ -47,8 +47,8 @@
 }
 
 .dropdown-circle-menu .btn-language {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #fff;
   color: #333;
@@ -58,28 +58,28 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+
+
 
 /* Estilo para el menú desplegable */
 .dropdown-menu {
-  /* position: absolute;  -> Elimina esta propiedad */
+  position: absolute;
   top: 100%;
-  /* left: 0;  -> Elimina esta propiedad */
+  /* Elimina el background-color y el border para quitar el fondo y el borde */
+  background-color: transparent;
+  border: none;
   list-style: none;
   display: none;
-  /* padding: 0; -> Puedes eliminar esta propiedad o ajustarla según tus necesidades */
+  padding: 0;
   margin: 5px 0;
-  background-color: #fff;
-  border: 1px solid #333;
-  /* Ajusta el ancho del menú según el contenido de los elementos */
-  width: fit-content;
 }
 
 .dropdown-menu li {
   display: block;
   margin: none;
-
 }
 
 .dropdown-menu li a {
