@@ -41,6 +41,62 @@
   <![endif]-->
 
   <style>
+    /* Dropdown Language Menu Styles */
+.dropdown-circle-menu {
+  position: relative;
+}
+
+.dropdown-circle-menu .btn-language {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  display: none;
+  padding: 0;
+  margin: 5px 0;
+  background-color: #fff;
+  border: 1px solid #333;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Show the dropdown menu on button click */
+.dropdown-circle-menu.open .dropdown-menu {
+  display: block;
+}
+
+  </style>
+
+  <style>
     #preloader {
     position: fixed;
     top: 0;
@@ -124,6 +180,7 @@
   }
 </style>
 
+
 <script>
   // Carrusel de imágenes
   document.addEventListener("DOMContentLoaded", function() {
@@ -158,28 +215,56 @@
   });
 </script>
 
+
 <script>
   // JavaScript para manejar el cambio de idioma y la clase activa
 document.addEventListener('DOMContentLoaded', function() {
   // Establecer el idioma predeterminado (ESP)
-  changeLanguage('es');
+  var defaultLanguage = 'en'; // Cambia 'en' al idioma predeterminado que deseas mostrar al cargar la página
+  changeLanguage(defaultLanguage);
+
+  // Función para obtener el idioma activo actual
+  function getActiveLanguage() {
+    var activeButton = document.querySelector('.btn-language.active');
+    if (activeButton) {
+      return activeButton.dataset.lang;
+    } else {
+      return defaultLanguage; // Si no hay botones activos, usar el idioma predeterminado
+    }
+  }
+
+  // Función para actualizar el botón desplegable con el idioma activo
+  function updateDropdownLanguage() {
+    var dropdownButton = document.querySelector('.dropdown-circle-menu .btn-language');
+    var activeLanguage = getActiveLanguage();
+    dropdownButton.innerText = activeLanguage.toUpperCase();
+  }
 
   // Agregar el evento clic a los botones de cambio de idioma
   document.querySelectorAll('.btn-language').forEach(function(btn) {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(event) {
+      event.stopPropagation(); // Detener la propagación del evento clic para que no interfiera con el menú desplegable
       var language = this.dataset.lang;
-      changeLanguage(language);
+      if(language != null) changeLanguage(language);
+
       // Remover la clase .active de todos los botones de idioma
       document.querySelectorAll('.btn-language').forEach(function(btn) {
         btn.classList.remove('active');
       });
+
       // Agregar la clase .active al botón de idioma actual
       this.classList.add('active');
+
+      // Actualizar el botón desplegable con el idioma activo
+      updateDropdownLanguage();
     });
   });
+
+  // Al cargar la página, actualizar el botón desplegable con el idioma activo
+  updateDropdownLanguage();
 });
 
-// Función para cambiar el idioma
+// Función para cambiar el idioma (sin cambios en esta función)
 function changeLanguage(language) {
   // Ocultar todo el contenido en todos los idiomas
   document.querySelectorAll('.lang').forEach(function(element) {
@@ -191,24 +276,50 @@ function changeLanguage(language) {
     element.style.display = 'block';
   });
 }
+</script>
 
-// Función para ocultar los botones de idioma al hacer scroll hacia abajo
-function hideLanguageButtonsOnScroll() {
-  var languageButtons = document.querySelector('.language-buttons');
-  var scrollPosition = window.scrollY;
+<script>
+  window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    preloader.classList.add('loaded');
+  });
+</script> 
 
-  if (scrollPosition > 100) { // Cambia este valor según cuándo deseas ocultar los botones
-    languageButtons.style.display = 'none';
-  } else {
-    languageButtons.style.display = 'block';
+
+<script>
+  // Function to check if the element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
-}
 
-// Detectar el evento de desplazamiento y llamar a la función para ocultar los botones
-window.addEventListener('scroll', hideLanguageButtonsOnScroll);
+  document.addEventListener('DOMContentLoaded', function () {
+    // ...
 
+    // Function to handle showing/hiding the language buttons container
+    function toggleLanguageButtons() {
+      var languageButtonsContainer = document.getElementById('language-buttons-container');
+      var homeSection = document.getElementById('home');
+      var isInHomeSection = isInViewport(homeSection);
+      languageButtonsContainer.style.display = isInHomeSection ? 'block' : 'none';
+    }
+
+    // Call the toggleLanguageButtons function on initial page load
+    toggleLanguageButtons();
+
+    // Call the toggleLanguageButtons function on scroll
+    window.addEventListener('scroll', toggleLanguageButtons);
+  });
 
 </script>
+
+
+
 </head>
 
 
@@ -219,24 +330,14 @@ window.addEventListener('scroll', hideLanguageButtonsOnScroll);
   <span class="loading-text">{Víctor Asenjo . load }</span>
 </div>
 
-<script>
-  window.addEventListener('load', function() {
-    var preloader = document.getElementById('preloader');
-    preloader.classList.add('loaded');
-  });
-</script>
+  <!-- Botones para cambiar el idioma -->
+  <div id="language-buttons-container" class="language-buttons">
+    <button class="btn btn-language" data-lang="en">EN</button>
+    <button class="btn btn-language" data-lang="es">ESP</button>
+    <button class="btn btn-language" data-lang="cat">CAT</button>
+  </div>
 
-<!-- Botones para cambiar el idioma -->
-<!-- Botones de cambio de idioma -->
-<div class="language-buttons">
-  <button class="btn btn-language active" data-lang="es">ESP</button>
-  <button class="btn btn-language" data-lang="en">EN</button>
-  <button class="btn btn-language" data-lang="cat">CAT</button>
-</div>
- 
-	
-
-	<!-- Home Section -->
+  <!-- Home Section -->
   <section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
 		
     
@@ -265,8 +366,7 @@ window.addEventListener('scroll', hideLanguageButtonsOnScroll);
 		</div></a>
 	</section><!-- End Home Section -->
 
-
-	<!-- Navigation -->
+  <!-- Navigation -->
 	<header class="header">
 		<nav class="navbar navbar-custom" role="navigation">
 			<div class="container">
@@ -282,14 +382,14 @@ window.addEventListener('scroll', hideLanguageButtonsOnScroll);
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-            <li><a class="lang lang-en" href="#home">Home</a></li>
-            <li><a class="lang lang-en" href="#about">About</a></li>
-            <li><a class="lang lang-en" href="#resume">Resume</a></li>
-            <li><a class="lang lang-en" href="#skills">Skills</a></li>
-            <li><a class="lang lang-en" href="#contact">Contact</a></li>
+            <li class="lang lang-en"><a href="#home">Home</a></li>
+            <li class="lang lang-en"><a href="#about">About</a></li>
+            <li class="lang lang-en"><a href="#resume">Resume</a></li>
+            <li class="lang lang-en"><a href="#skills">Skills</a></li>
+            <li class="lang lang-en"><a href="#contact">Contact</a></li>
 
-            <li><a class="lang lang-es" href="#home">Home</a></li>
-            <li><a class="lang lang-es" href="#about">About</a></li>
+            <li><a class="lang lang-es" href="#home">Inicio</a></li>
+            <li><a class="lang lang-es" href="#about">Sobre mí</a></li>
             <li><a class="lang lang-es" href="#resume">Currículum</a></li>
             <li><a class="lang lang-es" href="#skills">Habilidades</a></li>
             <li><a class="lang lang-es" href="#contact">Contacto</a></li>
@@ -299,9 +399,23 @@ window.addEventListener('scroll', hideLanguageButtonsOnScroll);
             <li><a class="lang lang-cat" href="#resume">Currículum</a></li>
             <li><a class="lang lang-cat" href="#skills">Habilitats</a></li>
             <li><a class="lang lang-cat" href="#contact">Contacte</a></li>
+            
+            <!-- Dropdown Circle Menu -->
+            <li class="dropdown-circle-menu">
+              <button class="btn btn-language dropdown-toggle" data-toggle="dropdown">
+                <!-- Add an icon here (e.g., Font Awesome arrow-down icon) -->
+                <i class="fas fa-caret-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="btn btn-language" data-lang="en">EN</a></li>
+                <li><a class="btn btn-language" data-lang="es">ESP</a></li>
+                <li><a class="btn btn-language" data-lang="cat">CAT</a></li>
+              </ul>
+            </li>
 					</ul>
 				</div>
 			</div><!-- .container -->
+
 		</nav>
 	</header><!-- End Navigation -->
 
