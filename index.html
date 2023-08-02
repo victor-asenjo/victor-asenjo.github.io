@@ -132,6 +132,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #fff;
   z-index: 9999;
@@ -160,53 +161,6 @@
   display: none;
 }
 </style>
-
-<script>
-  window.addEventListener('load', function() {
-    var preloader = document.getElementById('preloader');
-    var content = document.getElementById('content');
-    var cursor = document.getElementById('cursor');
-    var textAnimation = document.getElementById('text-animation');
-  
-    var textToAnimate = textAnimation.textContent.trim(); // Eliminar espacios en blanco iniciales y finales
-    var textLength = textToAnimate.length;
-    var animationDuration = 8 * textLength / 20; // Calcular la duración de la animación en función del tamaño del texto
-  
-    // Removemos la animación para que el texto se muestre completo sin espacios adicionales
-    textAnimation.style.animation = 'none';
-  
-    // Simulamos la carga de contenido retrasando 3 segundos
-    setTimeout(function() {
-      // Ocultar el preloader y mostrar el contenido
-      preloader.style.display = 'none';
-      content.style.display = 'block';
-      // Detener la animación del cursor
-      cursor.style.animation = 'none';
-    }, 3000);
-  });
-  </script> 
-
-<script>
-    // Función para cambiar la imagen al pasar el ratón por encima
-    function changeImage(element) {
-      var originalImage = element.querySelector('.original-image');
-      var hoverImage = element.querySelector('.hover-image');
-      
-      originalImage.style.display = 'none';
-      hoverImage.style.display = 'block';
-    }
-    
-    // Función para restaurar la imagen original al quitar el ratón de encima
-    function restoreImage(element) {
-      var originalImage = element.querySelector('.original-image');
-      var hoverImage = element.querySelector('.hover-image');
-      
-      originalImage.style.display = 'block';
-      hoverImage.style.display = 'none';
-    }
-  </script>
-
-
 
 <style>
   /* Agrega un estilo para el contenedor de las imágenes */
@@ -375,10 +329,68 @@ function changeLanguage(language) {
 
 
 <body>
+  <script>
+    window.addEventListener('load', function () {
+      var preloader = document.getElementById('preloader');
+      var content = document.getElementById('content');
+      var cursor = document.getElementById('cursor');
+      var textAnimation = document.getElementById('text-animation');
+      var loadingPercentage = document.getElementById('loading-percentage');
+
+      var textToAnimate = textAnimation.textContent.trim(); // Eliminar espacios en blanco iniciales y finales
+      var textLength = textToAnimate.length;
+      var animationDuration = 8 * textLength / 20; // Calcular la duración de la animación en función del tamaño del texto
+
+      // Removemos la animación para que el texto se muestre completo sin espacios adicionales
+      textAnimation.style.animation = 'none';
+
+      // Variable para la duración total de la animación del preloader (en segundos)
+      var totalAnimationDuration = 1.75;
+
+      // Variable para guardar el tiempo de inicio de la animación del preloader
+      var startTime;
+
+      // Función para actualizar el porcentaje de carga en el preloader
+      function updateProgress() {
+        var currentTime = Date.now();
+        var elapsedTime = (currentTime - startTime) / 1000; // Convertir a segundos
+        var percentage = (elapsedTime / totalAnimationDuration) * 100;
+        percentage = Math.min(percentage, 100); // Asegurarse de que el porcentaje máximo sea 100
+        updateLoadingPercentage(percentage.toFixed(0)); // Mostrar solo el número entero del porcentaje
+        if (elapsedTime < totalAnimationDuration) {
+          // Si no ha terminado la animación, sigue actualizando el porcentaje
+          requestAnimationFrame(updateProgress);
+        } else {
+          // Si ha terminado la animación, volvemos a aplicarla
+          textAnimation.style.animation = 'typing 1.75s steps(20, end)';
+        }
+      }
+
+      // Función para mostrar el porcentaje de carga en el texto del preloader
+      function updateLoadingPercentage(percentage) {
+        loadingPercentage.innerText = percentage + '%';
+      }
+
+      // Evento para iniciar la actualización del porcentaje de carga cuando se carga la página
+      startTime = Date.now(); // Guardar el tiempo de inicio de la animación
+      updateProgress(); // Iniciar la actualización del porcentaje de carga
+
+      // Simulamos la carga de contenido retrasando 3 segundos
+      setTimeout(function () {
+        // Ocultar el preloader y mostrar el contenido
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+        // Detener la animación del cursor
+        cursor.style.animation = 'none';
+      }, 3000);
+    });
+  </script>
 <!-- Preloader -->
 <div id="preloader">
   <span id="text-animation" class="loading-text">{Víctor Asenjo . loading }</span>
+  <span id="loading-percentage">0%</span>
 </div>
+
 
   <!-- Botones para cambiar el idioma -->
   <div id="language-buttons-container" class="language-buttons">
