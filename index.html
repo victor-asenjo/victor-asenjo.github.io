@@ -41,6 +41,13 @@
   <![endif]-->
 
   <style>
+    .centerDivDelTodo {
+      display: flex;
+      align-items: center;     /* Centers vertically */
+      justify-content: center; /* Centers horizontally */
+      flex-wrap: wrap;         /* Allows content to wrap to the next line */
+
+    }
     /* Estilo para el enlace */
     /* Solución 1: Regla simple */
     a {
@@ -857,9 +864,7 @@ function changeLanguage(language) {
           <h3>More skills</h3>
         </div>
           
-        <div class="row more-skill text-center" style="
-        justify-content: center;
-        align-items: center;">
+        <div class="row more-skill text-center centerDivDelTodo" >
           <div class="col-xs-12 col-sm-4 col-md-2">
               <div class="chart" data-percent="91" data-color="e74c3c">
                     <span class="percent"></span>
@@ -910,9 +915,8 @@ function changeLanguage(language) {
     <section id="contact" class="contact-section section-padding">
       <div class="container">
         <h2 class="section-title wow fadeInUp">Get in touch</h2>
-          <div class="download-button" style="
-          justify-content: center;
-          align-items: center;">
+          <div class="download-button centerDivDelTodo">
+
             <a class="btn btn-mail btn-lg" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=victorasenj@gmail.com&subject=MISSED%20CALL%20EZTRADER&body=Hey Víctor, I'm [name]"><i class="fa fa-envelope"></i>Send me a mail</a>
             <a class="btn btn-info btn-lg" href="https://telegram.me/victorasenjo"><i class="fa fa-paper-plane"></i>Send me message</a>
             <a class="btn btn-linkedin btn-lg" href="https://www.linkedin.com/in/victorasenjo/"><i class="icon brands fa-linkedin-in"></i>Add me on Linkedin</a>
