@@ -39,6 +39,7 @@
 
 	ul.list-check li {
 		width: 100%;
+		flex-wrap: wrap;         /* Allows content to wrap to the next line */
 	}
 
 	.download-button .btn{
@@ -55,6 +56,10 @@
 	/*skill section*/
 	.skill-title h3 {
 		font-size: 12px;
+	}
+
+	ul.list-skill li {
+		width: 100%;
 	}
 
 	/*facts section*/
@@ -202,6 +207,12 @@
 	/*skill section*/
 	.skill-title h3 {
 		font-size: 12px;
+	}
+
+	ul.list-skill li {
+		width: 100%;
+		font-size: 16px; /* Tamaño de fuente más pequeño para ajustarse al espacio */
+		line-height: 28px; /* Ajustar el espaciado de línea más pequeño */
 	}
 
 	/*facts section*/
