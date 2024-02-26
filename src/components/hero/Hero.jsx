@@ -54,6 +54,7 @@ const Hero = () => {
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
               href={ LINKS.linkedin }
+              target="_blank" 
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span> Hire Me</span>
@@ -75,37 +76,37 @@ const Hero = () => {
               className=" flex gap-5"
             >
               <li>
-                <a href={ LINKS.github }>
+                <a href={ LINKS.github } target="_blank" >
                   {" "}
                   <AiFillGithub className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
                 </a>
               </li>
               <li>
-                <a href={ LINKS.linkedin }>
+                <a href={ LINKS.linkedin } target="_blank" >
                   {" "}
                   <FaLinkedinIn className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125 " />{" "}
                 </a>
               </li>
               <li>
-                <a href={ LINKS.instagram }>
+                <a href={ LINKS.instagram } target="_blank" >
                   {" "}
                   <AiFillInstagram className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
               <li>
-                <a href={ LINKS.telegram }>
+                <a href={ LINKS.telegram } target="_blank" >
                   {" "}
                   <FaTelegram className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
               <li>
-                <a href={resumePDF}>
+                <a href={resumePDF} target="_blank" >
                   {" "}
                   <GrDocumentUser className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
               <li>
-                <a href={ LINKS.email }>
+                <a href={ LINKS.email } target="_blank" >
                   {" "}
                   <SiGmail className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>

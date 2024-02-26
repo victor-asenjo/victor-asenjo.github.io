@@ -20,6 +20,7 @@ const Footer = () => {
           data-aos="fade-up" data-aos-duration="1000"
 
             href={ LINKS.email }
+            target="_blank" 
             className="box font-medium text-white   flex items-center justify-center flex-col"
           >
             <SiGmail className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -29,6 +30,7 @@ const Footer = () => {
           data-aos="fade-up" data-aos-duration="1000"
 
             href={ LINKS.telegram }
+            target="_blank" 
             className="box font-medium text-white   flex items-center justify-center flex-col"
           >
             <FaTelegramPlane className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -49,6 +51,7 @@ const Footer = () => {
           data-aos="fade-up" data-aos-duration="1400"
 
             href={ LINKS.instagram }
+            target="_blank" 
             className="box font-medium text-white  flex items-center justify-center flex-col"
           >
             <RiInstagramFill className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -62,6 +65,7 @@ const Footer = () => {
           data-aos="fade-up" data-aos-duration="1400"
 
             href="https://linktr.ee/victorasenjo"
+            target="_blank" 
             className="box font-medium text-white  flex items-center justify-center flex-col"
           >
             <GiEasterEgg className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -70,6 +74,7 @@ const Footer = () => {
           data-aos="fade-up" data-aos-duration="1400"
 
             href="https://victor-asenjo.github.io/code-blog/"
+            target="_blank" 
             className="box font-medium text-white  flex items-center justify-center flex-col"
           >
             <IoIosFingerPrint className=" text-black text-3xl hover:scale-125 cursor-pointer" />
