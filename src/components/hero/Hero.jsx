@@ -4,9 +4,10 @@ import {
   AiFillGithub,
   AiFillInstagram,
 } from "react-icons/ai";
-import { GrDocumentUser, FaLinkedinIn, FaTelegram } from "react-icons/fa";
+import { FaLinkedinIn, FaTelegram } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
+import { GrDocumentUser } from "react-icons/gr";
 import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Resume.pdf";
 
