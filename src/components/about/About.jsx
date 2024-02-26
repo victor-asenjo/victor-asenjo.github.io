@@ -27,15 +27,15 @@ const About = ({ darkMode }) => {
                   className="text-gray-700 font-medium w-full mb-6" // Agregar margen inferior al párrafo
                 >
                   As a software engineer, my professional goals include working in a leading company
-              that develops advanced and innovative technologies, where I would have the opportunity to hold a position
-              that allows me to apply and expand my technical knowledge and skills in software development.
-              Additionally, I seek to be part of a highly collaborative team that fosters idea exchange and creativity
-              to tackle complex technical challenges in challenging and high-complexity projects. With a focus on
-              implementing agile development practices to improve speed and efficiency in delivering results, I am also
-              interested in participating in training and professional development programs to achieve continuous growth
-              in the field of technology. In the long term, my goal is to be a computer engineer with high value based
-              on experience and training, while contributing to the development of projects that have a positive impact
-              on society or provide meaningful solutions for users.
+                  that develops advanced and innovative technologies, where I would have the opportunity to hold a position
+                  that allows me to apply and expand my technical knowledge and skills in software development.
+                  Additionally, I seek to be part of a highly collaborative team that fosters idea exchange and creativity
+                  to tackle complex technical challenges in challenging and high-complexity projects. With a focus on
+                  implementing agile development practices to improve speed and efficiency in delivering results, I am also
+                  interested in participating in training and professional development programs to achieve continuous growth
+                  in the field of technology. In the long term, my goal is to be a computer engineer with high value based
+                  on experience and training, while contributing to the development of projects that have a positive impact
+                  on society or provide meaningful solutions for users.
                 </p>
               </div>
               <div className="text-container"> {/* Crear un contenedor para el texto */}
@@ -45,18 +45,15 @@ const About = ({ darkMode }) => {
                   className="text-gray-700 font-medium w-full" // Eliminar el margen inferior del último párrafo
                 >
                   Hi, I'm Víctor Asenjo, a passionate software engineer from Catalonia, Spain. My
-              passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I pay
-              great attention to details, architecture, and its impact, as well as the code quality of the things I
-              build. I would love to end up being a full-stack developer.
-              In my free time, I enjoy giving university classes, sharing my knowledge and experiences with students.
-              Being a university teacher, allows me to stay engaged with the latest advancements in my field and fosters
-              a sense of fulfillment in contributing to the education and development of the next generation of learners
-              and professionals. Additionally, I am a youth leisure and free time monitor, I am a basketball referee
-              (also wheelchair basketball).
+                  passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I pay
+                  great attention to details, architecture, and its impact, as well as the code quality of the things I
+                  build. I would love to end up being a full-stack developer.
+                  In my free time, I enjoy giving university classes, sharing my knowledge and experiences with students.
+                  Being a university teacher, allows me to stay engaged with the latest advancements in my field and fosters
+                  a sense of fulfillment in contributing to the education and development of the next generation of learners
+                  and professionals. Additionally, I am a youth leisure and free time monitor, I am a basketball referee
+                  (also wheelchair basketball).
                 </p>
-                <ul className="list-check mt-2"> {/* Agregar margen superior al ul */}
-                  {/* Elementos de la lista */}
-                </ul>
               </div>
             </div>
           </div>
