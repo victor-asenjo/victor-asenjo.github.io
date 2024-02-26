@@ -22,10 +22,10 @@ const Resume = () => {
             data-aos="zoom-in"
             className=" w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
           >
-            <legend className=" w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
+            <legend className="w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
               Experience
             </legend>
-            <div className=" relative">
+            <div className="relative">
               {/* design */}
               <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
                 <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
@@ -33,26 +33,22 @@ const Resume = () => {
                 <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
               </div>
               {/* design */}
-              <div className=" flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+              <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
                 <h1 className="text-[1.4rem] font-semibold sm:text-xl">
-                  Software Developer
+                  Software Engineer
                 </h1>
-                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
-                  Company Name
+                <span className="text-[.9rem] font-semibold text-gray-500 sm:text-base">
+                  Oracle Health
                 </span>
-                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  June 2023 - Present
+                <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                  December 2023 - Present
                 </span>
-                <p className=" text-[.9rem] text-justify break-words text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi nihil aut quae obcaecati alias placeat totam aperiam
-                  pariatur quam? Accusantium minima aperiam error obcaecati
-                  autem doloribus deserunt qui, laborum incidunt amet, numquam
-                  eos cum tempora. Debitis, esse quae corporis deserunt officia
-                  quos in a, quaerat vero odio vitae.
+                <p className="text-[.9rem] text-justify break-words text-gray-500">
+                  As a Software Engineer at Oracle Health, I am part of the International Support team, contributing to Oracle's mission of creating a human-centric healthcare experience powered by unified global data. In this dynamic role, I work collaboratively in a team environment to provide functional and technical expertise to our clients, specializing in custom code development and maintenance. My responsibilities extend to overseeing broad custom code design, ensuring code quality, and making critical architecture decisions. I play a key role in developing long-term technical roadmaps for custom products, driving innovation and staying abreast of emerging technologies. Performing software risk analysis and implementing effective mitigation strategies are integral aspects of my role, contributing to the reliability and security of our healthcare solutions.
                 </p>
               </div>
             </div>
+
           </fieldset>
         </div>
         <div className="right flex-1 flex items-center justify-center">
