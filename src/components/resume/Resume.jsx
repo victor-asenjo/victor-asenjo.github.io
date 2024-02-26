@@ -202,24 +202,7 @@ const Resume = () => {
           During the summer of 2022 I was in a TIC summer camp energizing,
                           organizing and directing children's and youth leisure activities.</p>
 
-          
-        </div>
-      </div>
-      <div className="relative">
-        {/* design */}
-        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
-          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
-          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
-          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
-        </div>
-        {/* design */}
-        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
-        
-          {/* Experience 3 */}
-          <h1 className="text-[1.4rem] font-semibold sm:text-xl">
-          Monitor and animator of children's and youth activities
-          </h1>
-          <span className="text-[.9rem] font-semibold text-gray-500 sm:text-base">
+                          <span className="text-[.9rem] font-semibold text-gray-500 sm:text-base">
           Fundesplai; Xanascat; Generalitat de Catalunya;
           </span>
           <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
@@ -231,6 +214,7 @@ const Resume = () => {
                       </p>
         </div>
       </div>
+      
       <div className="relative">
         {/* design */}
         <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
@@ -251,7 +235,7 @@ const Resume = () => {
           2019 - Present
           </span>
           <p className="text-[.9rem] text-justify break-words text-gray-500">
-          Since 2019 I'm a basketball referee on weekends.</p>
+          Since 2019, I've officiated basketball games for the FCBQ, making crucial decisions under pressure. From fast-paced fouls to game-changing calls, I navigate intense situations with composure, ensuring fair play and upholding the integrity of the game. My role demands quick thinking, clear communication, and unwavering impartiality, contributing to the smooth flow and fairness of every match.</p>
         </div>
       </div>
       <div className="relative">
