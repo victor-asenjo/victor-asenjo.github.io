@@ -21,7 +21,7 @@ const Hero = () => {
               data-aos="fade-up"
               className=" text-5xl font-bold sm:text-[2rem]"
             >
-              Hello, I'm John  Doe
+              Hello, I'm Víctor Asenjo
             </h2>
             <TypeAnimation
               data-aos="fade-up"
