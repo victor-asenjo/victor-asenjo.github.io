@@ -54,7 +54,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="sm:text-[12px]">
-          | Copyright &copy; <span>2024 Víctor Asenjo Carvajal </span> All rights reserved
+          | Copyright &copy; <span>2024 Víctor Asenjo Carvajal -</span> All rights reserved
           <a href="#"></a> |
           <a 
           data-aos="fade-up" data-aos-duration="1400"
