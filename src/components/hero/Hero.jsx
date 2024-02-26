@@ -7,6 +7,7 @@ import {
 import { FaLinkedinIn, FaTelegram } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import { GrDocumentUser } from "react-icons/gr";
 import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Resume.pdf";
@@ -51,7 +52,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href=""
+              href="https://www.linkedin.com/in/victorasenjo/"
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span> Hire Me</span>
@@ -100,6 +101,12 @@ const Hero = () => {
                 <a href={resumePDF}>
                   {" "}
                   <GrDocumentUser className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
+                </a>
+              </li>
+              <li>
+                <a href="mailto:victorasenj@gmail.com?subject=Collaboration offer&body=Hey Víctor, I'm [name]. I wanted to talk to you about your profile and a collaboration proposal. Could you please get back to me when you have a moment?">
+                  {" "}
+                  <SiGmail className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
             </ul>
