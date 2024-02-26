@@ -46,8 +46,19 @@ const Resume = () => {
           </span>
           <p className="text-[.9rem] text-justify break-words text-gray-500">
             As a Software Engineer at Oracle Health, I am part of the International Support team, contributing to Oracle's mission of creating a human-centric healthcare experience powered by unified global data. In this dynamic role, I work collaboratively in a team environment to provide functional and technical expertise to our clients, specializing in custom code development and maintenance. My responsibilities extend to overseeing broad custom code design, ensuring code quality, and making critical architecture decisions. I play a key role in developing long-term technical roadmaps for custom products, driving innovation and staying abreast of emerging technologies. Performing software risk analysis and implementing effective mitigation strategies are integral aspects of my role, contributing to the reliability and security of our healthcare solutions.
-          </p>
-          <p></p>
+          </p>        
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+          
           {/* Experience 8 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
             Associate University Professor
@@ -70,7 +81,20 @@ const Resume = () => {
                           management, effective communication, and the application of best practices in software
                           engineering.
                           </p>
-                          <p></p>
+                         
+          
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+          
           {/* Experience 7 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
             Wheelchair basketball national referee
@@ -89,7 +113,20 @@ const Resume = () => {
                           allows me to support the development of wheelchair basketball and empower athletes with
                           physical disabilities in their pursuit of competitive excellence.
                           </p>
-                          <p></p>
+                      
+          
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+          
           {/* Experience 6 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
             Research and Development Support Staff (R&D)
@@ -110,6 +147,19 @@ const Resume = () => {
                           is a subgroup of the inSSIDE research group and is primarily comprised of members from the
                           ESSI department at UPC.
                           </p>
+         
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+          
           {/* Experience 5 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
             Internships - Data Analyst
@@ -123,6 +173,20 @@ const Resume = () => {
           <p className="text-[.9rem] text-justify break-words text-gray-500">
             During my internship at SDG group, I gained hands-on experience in software development methodologies and practices. I assisted senior developers in designing and implementing software solutions, participating in all stages of the development lifecycle. I collaborated with cross-functional teams to analyze requirements, develop prototypes, and conduct testing to ensure product quality. Through this experience, I developed proficiency in programming languages such as Java and Python, as well as database technologies like SQL. Additionally, I honed my problem-solving skills and learned to adapt to fast-paced environments, laying a solid foundation for my career in software engineering.
           </p>
+
+      
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+          
 
           {/* Experience 4 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
@@ -138,6 +202,19 @@ const Resume = () => {
           During the summer of 2022 I was in a TIC summer camp energizing,
                           organizing and directing children's and youth leisure activities.</p>
 
+          
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+        
           {/* Experience 3 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
           Monitor and animator of children's and youth activities
@@ -152,8 +229,17 @@ const Resume = () => {
           During the summer of 2021 I was in several summer camps energizing,
                         organizing and directing children's and youth leisure activities of ingenuity and technology.
                       </p>
-
-
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
           {/* Experience 2 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
           Basketball Referee
@@ -166,8 +252,17 @@ const Resume = () => {
           </span>
           <p className="text-[.9rem] text-justify break-words text-gray-500">
           Since 2019 I'm a basketball referee on weekends.</p>
-                        
-
+        </div>
+      </div>
+      <div className="relative">
+        {/* design */}
+        <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+          <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+          <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+          <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+        </div>
+        {/* design */}
+        <div className="flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
 
           {/* Experience 1 */}
           <h1 className="text-[1.4rem] font-semibold sm:text-xl">
