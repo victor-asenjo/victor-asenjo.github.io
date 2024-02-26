@@ -15,64 +15,57 @@ const About = ({ darkMode }) => {
         {/* content*/}
         <div className="flex md:flex-col ">
           <div className="left flex-1 w-full">
-
             {/* left box */}
             <div
               data-aos="zoom-in"
-              className="progress flex items-center h-[100%] justify-end md:justify-center"
+              className="progress flex items-center h-[100%] justify-start md:justify-center flex-col" // Agregar clase flex-col para que los elementos se apilen verticalmente
             >
-
-
-              <h4 className=" text-2xl font-black text-gray-400 sm:text-2xl">
-                Goals
-              </h4>
-              <p
-                data-aos="fade-up"
-                className=" text-gray-700 font-medium w-[100%]"
-              >
-                As a software engineer, my professional goals include working in a leading company
-                that develops advanced and innovative technologies, where I would have the opportunity to hold a position
-                that allows me to apply and expand my technical knowledge and skills in software development.
-                Additionally, I seek to be part of a highly collaborative team that fosters idea exchange and creativity
-                to tackle complex technical challenges in challenging and high-complexity projects. With a focus on
-                implementing agile development practices to improve speed and efficiency in delivering results, I am also
-                interested in participating in training and professional development programs to achieve continuous growth
-                in the field of technology. In the long term, my goal is to be a computer engineer with high value based
-                on experience and training, while contributing to the development of projects that have a positive impact
-                on society or provide meaningful solutions for users.
-              </p>
-
-              <h4 className=" text-2xl font-black text-gray-400 sm:text-2xl">
-                What I Do ?
-              </h4>
-              <p
-                data-aos="fade-up"
-                className=" text-gray-700 font-medium w-[100%]"
-              >
-                Hi, I'm Víctor Asenjo, a passionate software engineer from Catalonia, Spain. My
-                passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I pay
-                great attention to details, architecture, and its impact, as well as the code quality of the things I
-                build. I would love to end up being a full-stack developer.
-                In my free time, I enjoy giving university classes, sharing my knowledge and experiences with students.
-                Being a university teacher, allows me to stay engaged with the latest advancements in my field and fosters
-                a sense of fulfillment in contributing to the education and development of the next generation of learners
-                and professionals. Additionally, I am a youth leisure and free time monitor, I am a basketball referee
-                (also wheelchair basketball).
-              </p>
-              <ul class="list-check">
-                <li >Software engineer</li>
-                <li >Basketball referee</li>
-                <li >Data analyst</li>
-                <li >Youth camps monitor</li>
-              </ul>
-
+              <div className="text-container"> {/* Crear un contenedor para el texto */}
+                <h4 className="text-2xl font-black text-gray-400 sm:text-2xl mb-2">Goals</h4> {/* Agregar margen inferior al título */}
+                <p
+                  data-aos="fade-up"
+                  className="text-gray-700 font-medium w-full mb-6" // Agregar margen inferior al párrafo
+                >
+                  As a software engineer, my professional goals include working in a leading company
+              that develops advanced and innovative technologies, where I would have the opportunity to hold a position
+              that allows me to apply and expand my technical knowledge and skills in software development.
+              Additionally, I seek to be part of a highly collaborative team that fosters idea exchange and creativity
+              to tackle complex technical challenges in challenging and high-complexity projects. With a focus on
+              implementing agile development practices to improve speed and efficiency in delivering results, I am also
+              interested in participating in training and professional development programs to achieve continuous growth
+              in the field of technology. In the long term, my goal is to be a computer engineer with high value based
+              on experience and training, while contributing to the development of projects that have a positive impact
+              on society or provide meaningful solutions for users.
+                </p>
+              </div>
+              <div className="text-container"> {/* Crear un contenedor para el texto */}
+                <h4 className="text-2xl font-black text-gray-400 sm:text-2xl mb-2">What I Do ?</h4> {/* Agregar margen inferior al título */}
+                <p
+                  data-aos="fade-up"
+                  className="text-gray-700 font-medium w-full" // Eliminar el margen inferior del último párrafo
+                >
+                  Hi, I'm Víctor Asenjo, a passionate software engineer from Catalonia, Spain. My
+              passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I pay
+              great attention to details, architecture, and its impact, as well as the code quality of the things I
+              build. I would love to end up being a full-stack developer.
+              In my free time, I enjoy giving university classes, sharing my knowledge and experiences with students.
+              Being a university teacher, allows me to stay engaged with the latest advancements in my field and fosters
+              a sense of fulfillment in contributing to the education and development of the next generation of learners
+              and professionals. Additionally, I am a youth leisure and free time monitor, I am a basketball referee
+              (also wheelchair basketball).
+                </p>
+                <ul className="list-check mt-2"> {/* Agregar margen superior al ul */}
+                  {/* Elementos de la lista */}
+                </ul>
+              </div>
             </div>
           </div>
+
           {/* right box */}
           <div className="right relative flex-1 flex flex-wrap p-5 gap-10 items-center justify-center sm:w-full">
             <div className="first2 flex flex-col gap-10">
 
-            <PhotoCarousel />
+              <PhotoCarousel />
 
 
             </div>
