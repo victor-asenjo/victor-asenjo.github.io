@@ -2,6 +2,8 @@ import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
+import { SiGmail } from "react-icons/si";
+
 
 const Footer = () => {
   return (
@@ -14,12 +16,22 @@ const Footer = () => {
           <a 
           data-aos="fade-up" data-aos-duration="1000"
 
-            href=""
+            href="mailto:victorasenj@gmail.com?subject=Collaboration offer&body=Hey Víctor, I'm [name]. I wanted to talk to you about your profile and a collaboration proposal. Could you please get back to me when you have a moment?"
+            className="box font-medium text-white   flex items-center justify-center flex-col"
+          >
+            <SiGmail className=" text-black text-3xl hover:scale-125 cursor-pointer" />
+            <p>Mail</p>
+          </a>
+          <a 
+          data-aos="fade-up" data-aos-duration="1000"
+
+            href="https://telegram.me/victorasenjo"
             className="box font-medium text-white   flex items-center justify-center flex-col"
           >
             <FaTelegramPlane className=" text-black text-3xl hover:scale-125 cursor-pointer" />
             <p>Telegram</p>
           </a>
+          {/*}
           <a 
           data-aos="fade-up" data-aos-duration="1200"
 
@@ -29,10 +41,11 @@ const Footer = () => {
             <IoLogoWhatsapp className=" text-black text-3xl hover:scale-125 cursor-pointer" />
             <p>WhatsApp</p>
           </a>
+  */}
           <a 
           data-aos="fade-up" data-aos-duration="1400"
 
-            href=""
+            href="https://www.instagram.com/victorasenjo22/"
             className="box font-medium text-white  flex items-center justify-center flex-col"
           >
             <RiInstagramFill className=" text-black text-3xl hover:scale-125 cursor-pointer" />
