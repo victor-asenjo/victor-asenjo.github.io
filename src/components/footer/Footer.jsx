@@ -3,7 +3,8 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiGmail } from "react-icons/si";
-
+import { GiEasterEgg } from "react-icons/gi";
+import { IoIosFingerPrint } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -53,8 +54,24 @@ const Footer = () => {
           </a>
         </div>
         <div className="sm:text-[12px]">
-          | Copyright &copy; <span>2023 Dev AlphaSpace </span> All rights reserved
+          | Copyright &copy; <span>2024 Víctor Asenjo Carvajal </span> All rights reserved
           <a href="#"></a> |
+          <a 
+          data-aos="fade-up" data-aos-duration="1400"
+
+            href="https://linktr.ee/victorasenjo"
+            className="box font-medium text-white  flex items-center justify-center flex-col"
+          >
+            <GiEasterEgg className=" text-black text-3xl hover:scale-125 cursor-pointer" />
+          </a>
+          <a 
+          data-aos="fade-up" data-aos-duration="1400"
+
+            href="https://victor-asenjo.github.io/code-blog/"
+            className="box font-medium text-white  flex items-center justify-center flex-col"
+          >
+            <IoIosFingerPrint className=" text-black text-3xl hover:scale-125 cursor-pointer" />
+          </a>
         </div>
       </div>
     </div>
