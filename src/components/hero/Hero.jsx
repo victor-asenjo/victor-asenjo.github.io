@@ -11,7 +11,7 @@ import { SiGmail } from "react-icons/si";
 import { GrDocumentUser } from "react-icons/gr";
 import { TypeAnimation } from "react-type-animation";
 import { LINKS } from "../../data/links"; // Importa las constantes de los enlaces
-import resumePDF from LINKS.resumePDF;
+const { resumePDF } = LINKS.resumePDF;
 
 
 const Hero = () => {
