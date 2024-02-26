@@ -62,7 +62,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             to="/"
             className="text-3xl font-bold sm:text-3xl"
           >
-            John Doe.
+            Víctor Asenjo.
           </Link>
         </div>
         <div
