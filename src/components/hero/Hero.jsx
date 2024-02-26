@@ -10,7 +10,8 @@ import { FaPlay } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { GrDocumentUser } from "react-icons/gr";
 import { TypeAnimation } from "react-type-animation";
-import resumePDF from "../../assets/Resume.pdf";
+import { LINKS } from "../../data/links"; // Importa las constantes de los enlaces
+import resumePDF from LINKS.resumePDF;
 
 
 const Hero = () => {
@@ -52,7 +53,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href="https://www.linkedin.com/in/victorasenjo/"
+              href={ LINKS.linkedin }
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span> Hire Me</span>
@@ -74,25 +75,25 @@ const Hero = () => {
               className=" flex gap-5"
             >
               <li>
-                <a href="https://github.com/victor-asenjo">
+                <a href={ LINKS.github }>
                   {" "}
                   <AiFillGithub className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/victorasenjo/">
+                <a href={ LINKS.linkedin }>
                   {" "}
                   <FaLinkedinIn className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125 " />{" "}
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/victorasenjo22/">
+                <a href={ LINKS.instagram }>
                   {" "}
                   <AiFillInstagram className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
               <li>
-                <a href="https://telegram.me/victorasenjo">
+                <a href={ LINKS.telegram }>
                   {" "}
                   <FaTelegram className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
@@ -104,7 +105,7 @@ const Hero = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:victorasenj@gmail.com?subject=Collaboration offer&body=Hey Víctor, I'm [name]. I wanted to talk to you about your profile and a collaboration proposal. Could you please get back to me when you have a moment?">
+                <a href={ LINKS.email }>
                   {" "}
                   <SiGmail className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>

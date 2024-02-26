@@ -5,6 +5,8 @@ import { RiInstagramFill } from "react-icons/ri";
 import { SiGmail } from "react-icons/si";
 import { GiEasterEgg } from "react-icons/gi";
 import { IoIosFingerPrint } from "react-icons/io";
+import { LINKS } from "../../data/links"; // Importa las constantes de los enlaces
+
 
 const Footer = () => {
   return (
@@ -17,7 +19,7 @@ const Footer = () => {
           <a 
           data-aos="fade-up" data-aos-duration="1000"
 
-            href="mailto:victorasenj@gmail.com?subject=Collaboration offer&body=Hey Víctor, I'm [name]. I wanted to talk to you about your profile and a collaboration proposal. Could you please get back to me when you have a moment?"
+            href={ LINKS.email }
             className="box font-medium text-white   flex items-center justify-center flex-col"
           >
             <SiGmail className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -26,7 +28,7 @@ const Footer = () => {
           <a 
           data-aos="fade-up" data-aos-duration="1000"
 
-            href="https://telegram.me/victorasenjo"
+            href={ LINKS.telegram }
             className="box font-medium text-white   flex items-center justify-center flex-col"
           >
             <FaTelegramPlane className=" text-black text-3xl hover:scale-125 cursor-pointer" />
@@ -46,7 +48,7 @@ const Footer = () => {
           <a 
           data-aos="fade-up" data-aos-duration="1400"
 
-            href="https://www.instagram.com/victorasenjo22/"
+            href={ LINKS.instagram }
             className="box font-medium text-white  flex items-center justify-center flex-col"
           >
             <RiInstagramFill className=" text-black text-3xl hover:scale-125 cursor-pointer" />
