@@ -8,7 +8,7 @@ import profile2 from "../../assets/images/profile2.jpg";
 
 const PhotoCarousel = () => {
   return (
-    <Carousel autoPlay interval={3000} infiniteLoop>
+    <Carousel autoPlay interval={3000} infiniteLoop showThumbs={false}>
       <div>
         <img src={profilephoto} alt="Profile Photo" />
       </div>

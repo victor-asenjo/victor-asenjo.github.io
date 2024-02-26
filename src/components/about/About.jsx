@@ -18,7 +18,7 @@ const About = ({ darkMode }) => {
             {/* left box */}
             <div
               data-aos="zoom-in"
-              className="progress flex items-center h-[100%] justify-start md:justify-center flex-col" // Agregar clase flex-col para que los elementos se apilen verticalmente
+              className="progress flex items-center h-[100%] justify-center md:justify-center flex-col" // Agregar clase flex-col para que los elementos se apilen verticalmente
             >
               <div className="text-container"> {/* Crear un contenedor para el texto */}
                 <h4 className="text-2xl font-black text-gray-400 sm:text-2xl mb-2">Goals</h4> {/* Agregar margen inferior al título */}
