@@ -111,7 +111,7 @@ const Hero = () => {
               className=" h-[90%]  w-full object-cover md:h-[95%] md:m-auto sm:m-0"
               src='https://github.com/victor-asenjo/victor-asenjo.github.io/blob/main/src/assets/CoverImage.png'
               // src={mine}
-              alt="mine"
+              alt="VictorAsenjo-image"
             />
             <div className=" absolute bottom-10 md:bottom-3 right-8 md:right-2">
               <div data-aos="zoom-in" data-aos-duration="1000"  className=" relative cursor-pointer">
