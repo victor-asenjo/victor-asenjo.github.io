@@ -10,18 +10,22 @@ const navItems = [
   },
   {
     id: 1,
-    name: "skills",
+    name: "about",
   },
   {
     id: 2,
-    name: "works",
+    name: "skills",
   },
   {
     id: 3,
-    name: "resume",
+    name: "works",
   },
   {
     id: 4,
+    name: "resume",
+  },
+  {
+    id: 5,
     name: "contact",
   },
 ];
