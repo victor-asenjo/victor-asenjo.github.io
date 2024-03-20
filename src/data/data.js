@@ -11,8 +11,8 @@ export const data = [
   },
   {
     id: 2,
-    img: 'https://i.postimg.cc/Bv75CLyN/4167022.jpg',
-    title: "Tarvel Agency",
+    img: '../src/assets/images/TelegramBotWork/Diapositiva1.PNG',
+    title: "Telegram Bot Organizer",
     link: "",
     git: "",
   },

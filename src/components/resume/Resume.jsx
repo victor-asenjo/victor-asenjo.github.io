@@ -1,4 +1,5 @@
 import React from "react";
+import resumePDF from "../../assets/Resume.pdf"; // Importa el archivo PDF de tu CV
 
 const Resume = () => {
   return (
@@ -14,6 +15,16 @@ const Resume = () => {
         <p className=" text-gray-700 font-medium w-[100%]">
           Here are my experiences and qualifications.
         </p>
+      </div>
+      {/* Botón de descarga de CV */}
+      <div className="flex justify-center mt-5">
+        <a
+          href={resumePDF} // Enlace al archivo PDF de tu CV
+          download="Victor_Asenjo_Resume.pdf" // Nombre de descarga del archivo
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Download CV
+        </a>
       </div>
       {/* card*/}
       <div className="card-wrapper w-[90%] sm:w-full mt-5 flex md:flex-col sm:gap-5 mx-auto">
