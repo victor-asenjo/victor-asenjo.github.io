@@ -7,14 +7,14 @@ export const data = [
     title: "Multimedia Web",
     desc: "",
     link: "",
-    git: "",
+    git: "https://github.com/victor-asenjo",
   },
   {
     id: 2,
-    img: '../src/assets/images/TelegramBotWork/Diapositiva1.PNG',
+    img: 'https://github.com/victor-asenjo/victor-asenjo.github.io/blob/4c5d1192dcda2ada1c84d6db2254ab30358fc6b0/src/assets/images/TelegramBotWork/Diapositiva1.PNG',
     title: "Telegram Bot Organizer",
-    link: "",
-    git: "",
+    link: "https://t.me/FCBQbot",
+    git: "https://github.com/victor-asenjo",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ export const data = [
     title: "Music Player",
     desc: "",
     link: "",
-    git: "",
+    git: "https://github.com/victor-asenjo",
   }
   
 ];
