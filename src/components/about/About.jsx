@@ -64,6 +64,34 @@ const About = ({ darkMode }) => {
 
               <PhotoCarousel />
 
+              {/* Información personal */}
+              <div className="flex flex-col">
+                <h4 className="text-lg font-semibold mb-2">Personal Information</h4>
+                <table className="table-auto">
+                  <tbody>
+                    <tr>
+                      <td className="font-semibold pr-4">Full Name:</td>
+                      <td>Víctor Asenjo Carvajal</td>
+                    </tr>
+                    <tr>
+                      <td className="font-semibold pr-4">Location:</td>
+                      <td>Barcelona, Catalonia, Spain</td>
+                    </tr>
+                    <tr>
+                      <td className="font-semibold pr-4">Languages:</td>
+                      <td>
+                        <ul>
+                          <li>Spanish - Native</li>
+                          <li>Catalan - Native</li>
+                          <li>English - C1</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
 
             </div>
           </div>
