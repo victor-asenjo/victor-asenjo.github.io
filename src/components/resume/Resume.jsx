@@ -114,10 +114,10 @@ const Resume = () => {
                   Federación Española de Deportes de Personas con Discapacidad Física (FEDDF)
                 </span>
                 <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  2023 - Present
+                  2022 - 2025
                 </span>
                 <p className="text-[.9rem] text-justify break-words text-gray-500">
-                  I started refereeing wheelchair basketball in 2023 to learn and
+                  I started refereeing wheelchair basketball in 2022 to learn and
                   contribute to the exciting world of adaptive sports. As a referee for the Federación Española
                   de Deportes de Personas con Discapacidad Física (FEDDF), I officiate games at various levels,
                   ensuring fair play and enforcing the rules of wheelchair basketball. Being a part of the FEDDF
@@ -243,7 +243,7 @@ const Resume = () => {
                   Federació Catalana de Basquetbol (FCBQ)
                 </span>
                 <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  2019 - Present
+                  2019 - 2025
                 </span>
                 <p className="text-[.9rem] text-justify break-words text-gray-500">
                   Since 2019, I've officiated basketball games for the FCBQ, making crucial decisions under pressure. From fast-paced fouls to game-changing calls, I navigate intense situations with composure, ensuring fair play and upholding the integrity of the game. My role demands quick thinking, clear communication, and unwavering impartiality, contributing to the smooth flow and fairness of every match.</p>
