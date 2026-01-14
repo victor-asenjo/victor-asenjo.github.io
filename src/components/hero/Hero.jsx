@@ -63,7 +63,7 @@ const Hero = () => {
               href="/VictorAsenjoCarvajalCV.pdf"
               className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
               target="_blank"
-              download
+              rel="noopener noreferrer"
             >
               <div className="flex items-center gap-1">
                 Resume <FiDownload />
