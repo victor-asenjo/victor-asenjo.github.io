@@ -2,6 +2,12 @@
 **Date:** 2026-03-21
 **Status:** Approved
 
+## Context
+
+I need you to completely redesign my personal portfolio website hosted at `https://victor-asenjo.github.io/`. This is a GitHub Pages site. Delete all existing design and code and rebuild it from scratch. The result must be a single-page, ultra-clean, professional, modern portfolio with smooth animations and transitions. It must be fully SEO-optimized for all relevant languages (English, Spanish, Catalan) and serve as my professional digital presence.
+
+The site uses the repository root as the deployment source. The final deliverable must work as a static site on GitHub Pages (HTML/CSS/JS only — no server-side rendering, no Node.js build step required unless you set up a proper `gh-pages` build pipeline with GitHub Actions).
+
 ---
 
 ## Summary
