@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import WaveDivider from "./WaveDivider";
 import { skills } from "../data";
 
 const Skills = () => {
@@ -24,6 +23,13 @@ const Skills = () => {
 
   return (
     <section className="section skills" id="skills" ref={ref} aria-labelledby="skills-title">
+      {/* Background decorations */}
+      <div className="s-orb skills-orb-1" aria-hidden="true" />
+      <div className="s-orb skills-orb-2" aria-hidden="true" />
+      <div className="s-ring skills-ring-1" aria-hidden="true" />
+      <div className="s-ring skills-ring-2" aria-hidden="true" />
+      <div className="s-geo skills-geo-1" aria-hidden="true" />
+
       <div className="container">
         <div className="eyebrow reveal" style={{ marginBottom: 12 }}>
           <span>04</span>
@@ -36,7 +42,7 @@ const Skills = () => {
 
         <div className="skills-grid">
           {skills.map((cat, i) => (
-            <div key={cat.category} className={`skill-category reveal rd${Math.min(i + 1, 5)}`}>
+            <div key={cat.category} className={`skill-category reveal-scale rd${Math.min(i + 1, 5)}`}>
               <h3>{cat.category}</h3>
               <div className="skill-pills">
                 {cat.items.map(item => (
@@ -47,9 +53,6 @@ const Skills = () => {
           ))}
         </div>
       </div>
-
-      {/* Wave to Education (#fffbeb) */}
-      <WaveDivider fill="#fffbeb" />
     </section>
   );
 };

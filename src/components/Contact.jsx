@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { FiMail, FiGithub, FiDownload, FiArrowRight } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
-import WaveDivider from "./WaveDivider";
 import { links } from "../data";
 
 const CONTACT_LINKS = [
@@ -58,7 +57,12 @@ const Contact = () => {
 
   return (
     <section className="section contact" id="contact" ref={ref} aria-labelledby="contact-title">
+      {/* Background decorations */}
       <div className="dot-grid" aria-hidden="true" />
+      <div className="s-orb contact-orb-1" aria-hidden="true" />
+      <div className="s-geo contact-geo-1" aria-hidden="true" />
+      <div className="s-geo contact-geo-2" aria-hidden="true" />
+
       <div className="container">
         <div className="contact-grid">
           <div className="contact-text">
@@ -97,8 +101,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      {/* No wave after Contact — Footer follows */}
     </section>
   );
 };

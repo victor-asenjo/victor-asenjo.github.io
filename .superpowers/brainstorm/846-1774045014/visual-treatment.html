@@ -1,0 +1,146 @@
+<style>
+  .approaches { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
+  .approach { border: 2px solid transparent; border-radius: 16px; overflow: hidden; cursor: pointer; transition: border-color 0.2s, transform 0.15s; }
+  .approach:hover { transform: translateY(-3px); }
+  .approach.selected { border-color: var(--accent, #7c6fef); }
+  .preview { height: 280px; position: relative; overflow: hidden; }
+  .meta { padding: 16px 20px; background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.07); }
+  .meta h3 { margin: 0 0 6px; font-size: 0.95rem; }
+  .meta p { margin: 0; font-size: 0.8rem; opacity: 0.55; line-height: 1.5; }
+
+  /* ─── Approach A: Ambient Orbs ─── */
+  .preview-a {
+    background: #0e0c16;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+  }
+  .orb {
+    position: absolute; border-radius: 50%; filter: blur(40px); pointer-events: none;
+  }
+  .orb-1 { width: 180px; height: 180px; background: rgba(99,102,241,0.35); top: -40px; right: -30px; }
+  .orb-2 { width: 120px; height: 120px; background: rgba(167,139,250,0.2); bottom: 20px; left: -20px; }
+  .orb-3 { width: 80px; height: 80px; background: rgba(99,102,241,0.15); top: 80px; left: 100px; }
+  .a-section-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7c6fef; margin-bottom: 8px; position: relative; z-index: 1; }
+  .a-title { font-size: 1.5rem; font-weight: 800; color: #f0eeff; line-height: 1.1; position: relative; z-index: 1; letter-spacing: -0.03em; }
+  .a-divider {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 40px;
+  }
+  .a-card {
+    position: absolute; top: 20px; left: 20px;
+    background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.09); border-radius: 10px;
+    padding: 10px 14px; z-index: 1;
+  }
+  .a-card-label { font-size: 0.55rem; color: #7c6fef; letter-spacing: 0.1em; text-transform: uppercase; }
+  .a-card-val { font-size: 1.2rem; font-weight: 700; color: #f0eeff; }
+
+  /* ─── Approach B: Grid & Lines ─── */
+  .preview-b {
+    background: #0e0c16;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(124,111,239,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,111,239,0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .grid-fade {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, #0e0c16 80%);
+  }
+  .b-accent-line {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 60px;
+    background: linear-gradient(to bottom, transparent, #7c6fef);
+  }
+  .b-dot-accent {
+    position: absolute; top: 58px; left: 50%; transform: translateX(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: #7c6fef;
+    box-shadow: 0 0 12px #7c6fef;
+  }
+  .b-title { font-size: 1.5rem; font-weight: 800; color: #f0eeff; letter-spacing: -0.03em; position: relative; z-index: 1; line-height: 1.1; }
+  .b-tag { display: inline-block; border: 1px solid rgba(124,111,239,0.4); border-radius: 4px; padding: 2px 8px; font-size: 0.55rem; color: #a89bf5; letter-spacing: 0.08em; margin-top: 8px; position: relative; z-index: 1; }
+  .b-divider-line { position: absolute; bottom: 55px; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(124,111,239,0.3), transparent); }
+
+  /* ─── Approach C: Noise + Gradient Mesh ─── */
+  .preview-c {
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+    background: #0b0919;
+  }
+  .mesh-1 { position: absolute; width: 200px; height: 200px; border-radius: 50%; top: -60px; right: -40px; background: radial-gradient(circle, rgba(91,79,232,0.5) 0%, transparent 70%); }
+  .mesh-2 { position: absolute; width: 160px; height: 160px; border-radius: 50%; bottom: -40px; left: 30px; background: radial-gradient(circle, rgba(167,139,250,0.35) 0%, transparent 70%); }
+  .noise-overlay {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .c-wave {
+    position: absolute; bottom: 0; left: 0; right: 0;
+  }
+  .c-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(91,79,232,0.2); border: 1px solid rgba(91,79,232,0.4); border-radius: 20px; padding: 4px 12px; font-size: 0.6rem; color: #c4baff; position: relative; z-index: 1; margin-bottom: 10px; }
+  .c-dot { width: 5px; height: 5px; border-radius: 50%; background: #7c6fef; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .c-title { font-size: 1.5rem; font-weight: 800; color: #f0eeff; letter-spacing: -0.03em; line-height: 1.1; position: relative; z-index: 1; }
+  .c-title em { color: #a89bf5; font-style: normal; }
+  .c-sub { font-size: 0.65rem; color: rgba(155,150,184,0.7); margin-top: 6px; position: relative; z-index: 1; }
+</style>
+
+<h2>Which visual treatment feels most like you?</h2>
+<p class="subtitle">All 3 replace the emoji icons, add depth to section backgrounds, and improve transitions. The difference is the texture style.</p>
+
+<div class="approaches">
+
+  <div class="approach" data-choice="a" onclick="toggleSelect(this)">
+    <div class="preview preview-a">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="a-card">
+        <div class="a-card-label">Experience</div>
+        <div class="a-card-val">5+ yrs</div>
+      </div>
+      <div class="a-section-label">Featured Work</div>
+      <div class="a-title">Things I've<br>built.</div>
+    </div>
+    <div class="meta">
+      <h3>A — Ambient Glow</h3>
+      <p>Blurred radial orbs create soft depth behind sections. Glassmorphism cards. Feels premium and modern. Like Linear, Vercel, or Raycast.</p>
+    </div>
+  </div>
+
+  <div class="approach" data-choice="b" onclick="toggleSelect(this)">
+    <div class="preview preview-b">
+      <div class="grid-bg"></div>
+      <div class="grid-fade"></div>
+      <div class="b-accent-line"></div>
+      <div class="b-dot-accent"></div>
+      <div class="b-divider-line"></div>
+      <div class="b-title">Where I've<br>worked.</div>
+      <div class="b-tag">Timeline</div>
+    </div>
+    <div class="meta">
+      <h3>B — Grid & Precision</h3>
+      <p>Subtle dot/line grid as texture. Glowing vertical dividers between sections. Technical, structured, engineering-forward. Like GitHub or Stripe.</p>
+    </div>
+  </div>
+
+  <div class="approach" data-choice="c" onclick="toggleSelect(this)">
+    <div class="preview preview-c">
+      <div class="mesh-1"></div>
+      <div class="mesh-2"></div>
+      <div class="noise-overlay"></div>
+      <div class="c-chip"><div class="c-dot"></div>Open to work</div>
+      <div class="c-title">I build <em>apps</em><br>people use.</div>
+      <div class="c-sub">Flutter · Kubernetes · AI</div>
+    </div>
+    <div class="meta">
+      <h3>C — Gradient Mesh + Noise</h3>
+      <p>Deep gradient meshes bleed between sections, noise grain adds tactile texture. Most dramatic and artistic. Like Framer or Craft.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px;font-size:0.78rem;">All approaches also fix: emoji → proper icons, plain section dividers → shaped transitions, static cards → animated entrances.</p>

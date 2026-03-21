@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "WebFetch(domain:zarcerog.com)",
+      "WebFetch(domain:375.studio)",
+      "Bash(grep -E \"\\\\.jsx?$\")",
+      "Bash(bash scripts/start-server.sh --project-dir \"C:/Users/victo/Documents/GitHub/victor-asenjo.github.io\")",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:victor-asenjo.github.io)",
+      "Bash(node --input-type=module -e \"import\\(''./src/data.js''\\).then\\(m => console.log\\(''✓ Certifications array:''\\); console.log\\(JSON.stringify\\(m.certifications, null, 2\\)\\)\\);\")"
+    ]
+  }
+}

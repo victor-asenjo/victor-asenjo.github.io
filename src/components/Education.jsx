@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { SiJava, SiOracle } from "react-icons/si";
-import WaveDivider from "./WaveDivider";
 import { education, certifications } from "../data";
 
 const CERT_ICONS = {
@@ -30,6 +29,11 @@ const Education = () => {
 
   return (
     <section className="section education bg2" id="education" ref={ref} aria-labelledby="edu-title">
+      {/* Background decorations */}
+      <div className="s-orb edu-orb-1" aria-hidden="true" />
+      <div className="s-geo edu-geo-1" aria-hidden="true" />
+      <div className="s-geo edu-geo-2" aria-hidden="true" />
+
       <div className="container">
         <div className="eyebrow reveal" style={{ marginBottom: 12 }}>
           <span>05</span>
@@ -42,7 +46,7 @@ const Education = () => {
 
         <div className="edu-grid">
           {education.map((edu, i) => (
-            <div key={edu.id} className={`edu-card reveal rd${i + 1}`}>
+            <div key={edu.id} className={`edu-card ${i % 2 === 0 ? "reveal-tilt" : "reveal-tilt-r"} rd${i + 1}`}>
               <div className="edu-degree">{edu.degree}</div>
               <div className="edu-institution">
                 {edu.institutionUrl ? (
@@ -60,7 +64,7 @@ const Education = () => {
         <h3 className="certs-title reveal" style={{ marginTop: 48 }}>Certifications</h3>
         <div className="certs-grid">
           {certifications.map((cert, i) => (
-            <div key={cert.name} className={`cert-card reveal rd${i + 1}`}>
+            <div key={cert.name} className={`cert-card reveal-scale rd${i + 1}`}>
               <div className="cert-icon" aria-hidden="true">
                 {CERT_ICONS[cert.icon] || <SiOracle />}
               </div>
@@ -79,9 +83,6 @@ const Education = () => {
           <p lang="ca">Certificacions: Oracle Certified Professional Java SE 21, Oracle Cloud Infrastructure Generative AI Professional. Formació universitària en Enginyeria Informàtica per la UPC Barcelona.</p>
         </div>
       </div>
-
-      {/* Wave to Contact (#fefdfb) */}
-      <WaveDivider fill="#fefdfb" />
     </section>
   );
 };

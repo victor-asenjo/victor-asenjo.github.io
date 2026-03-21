@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import { FiDownload, FiArrowRight } from "react-icons/fi";
+import React, { useEffect, useRef, useState } from "react";
+import { FiDownload, FiArrowRight, FiBriefcase, FiBook } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import profilePhoto from "../assets/VICTOR_ASENJO_CARVAJAL_-_FOTO-removebg.png";
-import WaveDivider from "./WaveDivider";
 import { links } from "../data";
 
 const TAGLINES = [
@@ -12,56 +11,6 @@ const TAGLINES = [
   "Mobile App Creator & Developer",
   "AI & Life Sciences Innovation",
 ];
-
-const STATS = [
-  { value: 5, suffix: "+", label: "Years exp." },
-  { value: 3, suffix: "k+", label: "App users" },
-  { value: 5, suffix: "",  label: "Apps shipped" },
-  { value: 2, suffix: "",  label: "Active roles" },
-];
-
-// Count-up hook — fires once on first intersection
-function useCountUp(target, duration = 1200) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !started) {
-        setStarted(true);
-        const start = performance.now();
-        const tick = (now) => {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          // ease-out
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setCount(Math.round(eased * target));
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      }
-    }, { threshold: 0.5 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [target, duration, started]);
-
-  return [count, ref];
-}
-
-const StatItem = ({ value, suffix, label }) => {
-  const [count, ref] = useCountUp(value);
-  return (
-    <div className="hero-stat" ref={ref}>
-      <div className="hero-stat-number">
-        {count}<em>{suffix}</em>
-      </div>
-      <div className="hero-stat-label">{label}</div>
-    </div>
-  );
-};
 
 const Hero = () => {
   const [taglineIdx, setTaglineIdx] = useState(0);
@@ -108,11 +57,13 @@ const Hero = () => {
 
   return (
     <section className="hero section" id="hero" ref={sectionRef} aria-label="Introduction">
-      {/* Mesh orbs */}
+      {/* Background */}
       <div className="mesh-orb orb-1" aria-hidden="true" />
       <div className="mesh-orb orb-2" aria-hidden="true" />
       <div className="mesh-orb orb-3" aria-hidden="true" />
       <div className="dot-grid" aria-hidden="true" />
+      <div className="s-geo hero-geo-1" aria-hidden="true" />
+      <div className="s-geo hero-geo-2" aria-hidden="true" />
 
       <div className="container">
         <div className="hero-inner">
@@ -175,20 +126,22 @@ const Hero = () => {
 
           {/* Right */}
           <div className="hero-right reveal rd1">
-            <div className="hero-photo-wrap">
+            <div className="hero-photo-ring">
               <img
                 src={profilePhoto}
                 alt="Víctor Asenjo Carvajal"
                 className="hero-photo"
-                width={220}
-                height={220}
+                width={280}
+                height={280}
               />
-            </div>
-
-            <div className="hero-stats">
-              {STATS.map(s => (
-                <StatItem key={s.label} {...s} />
-              ))}
+              <div className="hero-badge hero-badge--tl">
+                <FiBriefcase size={12} />
+                <span>Lead SWE · Clarivate</span>
+              </div>
+              <div className="hero-badge hero-badge--br">
+                <FiBook size={12} />
+                <span>Professor · UPC</span>
+              </div>
             </div>
           </div>
         </div>
@@ -198,9 +151,6 @@ const Hero = () => {
         <span>scroll</span>
         <FiArrowRight size={12} style={{ transform: "rotate(90deg)" }} />
       </div>
-
-      {/* Wave to About (#fffbeb) */}
-      <WaveDivider fill="#fffbeb" />
     </section>
   );
 };

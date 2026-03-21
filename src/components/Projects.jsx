@@ -2,16 +2,15 @@ import React, { useEffect, useRef } from "react";
 import {
   FiActivity, FiUsers, FiHome, FiZap, FiSmile, FiArrowRight
 } from "react-icons/fi";
-import WaveDivider from "./WaveDivider";
 import { projects, links } from "../data";
 
 // Map project id → icon
 const PROJECT_ICONS = {
-  1: <FiUsers />,    // Impostor
-  2: <FiHome />,     // Alertas VPO
-  3: <FiActivity />, // Celia
-  4: <FiZap />,      // LAMP
-  5: <FiSmile />,    // El Rarito
+  1: <FiUsers />,
+  2: <FiHome />,
+  3: <FiActivity />,
+  4: <FiZap />,
+  5: <FiSmile />,
 };
 
 const featured = projects.filter(p => p.featured);
@@ -39,7 +38,14 @@ const Projects = () => {
 
   return (
     <section className="section projects bg2" id="projects" ref={ref} aria-labelledby="proj-title">
+      {/* Background decorations */}
       <div className="dot-grid" aria-hidden="true" />
+      <div className="s-orb proj-orb-1" aria-hidden="true" />
+      <div className="s-orb proj-orb-2" aria-hidden="true" />
+      <div className="s-geo proj-geo-1" aria-hidden="true" />
+      <div className="s-geo proj-geo-2" aria-hidden="true" />
+      <div className="s-geo proj-geo-3" aria-hidden="true" />
+
       <div className="container">
         <div className="projects-header reveal">
           <div>
@@ -65,7 +71,7 @@ const Projects = () => {
         {/* Featured */}
         <div className="projects-grid">
           {featured.map((proj, i) => (
-            <div key={proj.id} className={`proj-card featured reveal rd${i + 1}`}>
+            <div key={proj.id} className={`proj-card featured reveal-scale rd${i + 1}`}>
               <div className="proj-icon-badge" aria-hidden="true">
                 {PROJECT_ICONS[proj.id]}
               </div>
@@ -93,7 +99,7 @@ const Projects = () => {
         {others.length > 0 && (
           <div className="projects-other" style={{ marginTop: 20 }}>
             {others.map((proj, i) => (
-              <div key={proj.id} className={`proj-card-sm reveal rd${i + 1}`}>
+              <div key={proj.id} className={`proj-card-sm reveal-scale rd${i + 1}`}>
                 <div className="proj-type">{proj.type}</div>
                 <div className="proj-name" style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--t1)" }}>
                   {proj.title.split("—")[0].trim()}
@@ -112,9 +118,6 @@ const Projects = () => {
           </div>
         )}
       </div>
-
-      {/* Wave to Skills (#fefdfb) */}
-      <WaveDivider fill="#fefdfb" />
     </section>
   );
 };

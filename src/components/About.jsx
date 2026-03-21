@@ -4,7 +4,6 @@ import {
   FiBriefcase, FiSmartphone, FiAward
 } from "react-icons/fi";
 import profilePhoto from "../assets/VICTOR_ASENJO_CARVAJAL_-_FOTO-removebg.png";
-import WaveDivider from "./WaveDivider";
 
 const FACTS = [
   { icon: <FiMapPin />,        text: "Barcelona, Spain" },
@@ -37,6 +36,12 @@ const About = () => {
 
   return (
     <section className="section about bg2" id="about" ref={ref} aria-labelledby="about-title">
+      {/* Background decorations */}
+      <div className="s-orb about-orb-1" aria-hidden="true" />
+      <div className="s-orb about-orb-2" aria-hidden="true" />
+      <div className="s-geo about-geo-1" aria-hidden="true" />
+      <div className="s-geo about-geo-2" aria-hidden="true" />
+
       <div className="container">
         <div className="about-grid">
           {/* Left: photo + facts */}
@@ -94,9 +99,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* Wave to Experience (#fefdfb) */}
-      <WaveDivider fill="#fefdfb" />
     </section>
   );
 };

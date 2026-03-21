@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import WaveDivider from "./WaveDivider";
 import { experience } from "../data";
 
 const Experience = () => {
@@ -24,7 +23,12 @@ const Experience = () => {
 
   return (
     <section className="section experience" id="experience" ref={ref} aria-labelledby="exp-title">
+      {/* Background decorations */}
       <div className="dot-grid" aria-hidden="true" />
+      <div className="s-orb exp-orb-1" aria-hidden="true" />
+      <div className="s-geo exp-geo-1" aria-hidden="true" />
+      <div className="s-geo exp-geo-2" aria-hidden="true" />
+
       <div className="container">
         <div className="eyebrow reveal" style={{ marginBottom: 12 }}>
           <span>02</span>
@@ -39,7 +43,7 @@ const Experience = () => {
           {experience.map((job, i) => (
             <div
               key={job.id}
-              className={`exp-item reveal rd${Math.min(i + 1, 5)} ${job.current ? "current" : ""}`}
+              className={`exp-item reveal-left rd${Math.min(i + 1, 5)} ${job.current ? "current" : ""}`}
             >
               <div className="exp-dot" aria-hidden="true" />
               <div className="exp-card">
@@ -68,9 +72,6 @@ const Experience = () => {
           ))}
         </div>
       </div>
-
-      {/* Wave to Projects (#fffbeb) */}
-      <WaveDivider fill="#fffbeb" />
     </section>
   );
 };

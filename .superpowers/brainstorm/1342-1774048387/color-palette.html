@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Palette Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,800;0,900;1,800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f4f4f4; font-family: 'Inter', sans-serif; padding: 32px 24px 64px; }
+  h2 { font-size: 1.4rem; font-weight: 800; color: #111; margin-bottom: 6px; letter-spacing: -0.03em; }
+  .subtitle { font-size: 0.85rem; color: #888; margin-bottom: 32px; }
+
+  .palettes { display: flex; flex-direction: column; gap: 28px; }
+
+  .palette-card {
+    border-radius: 20px; overflow: hidden; cursor: pointer;
+    border: 3px solid transparent; transition: border-color 0.2s, transform 0.15s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .palette-card:hover { transform: translateY(-2px); }
+  .palette-card.selected { border-color: #111; }
+
+  .palette-preview {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 200px;
+  }
+
+  /* Hero side */
+  .pal-hero { padding: 32px 36px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .pal-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+  .pal-status { display: inline-flex; align-items: center; gap: 7px; border-radius: 100px; padding: 5px 12px; font-size: 0.68rem; font-weight: 600; margin-bottom: 18px; width: fit-content; }
+  .pal-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .pal-name { font-size: 2.2rem; font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 6px; }
+  .pal-name em { font-family: 'Playfair Display', serif; font-style: italic; display: block; }
+  .pal-sub { font-size: 0.78rem; line-height: 1.6; max-width: 260px; margin-top: 12px; }
+  .pal-btn { margin-top: 18px; display: inline-block; padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; width: fit-content; }
+
+  /* Card side */
+  .pal-cards { padding: 24px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+  .pal-proj { border-radius: 12px; padding: 16px 18px; }
+  .pal-proj-type { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+  .pal-proj-name { font-size: 0.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .pal-proj-desc { font-size: 0.72rem; line-height: 1.5; }
+  .pal-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; padding: 3px 9px; border-radius: 100px; margin-top: 8px; margin-right: 4px; }
+
+  /* Label */
+  .pal-label { padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .pal-label-name { font-size: 0.9rem; font-weight: 800; letter-spacing: -0.02em; }
+  .pal-label-desc { font-size: 0.78rem; color: #666; max-width: 460px; }
+  .pal-click { font-size: 0.72rem; font-weight: 600; color: #999; }
+
+  /* ── A: Midnight + Amber ── */
+  .a-hero { background: #fefdfb; }
+  .a-orb-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 65%); top: -80px; right: -60px; }
+  .a-orb-2 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(245,158,11,0.07) 0%, transparent 65%); bottom: -50px; left: 40px; }
+  .a-status { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; }
+  .a-dot { background: #f59e0b; }
+  .a-name { color: #0c0a08; }
+  .a-name em { color: #d97706; }
+  .a-sub { color: #78716c; }
+  .a-btn { background: #0c0a08; color: #fff; }
+  .a-cards { background: #fefdfb; }
+  .a-proj { background: #fffbeb; border: 1.5px solid #fde68a; }
+  .a-proj-type { color: #d97706; }
+  .a-proj-name { color: #0c0a08; }
+  .a-proj-desc { color: #78716c; }
+  .a-tag { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+  .a-label { background: #fff8ed; border-top: 1px solid #fde68a; }
+  .a-label-name { color: #0c0a08; }
+
+  /* ── B: Pure + Electric Blue ── */
+  .b-hero { background: #ffffff; }
+  .b-orb-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 65%); top: -80px; right: -60px; }
+  .b-orb-2 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 65%); bottom: -40px; left: 50px; }
+  .b-status { background: #e0f2fe; border: 1px solid #7dd3fc; color: #0369a1; }
+  .b-dot { background: #0ea5e9; }
+  .b-name { color: #020617; }
+  .b-name em { color: #0284c7; }
+  .b-sub { color: #475569; }
+  .b-btn { background: #0284c7; color: #fff; }
+  .b-cards { background: #f8fafc; }
+  .b-proj { background: #f0f9ff; border: 1.5px solid #bae6fd; }
+  .b-proj-type { color: #0284c7; }
+  .b-proj-name { color: #020617; }
+  .b-proj-desc { color: #475569; }
+  .b-tag { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+  .b-label { background: #f0f9ff; border-top: 1px solid #bae6fd; }
+  .b-label-name { color: #020617; }
+
+  /* ── C: Cream + Emerald ── */
+  .c-hero { background: #fafaf9; }
+  .c-orb-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 65%); top: -80px; right: -60px; }
+  .c-orb-2 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 65%); bottom: -40px; left: 50px; }
+  .c-status { background: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; }
+  .c-dot { background: #10b981; }
+  .c-name { color: #0d1b16; }
+  .c-name em { color: #059669; }
+  .c-sub { color: #6b7280; }
+  .c-btn { background: #0d1b16; color: #fff; }
+  .c-cards { background: #f7faf9; }
+  .c-proj { background: #ecfdf5; border: 1.5px solid #a7f3d0; }
+  .c-proj-type { color: #059669; }
+  .c-proj-name { color: #0d1b16; }
+  .c-proj-desc { color: #6b7280; }
+  .c-tag { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+  .c-label { background: #f0fdf8; border-top: 1px solid #a7f3d0; }
+  .c-label-name { color: #0d1b16; }
+
+  /* ── D: Warm White + Rose ── */
+  .d-hero { background: #fffbfb; }
+  .d-orb-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(244,63,94,0.1) 0%, transparent 65%); top: -80px; right: -60px; }
+  .d-orb-2 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,113,133,0.07) 0%, transparent 65%); bottom: -40px; left: 50px; }
+  .d-status { background: #ffe4e6; border: 1px solid #fecdd3; color: #9f1239; }
+  .d-dot { background: #f43f5e; }
+  .d-name { color: #0f0a0b; }
+  .d-name em { color: #e11d48; }
+  .d-sub { color: #6b7280; }
+  .d-btn { background: #0f0a0b; color: #fff; }
+  .d-cards { background: #fff5f6; }
+  .d-proj { background: #fff1f2; border: 1.5px solid #fecdd3; }
+  .d-proj-type { color: #e11d48; }
+  .d-proj-name { color: #0f0a0b; }
+  .d-proj-desc { color: #6b7280; }
+  .d-tag { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+  .d-label { background: #fff1f2; border-top: 1px solid #fecdd3; }
+  .d-label-name { color: #0f0a0b; }
+</style>
+</head>
+<body>
+
+<h2>Which color palette feels like you?</h2>
+<p class="subtitle">Same layout, four different personalities. Click to select.</p>
+
+<div class="palettes">
+
+  <!-- A: Amber -->
+  <div class="palette-card" data-choice="a" onclick="this.classList.toggle('selected')">
+    <div class="palette-preview">
+      <div class="pal-hero a-hero">
+        <div class="pal-orb a-orb-1"></div>
+        <div class="pal-orb a-orb-2"></div>
+        <div class="pal-status a-status"><span class="pal-dot a-dot"></span>Open to work · BCN</div>
+        <div class="pal-name a-name">Víctor<em>Asenjo.</em></div>
+        <div class="pal-sub a-sub">Building apps, systems and ideas that ship to real users.</div>
+        <div class="pal-btn a-btn">Download CV</div>
+      </div>
+      <div class="pal-cards a-cards">
+        <div class="pal-proj a-proj">
+          <div class="pal-proj-type a-proj-type">Health · Flutter</div>
+          <div class="pal-proj-name a-proj-name">Celia</div>
+          <div class="pal-proj-desc a-proj-desc">AI-powered celiac restaurant finder. 4.8★</div>
+          <span class="pal-tag a-tag">Flutter</span><span class="pal-tag a-tag">AI</span>
+        </div>
+        <div class="pal-proj a-proj">
+          <div class="pal-proj-type a-proj-type">Game · Flutter</div>
+          <div class="pal-proj-name a-proj-name">Impostor</div>
+          <div class="pal-proj-desc a-proj-desc">Party game for 3–24 players, 13+ packs.</div>
+          <span class="pal-tag a-tag">Flutter</span>
+        </div>
+      </div>
+    </div>
+    <div class="pal-label a-label">
+      <div>
+        <div class="pal-label-name a-label-name">A — Midnight + Amber</div>
+        <div class="pal-label-desc">Warm, premium, confident. Near-black text with gold accent. Feels like Notion or Arc.</div>
+      </div>
+      <span class="pal-click">click to select</span>
+    </div>
+  </div>
+
+  <!-- B: Electric Blue -->
+  <div class="palette-card" data-choice="b" onclick="this.classList.toggle('selected')">
+    <div class="palette-preview">
+      <div class="pal-hero b-hero">
+        <div class="pal-orb b-orb-1"></div>
+        <div class="pal-orb b-orb-2"></div>
+        <div class="pal-status b-status"><span class="pal-dot b-dot"></span>Open to work · BCN</div>
+        <div class="pal-name b-name">Víctor<em>Asenjo.</em></div>
+        <div class="pal-sub b-sub">Building apps, systems and ideas that ship to real users.</div>
+        <div class="pal-btn b-btn">Download CV</div>
+      </div>
+      <div class="pal-cards b-cards">
+        <div class="pal-proj b-proj">
+          <div class="pal-proj-type b-proj-type">Health · Flutter</div>
+          <div class="pal-proj-name b-proj-name">Celia</div>
+          <div class="pal-proj-desc b-proj-desc">AI-powered celiac restaurant finder. 4.8★</div>
+          <span class="pal-tag b-tag">Flutter</span><span class="pal-tag b-tag">AI</span>
+        </div>
+        <div class="pal-proj b-proj">
+          <div class="pal-proj-type b-proj-type">Game · Flutter</div>
+          <div class="pal-proj-name b-proj-name">Impostor</div>
+          <div class="pal-proj-desc b-proj-desc">Party game for 3–24 players, 13+ packs.</div>
+          <span class="pal-tag b-tag">Flutter</span>
+        </div>
+      </div>
+    </div>
+    <div class="pal-label b-label">
+      <div>
+        <div class="pal-label-name b-label-name">B — Pure + Electric Blue</div>
+        <div class="pal-label-desc">Clean, technical, sharp. Sky blue accent on pure white. Feels like Linear or Tailwind docs.</div>
+      </div>
+      <span class="pal-click">click to select</span>
+    </div>
+  </div>
+
+  <!-- C: Emerald -->
+  <div class="palette-card" data-choice="c" onclick="this.classList.toggle('selected')">
+    <div class="palette-preview">
+      <div class="pal-hero c-hero">
+        <div class="pal-orb c-orb-1"></div>
+        <div class="pal-orb c-orb-2"></div>
+        <div class="pal-status c-status"><span class="pal-dot c-dot"></span>Open to work · BCN</div>
+        <div class="pal-name c-name">Víctor<em>Asenjo.</em></div>
+        <div class="pal-sub c-sub">Building apps, systems and ideas that ship to real users.</div>
+        <div class="pal-btn c-btn">Download CV</div>
+      </div>
+      <div class="pal-cards c-cards">
+        <div class="pal-proj c-proj">
+          <div class="pal-proj-type c-proj-type">Health · Flutter</div>
+          <div class="pal-proj-name c-proj-name">Celia</div>
+          <div class="pal-proj-desc c-proj-desc">AI-powered celiac restaurant finder. 4.8★</div>
+          <span class="pal-tag c-tag">Flutter</span><span class="pal-tag c-tag">AI</span>
+        </div>
+        <div class="pal-proj c-proj">
+          <div class="pal-proj-type c-proj-type">Game · Flutter</div>
+          <div class="pal-proj-name c-proj-name">Impostor</div>
+          <div class="pal-proj-desc c-proj-desc">Party game for 3–24 players, 13+ packs.</div>
+          <span class="pal-tag c-tag">Flutter</span>
+        </div>
+      </div>
+    </div>
+    <div class="pal-label c-label">
+      <div>
+        <div class="pal-label-name c-label-name">C — Cream + Emerald</div>
+        <div class="pal-label-desc">Fresh, distinctive, earthy. Green accent stands out from typical portfolios. Feels like Stripe or Resend.</div>
+      </div>
+      <span class="pal-click">click to select</span>
+    </div>
+  </div>
+
+  <!-- D: Rose -->
+  <div class="palette-card" data-choice="d" onclick="this.classList.toggle('selected')">
+    <div class="palette-preview">
+      <div class="pal-hero d-hero">
+        <div class="pal-orb d-orb-1"></div>
+        <div class="pal-orb d-orb-2"></div>
+        <div class="pal-status d-status"><span class="pal-dot d-dot"></span>Open to work · BCN</div>
+        <div class="pal-name d-name">Víctor<em>Asenjo.</em></div>
+        <div class="pal-sub d-sub">Building apps, systems and ideas that ship to real users.</div>
+        <div class="pal-btn d-btn">Download CV</div>
+      </div>
+      <div class="pal-cards d-cards">
+        <div class="pal-proj d-proj">
+          <div class="pal-proj-type d-proj-type">Health · Flutter</div>
+          <div class="pal-proj-name d-proj-name">Celia</div>
+          <div class="pal-proj-desc d-proj-desc">AI-powered celiac restaurant finder. 4.8★</div>
+          <span class="pal-tag d-tag">Flutter</span><span class="pal-tag d-tag">AI</span>
+        </div>
+        <div class="pal-proj d-proj">
+          <div class="pal-proj-type d-proj-type">Game · Flutter</div>
+          <div class="pal-proj-name d-proj-name">Impostor</div>
+          <div class="pal-proj-desc d-proj-desc">Party game for 3–24 players, 13+ packs.</div>
+          <span class="pal-tag d-tag">Flutter</span>
+        </div>
+      </div>
+    </div>
+    <div class="pal-label d-label">
+      <div>
+        <div class="pal-label-name d-label-name">D — Warm White + Rose</div>
+        <div class="pal-label-desc">Bold, warm, memorable. Rose/red accent is daring and personal. Stands out immediately.</div>
+      </div>
+      <span class="pal-click">click to select</span>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:28px;font-size:0.78rem;color:#999;text-align:center;">Or tell me in the terminal if you want something else entirely — a specific color, a combination, or a vibe.</p>
+</body>
+</html>
