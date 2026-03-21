@@ -308,7 +308,7 @@ p { color: var(--t2); line-height: 1.8; }
   padding: 0 clamp(20px, 5vw, 64px);
   justify-content: space-between;
   background: transparent;
-  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), backdrop-filter 0.3s;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), backdrop-filter 0.3s, -webkit-backdrop-filter 0.3s;
   border-bottom: 1px solid transparent;
 }
 
@@ -480,13 +480,13 @@ p { color: var(--t2); line-height: 1.8; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fef3c7;
-  border: 1px solid #fcd34d;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
   border-radius: 100px;
   padding: 6px 14px;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #92400e;
+  color: var(--tag-c);
   letter-spacing: 0.02em;
   margin-bottom: 24px;
 }
@@ -494,7 +494,7 @@ p { color: var(--t2); line-height: 1.8; }
   width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(217,119,6,0.2);
+  box-shadow: 0 0 0 3px var(--accent-dim);
   animation: status-pulse 2.5s ease-in-out infinite;
 }
 @keyframes status-pulse {
@@ -583,7 +583,7 @@ p { color: var(--t2); line-height: 1.8; }
   border-radius: 14px;
   padding: 16px 18px;
   text-align: center;
-  transition: border-color 0.18s, transform 0.18s;
+  transition: border-color 0.18s var(--ease), transform 0.18s var(--ease);
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 .hero-stat:hover { border-color: var(--accent); transform: translateY(-2px); }
@@ -1169,4 +1169,24 @@ p { color: var(--t2); line-height: 1.8; }
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   22. REDUCED MOTION
+═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-orb,
+  .status-dot,
+  .scroll-hint,
+  .hero-tagline-cursor {
+    animation: none !important;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
