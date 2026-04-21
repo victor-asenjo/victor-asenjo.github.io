@@ -1,0 +1,261 @@
+/* =========================================================================
+   TIMELINE — Gantt
+   ========================================================================= */
+.tl-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: start;
+}
+
+.tl-gantt {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+/* Year header */
+.gantt-years {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--ink);
+}
+.gantt-year-row {
+  position: relative;
+  height: 32px;
+}
+.gantt-year {
+  position: absolute;
+  top: 0; bottom: 0;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+}
+.gy-tick {
+  width: 1px; height: 8px;
+  background: var(--rule);
+}
+.gy-label {
+  font-size: 10px; letter-spacing: 0.06em;
+  color: var(--muted);
+  padding-top: 4px;
+}
+.gantt-now {
+  position: absolute;
+  top: -4px; bottom: -10000px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 4;
+}
+.now-line {
+  display: block;
+  width: 1px; height: 10000px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+.now-label {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 6px;
+  background: var(--accent); color: #fff;
+  font-size: 9px; letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+/* Gantt rows */
+.gantt-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border-top: 1px solid var(--rule);
+  min-height: 60px;
+}
+.gantt-row:first-of-type { border-top: none; }
+
+.gantt-track-label {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 14px;
+  background: var(--paper-2);
+  border-right: 1px solid var(--rule);
+}
+.gtl-name {
+  font-size: 12px; font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.gtl-count {
+  font-size: 9px; color: var(--muted);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.gantt-lane {
+  position: relative;
+  min-height: 60px;
+  padding: 8px 0;
+}
+.gantt-lane-bg { position: absolute; inset: 0; pointer-events: none; }
+.gantt-grid-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--rule);
+  opacity: 0.6;
+}
+
+/* Bars */
+.gantt-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 38px;
+  min-width: 30px;
+  padding: 0;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 180ms cubic-bezier(.34,1.4,.64,1), box-shadow 180ms, background 180ms;
+  border-radius: 3px;
+}
+.gantt-bar:hover {
+  transform: translateY(-50%) translateY(-2px);
+  box-shadow: 0 8px 20px -6px color-mix(in oklab, var(--ink) 30%, transparent);
+  z-index: 3;
+}
+.gantt-bar.track-work {
+  background: var(--accent); color: #fff;
+  border-color: var(--accent);
+}
+.gantt-bar.track-teach {
+  background: var(--ink); color: var(--paper);
+  border-color: var(--ink);
+}
+.gantt-bar.track-edu {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--ink) 0 6px,
+    color-mix(in oklab, var(--ink) 70%, var(--paper)) 6px 12px);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.gantt-bar.track-side {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px dashed color-mix(in oklab, var(--ink) 50%, transparent);
+}
+
+.gantt-bar.active {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  z-index: 4;
+}
+
+.gb-inner {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.gb-label {
+  font-size: 11px; font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+.gb-org {
+  font-size: 9px; opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.gb-pulse {
+  position: absolute;
+  top: 50%; right: -4px;
+  transform: translateY(-50%);
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(217,75,43,0.7);
+  animation: pulse 1.8s infinite;
+}
+
+/* Card */
+.tl-card {
+  border: 1px solid var(--ink);
+  padding: 26px 24px;
+  background: var(--paper-2);
+  position: relative;
+  min-height: 380px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.tl-card::before {
+  content: ''; position: absolute;
+  top: -1px; right: -1px;
+  width: 18px; height: 18px;
+  background: var(--accent);
+}
+.card-head { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip.kind-work { color: var(--accent); border-color: var(--accent); }
+.chip.kind-edu, .chip.kind-teach { color: var(--ink); border-color: var(--ink); }
+.chip.kind-side { color: var(--muted); }
+
+.card-range {
+  display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+  font-size: 11px; letter-spacing: 0.04em;
+  color: var(--ink);
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.card-dash { color: var(--accent); }
+.card-dur { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+.card-title {
+  font-family: var(--font-display);
+  font-size: 30px; line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 4px 0 0 0;
+  font-weight: 400;
+}
+.card-org { font-size: 14px; color: var(--muted-2); }
+.card-place { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.card-body { font-size: 13px; line-height: 1.6; color: var(--muted-2); margin: 6px 0 0; }
+.card-tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; padding-top: 14px; }
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .tl-layout { grid-template-columns: 1fr; }
+  .tl-card { min-height: auto; }
+}
+@media (max-width: 700px) {
+  .gantt-years, .gantt-row { grid-template-columns: 80px 1fr; }
+  .gantt-track-label { padding: 0 8px; }
+  .gtl-name { font-size: 11px; }
+  .gb-org { display: none; }
+  .gb-label { font-size: 10px; }
+  .gantt-bar { height: 30px; }
+  .gy-label { font-size: 9px; }
+  .card-title { font-size: 24px; }
+}
+@media (max-width: 480px) {
+  .gantt-years, .gantt-row { grid-template-columns: 64px 1fr; }
+  .gantt-track-label { padding: 0 6px; }
+  .gtl-name { font-size: 10px; }
+  .gtl-count { display: none; }
+  .gantt-bar { height: 26px; }
+  .gb-label { font-size: 9px; }
+  .gy-label { font-size: 8px; letter-spacing: 0; }
+  .card-title { font-size: 20px; }
+  .card-body { font-size: 12px; }
+  .tl-card { padding: 18px 16px; }
+}
+@media (max-width: 360px) {
+  .gantt-years, .gantt-row { grid-template-columns: 52px 1fr; }
+  .gtl-name { font-size: 9px; }
+  .gantt-bar { height: 22px; min-width: 16px; }
+}
