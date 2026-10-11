@@ -1,40 +1,68 @@
-name: 🚀 Build & Deploy
+name: Build and deploy
+
+# Runner selection (same idea as FCBQ-bot): the repository variable CI_RUNNER holds a JSON value.
+#   unset                         -> GitHub-hosted ubuntu-latest (uses Actions minutes)
+#   ["self-hosted","portfolio"]   -> the home laptop runner (free)
+# Flip it with scripts/ci-runner.sh (it checks the laptop over SSH first).
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Build & Deploy to GitHub Pages
-    runs-on: ubuntu-latest
-
+  build:
+    name: Build
+    runs-on: ${{ fromJSON(vars.CI_RUNNER || '"ubuntu-latest"') }}
+    timeout-minutes: 10
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - name: Build the CV from cv/cv.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          working_directory: cv
+      - run: cp cv/cv.pdf public/VictorAsenjoCarvajalCV.pdf
+      - run: npm run build
+      - name: Keep the single-page site working on deep links
+        run: cp dist/index.html dist/404.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist
+          retention-days: 3
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ${{ fromJSON(vars.CI_RUNNER || '"ubuntu-latest"') }}
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: dist
+      - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'deploy: ${{ github.event.head_commit.message }}'
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "deploy: ${{ github.event.head_commit.message }}"

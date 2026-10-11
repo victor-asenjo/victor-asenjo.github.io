@@ -1,0 +1,131 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.7in]{geometry} % Document margins
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\newcommand\spaceBetween{-0.3}
+\newcommand\spacePoints{4}
+
+\name{Víctor Asenjo Carvajal}
+\address{+34 671157616 \\ Barcelona, L’Hospitalet de Llobregat (08901)}
+\address{\href{mailto:victorasenj@gmail.com}{victorasenj@gmail.com} \\ \href{https://linkedin.com/in/victorasenjo}{linkedin.com/in/victorasenjo} \\ \href{https://victor-asenjo.github.io}{https://victor-asenjo.github.io}}
+
+\begin{document}
+\vspace{\spaceBetween em}
+\begin{rSection}{Education}
+\hypersetup{hidelinks}
+\href{https://www.upc.edu/en/bachelors/informatics-engineering-barcelona-fib}{\mySubTitleStyle{Bachelor's degree in Informatics Engineering -\textit{ Major in Software Engineering}}} \hfill {2019 - 2023}\\
+\href{https://www.fib.upc.edu/en}{Polytechnic University of Catalonia (UPC - FIB)}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% SKILLS
+%----------------------------------------------------------------------------------------
+\vspace{\spaceBetween em}
+\begin{rSection}{Skills}
+\textbf{Languages:} Spanish (Native); Catalan (Native); English (C1 – Advanced) \\[\spacePoints pt]
+\textbf{Programming:} Python (High); Java (High); C++ (High); Spring Framework (High); Flutter (Dart - High); SQL (High); CCL (Cerner Command Language - High); JavaScript / React (Intermediate); HTML5 (Intermediate) \\[\spacePoints pt]
+\textbf{AI \& Cloud:} AWS; Azure; Oracle Cloud Infrastructure (OCI); Terraform (Infrastructure as Code); IAM; MCP (Model Context Protocol) servers; LLM applications (LangChain, RAG); Cloud-native services \\[\spacePoints pt]
+\textbf{Technical Skills:} PostgreSQL; MySQL; Docker; Git; Continuous Integration/Continuous Deployment (CI/CD); Agile Software Development; Scrum; Kanban; JIRA; Confluence \\[\spacePoints pt]
+\textbf{Soft Skills:} Problem-Solving; Analytical Thinking; Effective Communication; Team Leadership; Mentoring \& Knowledge Sharing; Decision-Making Under Pressure; Adaptability; Cross-Functional Collaboration
+
+\end{rSection}
+\vspace{\spaceBetween em}
+\begin{rSection}{Experience}
+\hypersetup{hidelinks}
+
+\textbf{Lead Software Engineer -- AI Innovation} \hfill Mar 2026 – Present \\
+\href{https://clarivate.com/}{Clarivate -- Life Sciences \& Healthcare (LS\&H)} \hfill \textit{Barcelona}
+\vspace{-0.5em}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Lead software engineering in the \textbf{AI innovation team} of the Life Sciences \& Healthcare division, building AI-powered products for the life sciences and healthcare domain.
+    \item Build and operate cloud infrastructure on \textbf{AWS and Azure} as code with \textbf{Terraform}, including \textbf{IAM} configuration for secure access between services.
+    \item Develop \textbf{MCP servers} that expose data and tools to LLM agents, plus the supporting services in \textbf{Python and Java} and \textbf{React} front-ends backed by \textbf{SQL}.
+\end{itemize}
+
+\mySubTitleStyle{Software Engineer} \hfill Dec 2023 – Feb 2026 \\
+Oracle \hfill \textit{Barcelona}
+\vspace{-0.5em}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Designed and optimized reporting solutions using \textbf{SQL, Python, and Oracle Cloud}, cutting query times from 30 minutes to less than two seconds and ensuring reliability across 10+ TB of healthcare data.
+    \item Automated manual workflows with \textbf{Python and Shell scripts}, saving 20+ hours of operational overhead per month.
+    \item Developed an \textbf{AI chatbot} to help building queries using a custom query language \textbf{CCL (Cerner Command Language)}.
+    \item Partnered with teams in Dubai, Spain, and the US to deliver \textbf{custom clinical reports}, enhancing decision-making for 50+ hospitals worldwide.
+\end{itemize}
+
+\mySubTitleStyle{Associate University Professor} \hfill 2023 – Present \\
+\href{https://www.fib.upc.edu/en/studies/bachelors-degrees/bachelor-degree-informatics-engineering/curriculum/syllabus/PES}{Polytechnic University of Catalonia – Software Engineering Projects} \hfill \textit{Barcelona}
+\vspace{-0.5em}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Instructed and mentored 60+ students in \textbf{Agile, Scrum, and Kanban}, ensuring hands-on application of software engineering practices.
+    \item Supervised semester-long projects with \textbf{Java, Spring Boot, SQL, and React}, guiding 12 teams to deliver \textbf{100\% of projects on time} with industry-grade quality.
+    \item Evaluated and supervised Spain’s national university entrance exams (\textbf{PAU}), correcting 200+ exams in 2025 while ensuring \textbf{100\% consistency and fairness} in assessments. \hfill Jun 2025
+\end{itemize}
+
+\mySubTitleStyle{Research Support Staff} \hfill Jan 2023 – Nov 2023 \\
+\href{https://www.essi.upc.edu/dtim/}{Polytechnic University of Catalonia – DTIM Research Group} \hfill \textit{Barcelona}
+\vspace{-0.5em}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Built and maintained \textbf{ETL pipelines} for heterogeneous biomedical datasets, reducing data integration time by \textbf{40\%} and improving reproducibility in published studies.
+    \item Supported 10+ PhD researchers with \textbf{data wrangling, visualization, and semantic web tools}, accelerating research output and cutting preparation time by \textbf{25\%}.
+    \item Co-authored technical documentation and assisted in preparing academic publications, contributing to 2 peer-reviewed papers.
+\end{itemize}
+
+\mySubTitleStyle{Data Analyst} \hfill Oct 2022 – Jan 2023 \\
+\href{https://www.sdggroup.com/}{SDG Group · Data \& Analytics Consulting Firm} \hfill \textit{Barcelona}
+\vspace{-0.5em}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Improved \textbf{data quality processes} for a major banking client by designing validation rules and automated checks, reducing reporting inconsistencies by \textbf{30\%} and ensuring compliance with \textbf{Basel III and IFRS 9 standards}.
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{rSection}{Projects}
+\vspace{-1.0em}
+\item \href{https://t.me/FCBQbot}{\textbf{FCBQ Telegram Bot.}} Developed a bot for the Catalan Basketball Federation (FCBQ) to automate referee notifications, schedules, and updates, improving communication efficiency and reducing manual coordination. Built with \textit{Python, Telegram Bot API, Google Calendar and deployed and hosted on OCI}. Leading the development of a specialized LLM application leveraging LangChain and RAG to transform static sports regulations into an interactive, natural language query system.
+
+\item \textbf{Mobile Applications (\href{https://play.google.com/store/apps/dev?id=7628959347884936338}{Google Play Store}).} Published seven Android apps, including games and utility tools (Impostor, Skein, Sushin, Altitude, Alertas VPO, El Rarito, LAMP). Built using Flutter (Dart), integrated with Firebase for analytics and authentication.
+
+\item \textbf{Personal Portfolio Website.} Built and deployed a responsive portfolio to showcase projects and technical skills, with CI/CD to GitHub Pages. Using \textit{React, Vite, Motion, GitHub Actions.} \href{https://victor-asenjo.github.io/}{(View here)}
+
+\end{rSection}
+
+\vspace{\spaceBetween em}
+\begin{rSection}{Publications}
+\mySubTitleStyle{Reengineering the architecture of ODIN (On-demand Data Integration)} \hfill 2023 \\
+\href{https://upcommons.upc.edu/handle/2117/394198}{Published on UPC Commons (upcommons.upc.edu)} \\[4pt]
+\mySubTitleStyle{Musical geography of Hospitalet de Llobregat} \hfill 2019 \\
+Winner of the \textit{“City” Award of Hospitalet de Llobregat 2019} \\
+\href{http://www.museul-h.cat/detallCataleg.aspx?1jj5gAdUHadUSBLlOTKvqazAvixYO5e8c9sIJ3EJZPqazAQysMqazB}{Published at Museu de L’Hospitalet}
+\end{rSection}
+
+\vspace{\spaceBetween em}
+\begin{rSection}{Extra-Curricular Activities}
+\vspace{-1.0 em}
+\item \textbf{Basketball Referee – FCBQ (Catalan Basketball Federation)} \hfill 2018 – 2025 \\
+\vspace{-1.5 em}
+\item \textbf{FEDDF (Spanish Federation of Sports for People with Physical Disabilities)} \hfill 2022 – 2025 \\
+Licensed referee (\#11584) at \textbf{Primera CABQ} and certified national referee in wheelchair basketball (\textbf{Honor División}). Officiated competitive and adaptive sports, strengthening \textbf{decision-making under pressure, conflict resolution, and leadership} skills. Transitioned in 2025 to focus on professional and personal development projects.
+\item \textbf{Accredited Table Official – FCBQ / FEB (Group 3)} \hfill 2018 – 2023 \\
+Managed game statistics, timekeeping, and compliance with official regulations at regional and national basketball competitions.
+\item \textbf{Leisure and Free Time Monitor Course – Generalitat de Catalunya} \hfill ID 156274 \\
+Completed certified training in leisure and free time education, focusing on teamwork, activity planning, and youth engagement.
+\end{rSection}
+
+\end{document}

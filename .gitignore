@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 src/assets/~$ImageCover.pptx
+
+# CV build output
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.pdf
+cv/*.fls
+cv/*.fdb_latexmk
