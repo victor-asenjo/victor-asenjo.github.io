@@ -86,6 +86,7 @@ export default function AppModal({ app, onClose }) {
                   {s}
                 </span>
               ))}
+              {app.ads && <span className="tag tag-ads">Contains ads</span>}
             </div>
 
             <div className="dialog-cta">

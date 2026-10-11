@@ -18,10 +18,11 @@ export const apps = [
     slug: "impostor",
     name: "Impostor",
     kind: "game",
+    ads: true,
     tagline: "Social deduction for one phone and a group of friends.",
     description:
       "Everyone gets a secret word except the impostor, who has to bluff. Three modes, four difficulties, and custom word packs you can share on WhatsApp with a short code.",
-    facts: ["Almost 3,000 words in 24 categories", "Classic, Mysterious and Chaos modes", "No ads, no accounts, no data collection"],
+    facts: ["Almost 3,000 words in 24 categories", "Classic, Mysterious and Chaos modes", "No accounts needed, plays on a single phone"],
     stack: ["Flutter", "Dart", "Firebase"],
     play: play("com.elpages.impostor"),
     icon: img("impostor", "icon.webp"),
@@ -32,6 +33,7 @@ export const apps = [
     slug: "skein",
     name: "Skein",
     kind: "tool",
+    ads: true,
     tagline: "A serverless visual board for notes, shared device to device.",
     description:
       "Kanban lanes with sticky notes you drag around. Boards are local first. Sharing is peer to peer and end-to-end encrypted, so there is no account and no server that stores your data.",
@@ -47,6 +49,7 @@ export const apps = [
     slug: "sushin",
     name: "Sushin",
     kind: "tool",
+    ads: true,
     tagline: "The sushi counter for the whole table.",
     description:
       "One tap per piece. Twenty sushi characters evolve as you eat, and every meal ends with statistics and a story-ready image to share.",
@@ -62,6 +65,7 @@ export const apps = [
     slug: "altitude",
     name: "Altitude",
     kind: "game",
+    ads: true,
     tagline: "Climb a rope to the Sun, then dig to the center of the Earth.",
     description:
       "A minimalist climbing game about the real scale of our world. Pass the Eiffel Tower, Everest and the Moon, burn up at the Sun, and come back as a Phoenix to dig through the crust and the core.",
@@ -76,6 +80,7 @@ export const apps = [
     slug: "alertas",
     name: "Alertas VPO",
     kind: "tool",
+    ads: true,
     tagline: "A push notification when a new protected-housing announcement matches you.",
     description:
       "Watches the Catalan registry of HPO/VPO applicants and tells you the moment a new announcement matches your filters. Built for people for whom a missed notice can mean a missed home.",
@@ -88,6 +93,7 @@ export const apps = [
     slug: "rarito",
     name: "El Rarito",
     kind: "game",
+    ads: true,
     tagline: "A party game to prove who is the weirdest.",
     description: "Pass the phone around and find out which of your friends is the real rarito.",
     facts: ["Made for groups", "Single device"],
@@ -99,6 +105,7 @@ export const apps = [
     slug: "lamp",
     name: "LAMP",
     kind: "tool",
+    ads: true,
     tagline: "A small, focused utility app.",
     description: "Simple and built with Flutter.",
     facts: [],

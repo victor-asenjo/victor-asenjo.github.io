@@ -1601,3 +1601,9 @@ kbd {
     font-size: 17vw;
   }
 }
+
+.tag-ads {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
