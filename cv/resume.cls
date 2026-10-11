@@ -37,7 +37,8 @@
 % ----- Sections -----
 \newenvironment{rSection}[1]{%
   \medskip
-  {\large\bfseries\scshape #1}\par\vspace{-0.45em}%
+  {\large\bfseries\scshape #1\par}% \par inside the group so the line keeps the large font's height
+  \nointerlineskip\vspace{2pt}%
   \hrule height 0.6pt\vspace{0.35em}%
   \begin{list}{}{\setlength{\leftmargin}{0em}\setlength{\itemsep}{0.2em}\setlength{\parsep}{0.25em}\setlength{\topsep}{0pt}\setlength{\parskip}{0pt}}\item[]}
  {\end{list}\vspace{0.2em}}
