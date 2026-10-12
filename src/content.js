@@ -5,6 +5,7 @@ export const links = {
   github: "https://github.com/victor-asenjo",
   linkedin: "https://www.linkedin.com/in/victorasenjo/",
   email: "victorasenj@gmail.com",
+  appsHub: "https://elpages.web.app",
   playStoreDev: "https://play.google.com/store/apps/dev?id=7628959347884936338",
   cv: "VictorAsenjoCarvajalCV.pdf",
 };

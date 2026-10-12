@@ -110,6 +110,9 @@ export default function Apps({ onOpenApp }) {
               </span>
             </button>
           ))}
+          <a className="link-arrow" href={links.appsHub} target="_blank" rel="noreferrer">
+            All apps and their pages <ArrowUpRight size={16} weight="bold" />
+          </a>
           <a className="link-arrow" href={links.playStoreDev} target="_blank" rel="noreferrer">
             Developer page <ArrowUpRight size={16} weight="bold" />
           </a>

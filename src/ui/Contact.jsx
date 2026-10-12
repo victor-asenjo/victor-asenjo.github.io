@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
-import { Check, Copy, GithubLogo, GooglePlayLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { Check, Copy, GithubLogo, GooglePlayLogo, LinkedinLogo, SquaresFour } from "@phosphor-icons/react";
 import { links } from "../content";
 import { Magnetic, Reveal, RevealText } from "./util";
 
@@ -60,6 +60,9 @@ export default function Contact() {
             </a>
             <a className="icon-btn icon-btn-lg" href={links.playStoreDev} target="_blank" rel="noreferrer" aria-label="Google Play developer page">
               <GooglePlayLogo size={22} weight="bold" />
+            </a>
+            <a className="icon-btn icon-btn-lg" href={links.appsHub} target="_blank" rel="noreferrer" aria-label="All my apps, with their websites and privacy policies">
+              <SquaresFour size={22} weight="bold" />
             </a>
           </div>
         </Reveal>
