@@ -93,7 +93,7 @@ export const apps = [
     slug: "rarito",
     name: "El Rarito",
     kind: "game",
-    ads: true,
+    ads: false,
     tagline: "A party game to prove who is the weirdest.",
     description: "Pass the phone around and find out which of your friends is the real rarito.",
     facts: ["Made for groups", "Single device"],
@@ -104,14 +104,18 @@ export const apps = [
   {
     slug: "lamp",
     name: "LAMP",
-    kind: "tool",
-    ads: true,
-    tagline: "A small, focused utility app.",
-    description: "Simple and built with Flutter.",
-    facts: [],
+    kind: "game",
+    ads: false,
+    tagline: "Lights out, everybody taps, the closest finger wins.",
+    description:
+      "A quick way to decide who goes first, pays or drinks. Turn the lamp off, everyone puts a finger on the screen, turn it on again and the finger closest to the #ELPAGES signature wins.",
+    facts: ["Fully offline, no ads, no accounts", "Real rope physics", "Nothing is stored: touches are discarded after each round"],
     stack: ["Flutter", "Dart"],
     play: play("com.elPages.lamp.lamp"),
-    icon: null,
+    site: "https://lamp-elpages.web.app",
+    icon: img("lamp", "icon.webp"),
+    feature: img("lamp", "feature.webp"),
+    shots: [1, 2, 3, 4].map((n) => img("lamp", `shot-${n}.webp`)),
   },
 ];
 
