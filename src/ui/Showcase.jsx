@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight, GooglePlayLogo } from "@phosphor-icons/react";
-import { apps, links } from "../content";
+import { apps, appCountTitle, links } from "../content";
 import { RevealText, useCinematic } from "./util";
 
 const FEATURED = ["impostor", "skein", "sushin", "altitude"].map((s) => apps.find((a) => a.slug === s));
@@ -52,7 +52,7 @@ function Intro() {
   return (
     <div className="panel panel-intro">
       <div className="panel-copy">
-        <RevealText as="h2" className="h1" text="Seven apps live on Google Play" />
+        <RevealText as="h2" className="h1" text={`${appCountTitle} apps on Google Play`} />
         <p className="lede">Games for groups and tools for daily life, built with Flutter and shipped under the #elPagès name.</p>
         <a className="link-arrow link-left" href={links.playStoreDev} target="_blank" rel="noreferrer">
           Developer page <ArrowUpRight size={16} weight="bold" />
@@ -113,7 +113,7 @@ function Swipe({ onOpen }) {
   return (
     <section id="apps" className="showcase-swipe">
       <div className="wrap swipe-head">
-        <RevealText as="h2" className="h2" text="Seven apps live on Google Play" />
+        <RevealText as="h2" className="h2" text={`${appCountTitle} apps on Google Play`} />
         <p className="lede">Games for groups and tools for daily life, built with Flutter.</p>
       </div>
       <div className="swipe-track">

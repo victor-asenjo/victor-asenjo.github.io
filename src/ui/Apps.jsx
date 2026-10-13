@@ -10,8 +10,9 @@ const FILTERS = [
   { id: "tool", label: "Tools" },
 ];
 
-// Bento spans on a 6-column grid. Rows: 3+3, 2+2+2, 3+3. Only used while filter is "all".
-const SPAN = { impostor: 3, skein: 3, sushin: 2, altitude: 2, alertas: 2, rarito: 3, lamp: 3 };
+// Bento spans on a 6-column grid. Rows: 3+3, 2+2+2, 3+3, 3+3. Only used while filter is "all".
+// Every row must add up to 6; an app missing here falls back to 2 (see the check below).
+const SPAN = { impostor: 3, skein: 3, sushin: 2, altitude: 2, "lunar-dustup": 2, "ball-roundup": 3, alertas: 3, rarito: 3, lamp: 3 };
 
 function Icon({ app, size = 56 }) {
   if (app.icon) {
@@ -121,7 +122,7 @@ export default function Apps({ onOpenApp }) {
         <motion.ul layout className={`app-grid ${filter === "all" ? "is-bento" : "is-even"}`}>
           <AnimatePresence mode="popLayout">
             {list.map((a) => (
-              <Card key={a.slug} app={a} span={filter === "all" ? SPAN[a.slug] : 2} onOpen={onOpenApp} />
+              <Card key={a.slug} app={a} span={filter === "all" ? SPAN[a.slug] ?? 2 : 2} onOpen={onOpenApp} />
             ))}
           </AnimatePresence>
         </motion.ul>

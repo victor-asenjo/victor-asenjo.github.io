@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
 import { ArrowDown, DownloadSimple } from "@phosphor-icons/react";
-import { apps, links } from "../content";
+import { apps, appCountWord, links } from "../content";
 import { Magnetic, useCinematic } from "./util";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -92,7 +92,7 @@ export default function Hero({ onOpenApp, ready }) {
               <span className="hero-title-2">Asenjo</span>
             </motion.h1>
             <motion.p className="hero-sub" initial={{ opacity: 0, y: 24 }} animate={show} transition={{ duration: 0.9, delay: 0.12, ease: EASE }}>
-              Lead engineer at Clarivate, professor at UPC, and the developer behind seven apps on Google Play.
+              Lead engineer at Clarivate, professor at UPC, and the developer behind {appCountWord} apps on Google Play.
             </motion.p>
             <motion.div className="hero-cta" initial={{ opacity: 0, y: 24 }} animate={show} transition={{ duration: 0.9, delay: 0.22, ease: EASE }}>
               <Magnetic href="#apps" className="btn btn-primary">

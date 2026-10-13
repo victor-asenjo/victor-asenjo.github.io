@@ -282,3 +282,9 @@ export const skills = [
   { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "Telegram", "Web scraping"] },
   { group: "Other languages", items: ["JavaScript", "C++"] },
 ];
+
+const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen"];
+
+// "nine": the number of apps listed above, spelled out. Used by the hero and the showcase headings.
+export const appCountWord = NUMBER_WORDS[apps.length] ?? String(apps.length);
+export const appCountTitle = appCountWord.charAt(0).toUpperCase() + appCountWord.slice(1);
