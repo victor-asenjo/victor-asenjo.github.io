@@ -69,9 +69,9 @@ export const apps = [
     ads: true,
     tagline: "Climb a rope to the Sun, then dig to the center of the Earth.",
     description:
-      "A minimalist climbing game about the real scale of our world. Pass the Eiffel Tower, Everest and the Moon, burn up at the Sun, and come back as a Phoenix to dig through the crust and the core.",
+      "A stylized 3D climbing game about the real scale of our world. Pass detailed 3D models of the Eiffel Tower, Everest, the ISS and the Moon, burn up at the Sun, and come back as a Phoenix to dig through the crust and the core.",
     facts: ["Real heights, from landmarks to the Sun", "Two phases: climb, then dig", "6 languages"],
-    stack: ["Flutter", "Dart", "Firebase"],
+    stack: ["Flutter", "three.js", "WebGL", "Firebase"],
     play: play("com.elpages.altitude"),
     icon: img("altitude", "icon.webp"),
     feature: img("altitude", "feature.webp"),
