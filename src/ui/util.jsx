@@ -55,7 +55,8 @@ export function spotlight(e) {
 }
 
 export function useMedia(query) {
-  const [matches, setMatches] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
+  // false on the first render everywhere so hydration matches; the effect corrects it right after.
+  const [matches, setMatches] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia(query);
     const on = () => setMatches(mq.matches);

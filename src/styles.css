@@ -12,9 +12,9 @@
   --ink-3: #6b6b76;
   --line: rgba(18, 18, 22, 0.1);
   --line-strong: rgba(18, 18, 22, 0.2);
-  --accent: #d9480f;
+  --accent: #c2410c;
   --accent-ink: #ffffff;
-  --accent-soft: rgba(217, 72, 15, 0.1);
+  --accent-soft: rgba(194, 65, 12, 0.1);
   --shadow: 0 1px 2px rgba(18, 18, 30, 0.05), 0 12px 32px -12px rgba(18, 18, 40, 0.16);
   --r-surface: 20px;
   --r-pill: 999px;
@@ -1735,3 +1735,18 @@ kbd {
     transform: none;
   }
 }
+
+/* ---------- Prerender handoff ---------- */
+/* Hero entrance runs in CSS so it plays on the prerendered HTML before JS arrives. `translate` composes with the
+   scroll-driven `transform` that Motion writes inline. Paused while the intro curtain is up. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in { animation: hero-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: var(--d, 0ms); }
+  html.intro .hero-in { animation-play-state: paused; }
+  @keyframes hero-in { from { opacity: 0; translate: 0 32px; } }
+}
+/* Static curtain from the inline script until the Preloader component takes over. */
+html.intro body::after { content: ""; position: fixed; inset: 0; z-index: 89; background: #0c0c0f; }
+.filter-tabs { display: contents; }
+.theme-btn .ico-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .ico-sun { display: block; }
+:root[data-theme="dark"] .theme-btn .ico-moon { display: none; }

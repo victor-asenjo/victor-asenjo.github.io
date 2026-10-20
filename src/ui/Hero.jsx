@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
 import { ArrowDown, DownloadSimple } from "@phosphor-icons/react";
-import { apps, appCountWord, links } from "../content";
+import { apps, appCountWord, websiteCountWord, links } from "../content";
 import { Magnetic, useCinematic } from "./util";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -73,49 +73,40 @@ export default function Hero({ onOpenApp, ready }) {
   };
 
   const bySlug = Object.fromEntries(apps.map((a) => [a.slug, a]));
-  const show = ready ? { opacity: 1, y: 0 } : undefined;
 
   return (
     <section id="top" className="hero-track" ref={track}>
       <div className="hero-stick">
         <div className="wrap hero-grid">
           <motion.div className="hero-copy" style={{ y: copyY, opacity: copyOpacity }}>
-            <motion.h1
-              className="hero-title"
-              style={{ scale: titleScale, transformOrigin: "left center" }}
-              initial={{ opacity: 0, y: 40 }}
-              animate={show}
-              transition={{ duration: 0.9, ease: EASE }}
-            >
+            <motion.h1 className="hero-title hero-in" style={{ scale: titleScale, transformOrigin: "left center" }}>
               Víctor
               <br />
               <span className="hero-title-2">Asenjo</span>
             </motion.h1>
-            <motion.p className="hero-sub" initial={{ opacity: 0, y: 24 }} animate={show} transition={{ duration: 0.9, delay: 0.12, ease: EASE }}>
-              Lead engineer at Clarivate, professor at UPC, and the developer behind {appCountWord} apps on Google Play.
-            </motion.p>
-            <motion.div className="hero-cta" initial={{ opacity: 0, y: 24 }} animate={show} transition={{ duration: 0.9, delay: 0.22, ease: EASE }}>
+            <p className="hero-sub hero-in" style={{ "--d": "120ms" }}>
+              Lead engineer at Clarivate, professor at UPC, and the developer behind {appCountWord} apps on Google Play and {websiteCountWord} web tools.
+            </p>
+            <div className="hero-cta hero-in" style={{ "--d": "220ms" }}>
               <Magnetic href="#apps" className="btn btn-primary">
                 View apps <ArrowDown size={18} weight="bold" />
               </Magnetic>
               <Magnetic href={`${import.meta.env.BASE_URL}${links.cv}`} className="btn btn-ghost" download>
                 Download CV <DownloadSimple size={18} weight="bold" />
               </Magnetic>
-            </motion.div>
+            </div>
           </motion.div>
 
           <div className="hero-visual" ref={visual} onPointerMove={onMove} onPointerLeave={onLeave}>
             <motion.div className="hero-disc" style={{ scale: discScale }} aria-hidden="true" />
             <motion.img
-              className="hero-portrait"
+              className="hero-portrait hero-in"
               src={`${import.meta.env.BASE_URL}portrait.webp`}
               alt="Portrait of Víctor Asenjo"
               width="560"
               height="560"
-              initial={{ opacity: 0, y: 40 }}
-              animate={show}
-              transition={{ duration: 1, delay: 0.1, ease: EASE }}
-              style={{ x: portraitX, y: portraitY, scale: portraitScale, transformOrigin: "50% 100%" }}
+              fetchpriority="high"
+              style={{ "--d": "100ms", x: portraitX, y: portraitY, scale: portraitScale, transformOrigin: "50% 100%" }}
             />
             {ORBIT.map((spec, i) => (
               <OrbitIcon key={spec.slug} app={bySlug[spec.slug]} spec={spec} px={px} py={py} sp={sp} onOpen={onOpenApp} i={i} ready={ready} />

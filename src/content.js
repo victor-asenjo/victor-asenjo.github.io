@@ -194,7 +194,7 @@ export const websites = [
   {
     slug: "oraculo",
     name: "Oráculo",
-    url: "https://oraculo-elpagesweb.web.app",
+    url: "https://oraculo.elpagesweb.com",
     tagline: "Guardian animal and magic house personality quizzes, with a particle reveal and a shareable story image.",
     facts: ["Exhaustively balanced: every result between 4 and 6 percent", "Canvas particle morphing"],
     stack: ["JavaScript", "Canvas", "SEO"],
@@ -338,3 +338,4 @@ const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "sev
 // "nine": the number of apps listed above, spelled out. Used by the hero and the showcase headings.
 export const appCountWord = NUMBER_WORDS[apps.length] ?? String(apps.length);
 export const appCountTitle = appCountWord.charAt(0).toUpperCase() + appCountWord.slice(1);
+export const websiteCountWord = NUMBER_WORDS[websites.length] ?? String(websites.length);

@@ -7,31 +7,31 @@
 <meta name="color-scheme" content="light dark">
 
 <title>Víctor Asenjo | Lead Software Engineer, AI &amp; Life Sciences | UPC Professor</title>
-<meta name="description" content="Víctor Asenjo Carvajal is a Lead Software Engineer at Clarivate (AI Life Sciences &amp; Healthcare Innovation), a professor at UPC Barcelona and the developer behind Impostor, Skein, Sushin, Altitude and Alertas VPO on Google Play." />
+<meta name="description" content="Víctor Asenjo Carvajal: Lead Software Engineer at Clarivate (AI, Life Sciences), professor at UPC Barcelona, and maker of nine Android apps and five web tools." />
 <meta name="keywords" content="Víctor Asenjo, Victor Asenjo, software engineer Barcelona, Lead Software Engineer Clarivate, UPC professor, AI Life Sciences, Flutter developer, Impostor game, Alertas VPO, Skein, Sushin, Altitude, FCBQbot, Java developer, OCP Java SE 21, Oracle Cloud Infrastructure, elPagès, ingeniero de software, profesor UPC, enginyer de software" />
 <meta name="author" content="Víctor Asenjo Carvajal" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://victor-asenjo.github.io/" />
 
 <meta property="og:title" content="Víctor Asenjo | Lead Software Engineer and app developer" />
-<meta property="og:description" content="Lead Software Engineer at Clarivate, professor at UPC Barcelona, and creator of nine apps on Google Play." />
+<meta property="og:description" content="Lead Software Engineer at Clarivate, professor at UPC Barcelona, and creator of nine Android apps and five web tools." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://victor-asenjo.github.io/" />
-<meta property="og:image" content="https://victor-asenjo.github.io/portrait.webp" />
+<meta property="og:image" content="https://victor-asenjo.github.io/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Víctor Asenjo, software engineer" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="es_ES" />
-<meta property="og:locale:alternate" content="ca_ES" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Víctor Asenjo | Lead Software Engineer" />
-<meta name="twitter:description" content="Lead Software Engineer at Clarivate. Professor at UPC. Creator of nine apps on Google Play." />
+<meta name="twitter:description" content="Lead Software Engineer at Clarivate. Professor at UPC. Nine Android apps and five web tools." />
+<meta name="twitter:image" content="https://victor-asenjo.github.io/og.jpg" />
 
-<link rel="alternate" hreflang="en" href="https://victor-asenjo.github.io/" />
-<link rel="alternate" hreflang="es" href="https://victor-asenjo.github.io/" />
-<link rel="alternate" hreflang="ca" href="https://victor-asenjo.github.io/" />
-<link rel="alternate" hreflang="x-default" href="https://victor-asenjo.github.io/" />
 
 <link rel="icon" href="/favicon.png" type="image/png" />
-<link rel="preload" as="image" href="/portrait.webp" type="image/webp" />
+<link rel="preload" as="image" href="/portrait.webp" type="image/webp" fetchpriority="high" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f6" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0c0f" />
 
 <script>
   // Set the theme before first paint so there is no flash. Stored choice wins over the system setting.
@@ -42,6 +42,9 @@
       t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
     document.documentElement.setAttribute("data-theme", t);
+    try {
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !sessionStorage.getItem("intro-seen")) document.documentElement.classList.add("intro");
+    } catch (e) {}
   })();
 </script>
 
@@ -76,7 +79,7 @@
   <div id="root">
     <noscript>
       <h1>Víctor Asenjo</h1>
-      <p>Lead Software Engineer at Clarivate, professor at UPC Barcelona, and developer of nine apps on Google Play.</p>
+      <p>Lead Software Engineer at Clarivate, professor at UPC Barcelona, and developer of nine Android apps and five web tools.</p>
       <p><a href="https://github.com/victor-asenjo">GitHub</a> | <a href="https://www.linkedin.com/in/victorasenjo/">LinkedIn</a> | <a href="mailto:victorasenj@gmail.com">Email</a></p>
     </noscript>
   </div>

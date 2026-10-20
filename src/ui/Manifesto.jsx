@@ -6,7 +6,7 @@ import { useCinematic } from "./util";
 function Word({ word, i, n, progress, accent }) {
   // Each word lights up in turn as the section scrolls. Motivated: the reader's scroll sets the reading pace.
   const start = 0.05 + (i / n) * 0.8;
-  const opacity = useTransform(progress, [start, start + 0.8 / n + 0.04], [0.14, 1]);
+  const opacity = useTransform(progress, [start, start + 0.8 / n + 0.04], [accent ? 0.85 : 0.55, 1]); // unlit words keep 3:1 (large text)
   return (
     <motion.span style={{ opacity }} className={accent ? "mf-accent" : undefined}>
       {word}{" "}

@@ -96,7 +96,8 @@ export default function Apps({ onOpenApp }) {
           <p className="lede">Filter by type, then open any card for screenshots, details and the Google Play link.</p>
         </Reveal>
 
-        <Reveal className="filters" role="tablist" aria-label="Filter apps" delay={0.05}>
+        <Reveal className="filters" delay={0.05}>
+          <div className="filter-tabs" role="tablist" aria-label="Filter apps">
           {FILTERS.map((f) => (
             <button
               key={f.id}
@@ -111,6 +112,7 @@ export default function Apps({ onOpenApp }) {
               </span>
             </button>
           ))}
+          </div>
           <a className="link-arrow" href={links.appsHub} target="_blank" rel="noreferrer">
             All apps and their pages <ArrowUpRight size={16} weight="bold" />
           </a>

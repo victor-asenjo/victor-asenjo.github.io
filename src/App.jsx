@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { AnimatePresence, MotionConfig } from "motion/react";
 import Nav from "./ui/Nav";
 import Preloader from "./ui/Preloader";
@@ -17,7 +17,7 @@ import AppModal from "./ui/AppModal";
 import { apps } from "./content";
 
 function useTheme() {
-  const [theme, setTheme] = useState(() => document.documentElement.getAttribute("data-theme") || "light");
+  const [theme, setTheme] = useState(() => (typeof document !== "undefined" && document.documentElement.getAttribute("data-theme")) || "light");
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     try {
@@ -30,21 +30,19 @@ function useTheme() {
   return [theme, toggle];
 }
 
-// Intro curtain: once per session, never for reduced motion.
-function shouldIntro() {
-  try {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-    return !sessionStorage.getItem("intro-seen");
-  } catch {
-    return false;
-  }
-}
+// Intro curtain: once per session, never for reduced motion. The inline script in index.html decides it
+// before first paint and sets <html class="intro">, which shows a static curtain until the Preloader mounts.
+const introPending = () => typeof document !== "undefined" && document.documentElement.classList.contains("intro");
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [openSlug, setOpenSlug] = useState(null);
-  const [intro, setIntro] = useState(shouldIntro);
+  // Starts false so server and client render the same tree; switches on before paint if the curtain is up.
+  const [intro, setIntro] = useState(false);
+  useLayoutEffect(() => {
+    if (introPending()) setIntro(true);
+  }, []);
 
   const finishIntro = useCallback(() => {
     try {
@@ -52,6 +50,7 @@ export default function App() {
     } catch {
       /* ignore */
     }
+    document.documentElement.classList.remove("intro");
     setIntro(false);
   }, []);
 

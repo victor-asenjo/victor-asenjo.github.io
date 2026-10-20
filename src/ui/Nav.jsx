@@ -51,8 +51,9 @@ export default function Nav({ theme, onToggleTheme, onSearch }) {
             <span className="chip-search-text">Search</span>
             <kbd>{isMac ? "⌘" : "Ctrl"} K</kbd>
           </button>
-          <button className="icon-btn" onClick={onToggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>
-            {theme === "dark" ? <Sun size={18} weight="bold" /> : <Moon size={18} weight="bold" />}
+          <button className="icon-btn theme-btn" onClick={onToggleTheme} aria-label="Switch between light and dark theme">
+            <Sun size={18} weight="bold" className="ico-sun" aria-hidden="true" />
+            <Moon size={18} weight="bold" className="ico-moon" aria-hidden="true" />
           </button>
         </div>
       </div>
