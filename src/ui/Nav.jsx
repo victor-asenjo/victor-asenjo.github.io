@@ -5,6 +5,7 @@ import { MagnifyingGlass, Moon, Sun } from "@phosphor-icons/react";
 const SECTIONS = [
   { id: "apps", label: "Apps" },
   { id: "platform", label: "Platform" },
+  { id: "web", label: "Web" },
   { id: "career", label: "Career" },
   { id: "toolkit", label: "Toolkit" },
   { id: "contact", label: "Contact" },

@@ -152,6 +152,38 @@ export const apps = [
   },
 ];
 
+// Ad-funded web tools (static sites, shared Python kit). Images are each site's own Open Graph card.
+const web = (slug) => `${import.meta.env.BASE_URL}web/${slug}.webp`;
+export const websites = [
+  {
+    slug: "nomina-clara",
+    name: "Nómina Clara",
+    url: "https://nomina-clara.web.app",
+    tagline: "Spanish net salary calculator built on the tax agency's own 2026 withholding algorithm.",
+    facts: ["Every step of the calculation shown", "Tested on the official example"],
+    stack: ["JavaScript", "Python", "SEO"],
+    image: web("nomina-clara"),
+  },
+  {
+    slug: "casa-en-cifras",
+    name: "Casa en Cifras",
+    url: "https://casa-en-cifras.web.app",
+    tagline: "Mortgage, purchase taxes for all 17 regions and how much home you can afford.",
+    facts: ["Animated amortization chart", "Regional tax scales"],
+    stack: ["JavaScript", "Python", "SEO"],
+    image: web("casa-en-cifras"),
+  },
+  {
+    slug: "mapa-vpo",
+    name: "Mapa VPO",
+    url: "https://mapa-vpo.web.app",
+    tagline: "Where to apply for protected housing in every Spanish region, on one tile map.",
+    facts: ["Official registries, links checked", "Funnels Catalan users to Alertas VPO"],
+    stack: ["JavaScript", "Python", "SEO"],
+    image: web("mapa-vpo"),
+  },
+];
+
 export const platform = {
   name: "FCBQbot",
   headline: "A Telegram bot and web platform for Catalan basketball referees.",
@@ -279,7 +311,7 @@ export const skills = [
   { group: "Mobile", items: ["Flutter", "Dart", "Firebase", "Encryption", "WorkManager"] },
   { group: "AI", items: ["AI", "MCP"] },
   { group: "Cloud & DevOps", items: ["AWS", "Azure", "Terraform", "IAM", "Docker", "CI/CD", "Oracle Cloud", "Kubernetes", "Linux"] },
-  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "Telegram", "Web scraping"] },
+  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "Telegram", "Web scraping", "SEO"] },
   { group: "Other languages", items: ["JavaScript", "C++"] },
 ];
 

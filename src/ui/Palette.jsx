@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowBendDownLeft, Compass, DownloadSimple, EnvelopeSimple, GithubLogo, LinkedinLogo, MagnifyingGlass, Moon, SquaresFour, Sun } from "@phosphor-icons/react";
-import { apps, links } from "../content";
+import { ArrowBendDownLeft, Compass, Globe, DownloadSimple, EnvelopeSimple, GithubLogo, LinkedinLogo, MagnifyingGlass, Moon, SquaresFour, Sun } from "@phosphor-icons/react";
+import { apps, links, websites } from "../content";
 import { copyEmail } from "./Contact";
 
 const SECTIONS = [
   ["apps", "Apps"],
   ["platform", "FCBQbot platform"],
+  ["web", "Web tools"],
   ["career", "Career"],
   ["toolkit", "Toolkit"],
   ["contact", "Contact"],
@@ -30,6 +31,7 @@ export default function Palette({ open, onClose, theme, onToggleTheme, onOpenApp
     return [
       ...SECTIONS.map(([id, label]) => ({ id: `s-${id}`, label: `Go to ${label}`, group: "Navigate", icon: Compass, run: go(id) })),
       ...apps.map((a) => ({ id: `a-${a.slug}`, label: `Open ${a.name}`, group: "Apps", icon: SquaresFour, run: () => onOpenApp(a.slug) })),
+      ...websites.map((w) => ({ id: `w-${w.slug}`, label: `Visit ${w.name}`, group: "Web", icon: Globe, run: ext(w.url) })),
       { id: "t", label: theme === "dark" ? "Switch to light theme" : "Switch to dark theme", group: "Actions", icon: theme === "dark" ? Sun : Moon, run: () => { onToggleTheme(); onClose(); } },
       { id: "m", label: `Copy email (${links.email})`, group: "Actions", icon: EnvelopeSimple, run: () => { copyEmail(); onClose(); } },
       { id: "cv", label: "Download CV", group: "Actions", icon: DownloadSimple, run: ext(`${import.meta.env.BASE_URL}${links.cv}`) },

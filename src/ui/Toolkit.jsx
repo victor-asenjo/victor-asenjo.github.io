@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { apps, experience, platform, skills } from "../content";
+import { apps, experience, platform, skills, websites } from "../content";
 import { Reveal, RevealText } from "./util";
 
 // Pick a skill, see where it was actually used. Chips are the filter, the panel is the proof.
@@ -11,10 +11,11 @@ export default function Toolkit({ onOpenApp }) {
     const a = apps.filter((x) => x.stack.includes(skill));
     const p = platform.stack.includes(skill) ? platform : null;
     const e = experience.filter((x) => x.tags.includes(skill));
-    return { apps: a, platform: p, roles: e };
+    const w = websites.filter((x) => x.stack.includes(skill));
+    return { apps: a, platform: p, roles: e, sites: w };
   }, [skill]);
 
-  const empty = !result.apps.length && !result.platform && !result.roles.length;
+  const empty = !result.apps.length && !result.platform && !result.roles.length && !result.sites.length;
 
   return (
     <section id="toolkit" className="section section-alt">
@@ -69,6 +70,20 @@ export default function Toolkit({ onOpenApp }) {
                     <img src={`${import.meta.env.BASE_URL}apps/fcbq/icon.webp`} alt="" width="40" height="40" />
                     <span>{platform.name}</span>
                   </a>
+                </div>
+              )}
+
+              {result.sites.length > 0 && (
+                <div className="out-block">
+                  <p className="out-label">On the web</p>
+                  <div className="out-apps">
+                    {result.sites.map((w) => (
+                      <a key={w.slug} className="out-app" href={w.url} target="_blank" rel="noreferrer">
+                        <img src={w.image} alt="" width="40" height="40" style={{ objectFit: "cover" }} />
+                        <span>{w.name}</span>
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
 

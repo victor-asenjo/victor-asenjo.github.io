@@ -7,6 +7,7 @@ import Manifesto from "./ui/Manifesto";
 import Showcase from "./ui/Showcase";
 import Apps from "./ui/Apps";
 import Platform from "./ui/Platform";
+import Websites from "./ui/Websites";
 import Marquee from "./ui/Marquee";
 import Career from "./ui/Career";
 import Toolkit from "./ui/Toolkit";
@@ -89,6 +90,7 @@ export default function App() {
         <Showcase onOpenApp={openApp} />
         <Apps onOpenApp={openApp} />
         <Platform />
+        <Websites />
         <Marquee />
         <Career />
         <Toolkit onOpenApp={openApp} />
