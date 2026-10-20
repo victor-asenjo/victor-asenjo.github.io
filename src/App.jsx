@@ -32,6 +32,8 @@ function useTheme() {
 
 // Intro curtain: once per session, never for reduced motion. The inline script in index.html decides it
 // before first paint and sets <html class="intro">, which shows a static curtain until the Preloader mounts.
+// Layout effect in the browser (runs before paint), plain effect on the server (where it never runs).
+const useBrowserLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 const introPending = () => typeof document !== "undefined" && document.documentElement.classList.contains("intro");
 
 export default function App() {
@@ -40,7 +42,7 @@ export default function App() {
   const [openSlug, setOpenSlug] = useState(null);
   // Starts false so server and client render the same tree; switches on before paint if the curtain is up.
   const [intro, setIntro] = useState(false);
-  useLayoutEffect(() => {
+  useBrowserLayoutEffect(() => {
     if (introPending()) setIntro(true);
   }, []);
 
