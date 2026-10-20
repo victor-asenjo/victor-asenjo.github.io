@@ -158,8 +158,8 @@ export const websites = [
   {
     slug: "nomina-clara",
     name: "Nómina Clara",
-    url: "https://nomina-clara.web.app",
-    tagline: "Spanish net salary calculator built on the tax agency's own 2026 withholding algorithm.",
+    url: "https://nomina.elpagesweb.com",
+    tagline: "Spanish net salary and severance calculators built on the tax agency's 2026 algorithm and the Workers' Statute.",
     facts: ["Every step of the calculation shown", "Tested on the official example"],
     stack: ["JavaScript", "Python", "SEO"],
     image: web("nomina-clara"),
@@ -167,7 +167,7 @@ export const websites = [
   {
     slug: "casa-en-cifras",
     name: "Casa en Cifras",
-    url: "https://casa-en-cifras.web.app",
+    url: "https://casa.elpagesweb.com",
     tagline: "Mortgage, purchase taxes for all 17 regions and how much home you can afford.",
     facts: ["Animated amortization chart", "Regional tax scales"],
     stack: ["JavaScript", "Python", "SEO"],
@@ -176,7 +176,7 @@ export const websites = [
   {
     slug: "mapa-vpo",
     name: "Mapa VPO",
-    url: "https://mapa-vpo.web.app",
+    url: "https://vpo.elpagesweb.com",
     tagline: "Where to apply for protected housing in every Spanish region, on one tile map.",
     facts: ["Official registries, links checked", "Funnels Catalan users to Alertas VPO"],
     stack: ["JavaScript", "Python", "SEO"],
@@ -185,11 +185,20 @@ export const websites = [
   {
     slug: "vales-imprimibles",
     name: "Vale por",
-    url: "https://vales-imprimibles.web.app",
+    url: "https://vales.elpagesweb.com",
     tagline: "Printable gift vouchers, tickets and wizard cards whose backs line up when printed double-sided.",
-    facts: ["PDF built in the browser", "Duplex imposition and calibration sheet"],
+    facts: ["PDF built in the browser", "Duplex imposition and calibration sheet", "Christmas cards with your photo and a secret santa draw"],
     stack: ["JavaScript", "Canvas", "PDF", "SEO"],
     image: web("vales-imprimibles"),
+  },
+  {
+    slug: "oraculo",
+    name: "Oráculo",
+    url: "https://oraculo-elpagesweb.web.app",
+    tagline: "Guardian animal and magic house personality quizzes, with a particle reveal and a shareable story image.",
+    facts: ["Exhaustively balanced: every result between 4 and 6 percent", "Canvas particle morphing"],
+    stack: ["JavaScript", "Canvas", "SEO"],
+    image: web("oraculo"),
   },
 ];
 
