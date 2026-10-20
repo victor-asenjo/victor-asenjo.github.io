@@ -182,6 +182,15 @@ export const websites = [
     stack: ["JavaScript", "Python", "SEO"],
     image: web("mapa-vpo"),
   },
+  {
+    slug: "vales-imprimibles",
+    name: "Vale por",
+    url: "https://vales-imprimibles.web.app",
+    tagline: "Printable gift vouchers, tickets and wizard cards whose backs line up when printed double-sided.",
+    facts: ["PDF built in the browser", "Duplex imposition and calibration sheet"],
+    stack: ["JavaScript", "Canvas", "PDF", "SEO"],
+    image: web("vales-imprimibles"),
+  },
 ];
 
 export const platform = {

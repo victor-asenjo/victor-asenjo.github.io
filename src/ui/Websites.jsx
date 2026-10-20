@@ -3,16 +3,16 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import { websites } from "../content";
 import { Reveal, RevealText, spotlight } from "./util";
 
-// Asymmetric trio: the first site gets a full-width horizontal card, the other two share the row below.
+// The first site gets a full-width horizontal card; the rest share two-column rows below it.
 export default function Websites() {
   return (
     <section id="web" className="section">
       <div className="wrap">
         <div className="section-head">
-          <RevealText className="h2" text="Web tools for everyday money questions in Spain." />
+          <RevealText className="h2" text="Web tools for everyday questions in Spain." />
           <p className="lede">
-            Three static sites built from one shared Python kit. The calculators run in the browser and nothing typed leaves the
-            device. Consent, legal pages and SEO come built in.
+            Static sites built from one shared Python kit. Calculators and PDF generation run in the browser, so nothing typed
+            leaves the device. Consent, legal pages and SEO come built in.
           </p>
         </div>
         <div className="sites">
