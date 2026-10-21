@@ -214,8 +214,8 @@ export const websites = [
     name: "Guia PES",
     url: "https://pes.elpagesweb.com",
     tagline: "A trilingual companion site for the FIB software engineering project course: a Duolingo-style course map, deliverables, sprints, UML models and grading.",
-    facts: ["Mock API generator: json-server data, OpenAPI contract, Kotlin and Dart fakes", "Subscribable calendar feed with reminders, planning poker and burndown charts", "Catalan, Spanish and English at translated URLs, three.js hero, zero axe violations"],
-    stack: ["JavaScript", "GSAP", "three.js", "Python", "SVG", "i18n"],
+    facts: ["Hosted Mock API: a json-server compatible REST API per click on Cloudflare Workers and D1, with validation, access keys, export and abuse reports", "virtech setup generator: NAT ports, SSH, systemd units and setup.sh from a machine's IP", "Catalan, Spanish and English at translated URLs, calendar feed with reminders, zero axe violations"],
+    stack: ["JavaScript", "Cloudflare Workers", "SQL", "GSAP", "three.js", "Python", "i18n"],
     image: web("guia-pes"),
   },
 ];
@@ -346,7 +346,7 @@ export const certifications = [
 export const skills = [
   { group: "Mobile", items: ["Flutter", "Dart", "Firebase", "Encryption", "WorkManager"] },
   { group: "AI", items: ["AI", "MCP"] },
-  { group: "Cloud & DevOps", items: ["AWS", "Azure", "Terraform", "IAM", "Docker", "CI/CD", "Oracle Cloud", "Kubernetes", "Linux"] },
+  { group: "Cloud & DevOps", items: ["AWS", "Azure", "Cloudflare Workers", "Terraform", "IAM", "Docker", "CI/CD", "Oracle Cloud", "Kubernetes", "Linux"] },
   { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "GSAP", "three.js", "Telegram", "Web scraping", "SEO"] },
   { group: "Other languages", items: ["JavaScript", "C++"] },
 ];
