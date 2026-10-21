@@ -161,7 +161,7 @@ export const websites = [
     url: "https://nomina.elpagesweb.com",
     tagline: "Spanish net salary and severance calculators built on the tax agency's 2026 algorithm and the Workers' Statute.",
     facts: ["Every step of the calculation shown", "Tested on the official example"],
-    stack: ["JavaScript", "Python", "SEO"],
+    stack: ["JavaScript", "GSAP", "Python", "SEO"],
     image: web("nomina-clara"),
   },
   {
@@ -170,7 +170,7 @@ export const websites = [
     url: "https://casa.elpagesweb.com",
     tagline: "Mortgage, purchase taxes for all 17 regions and how much home you can afford.",
     facts: ["Animated amortization chart", "Regional tax scales"],
-    stack: ["JavaScript", "Python", "SEO"],
+    stack: ["JavaScript", "GSAP", "Python", "SEO"],
     image: web("casa-en-cifras"),
   },
   {
@@ -179,7 +179,7 @@ export const websites = [
     url: "https://vpo.elpagesweb.com",
     tagline: "Where to apply for protected housing in every Spanish region, on one tile map.",
     facts: ["Official registries, links checked", "Funnels Catalan users to Alertas VPO"],
-    stack: ["JavaScript", "Python", "SEO"],
+    stack: ["JavaScript", "GSAP", "Python", "SEO"],
     image: web("mapa-vpo"),
   },
   {
@@ -188,7 +188,7 @@ export const websites = [
     url: "https://vales.elpagesweb.com",
     tagline: "Printable gift vouchers, invitations, tickets and cards whose backs line up when printed double-sided.",
     facts: ["PDF built in the browser", "Duplex imposition and calibration sheet", "Wedding, birthday and Halloween invitations", "16 canvas-drawn voucher styles with live previews"],
-    stack: ["JavaScript", "Canvas", "PDF", "SEO"],
+    stack: ["JavaScript", "Canvas", "GSAP", "PDF", "SEO"],
     image: web("vales-imprimibles"),
   },
   {
@@ -197,7 +197,7 @@ export const websites = [
     url: "https://oraculo.elpagesweb.com",
     tagline: "Guardian animal and magic house personality quizzes, with a particle reveal and a shareable story image.",
     facts: ["Exhaustively balanced: every result between 4 and 6 percent", "Canvas particle morphing"],
-    stack: ["JavaScript", "Canvas", "SEO"],
+    stack: ["JavaScript", "Canvas", "GSAP", "SEO"],
     image: web("oraculo"),
   },
   {
@@ -206,7 +206,7 @@ export const websites = [
     url: "https://calendario.elpagesweb.com",
     tagline: "Spanish work calendar 2027 with every region's official holidays, long weekends, a vacation optimiser and a business days calculator.",
     facts: ["Holidays imported from the BOE by script", "Exact vacation optimiser (dynamic programming)", "Printable PDF calendars built in the browser"],
-    stack: ["JavaScript", "Python", "PDF", "SEO"],
+    stack: ["JavaScript", "GSAP", "Python", "PDF", "SEO"],
     image: web("almanaque"),
   },
   {
@@ -214,8 +214,8 @@ export const websites = [
     name: "Guia PES",
     url: "https://pes.elpagesweb.com",
     tagline: "A trilingual companion site for the FIB software engineering project course: a Duolingo-style course map, deliverables, sprints, UML models and grading.",
-    facts: ["Mock API generator: json-server data, OpenAPI contract, Kotlin and Dart fakes", "Planning poker, burndown charts and a commit message checker", "Catalan, Spanish and English, zero axe violations"],
-    stack: ["JavaScript", "Python", "SVG", "i18n"],
+    facts: ["Mock API generator: json-server data, OpenAPI contract, Kotlin and Dart fakes", "Subscribable calendar feed with reminders, planning poker and burndown charts", "Catalan, Spanish and English at translated URLs, three.js hero, zero axe violations"],
+    stack: ["JavaScript", "GSAP", "three.js", "Python", "SVG", "i18n"],
     image: web("guia-pes"),
   },
 ];
@@ -347,7 +347,7 @@ export const skills = [
   { group: "Mobile", items: ["Flutter", "Dart", "Firebase", "Encryption", "WorkManager"] },
   { group: "AI", items: ["AI", "MCP"] },
   { group: "Cloud & DevOps", items: ["AWS", "Azure", "Terraform", "IAM", "Docker", "CI/CD", "Oracle Cloud", "Kubernetes", "Linux"] },
-  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "Telegram", "Web scraping", "SEO"] },
+  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "GSAP", "three.js", "Telegram", "Web scraping", "SEO"] },
   { group: "Other languages", items: ["JavaScript", "C++"] },
 ];
 
