@@ -203,7 +203,7 @@ export const websites = [
   {
     slug: "almanaque",
     name: "Almanaque",
-    url: "https://almanaque-elpagesweb.web.app",
+    url: "https://calendario.elpagesweb.com",
     tagline: "Spanish work calendar 2027 with every region's official holidays, long weekends, a vacation optimiser and a business days calculator.",
     facts: ["Holidays imported from the BOE by script", "Exact vacation optimiser (dynamic programming)", "Printable PDF calendars built in the browser"],
     stack: ["JavaScript", "Python", "PDF", "SEO"],
