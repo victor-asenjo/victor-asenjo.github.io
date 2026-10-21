@@ -209,6 +209,15 @@ export const websites = [
     stack: ["JavaScript", "Python", "PDF", "SEO"],
     image: web("almanaque"),
   },
+  {
+    slug: "guia-pes",
+    name: "Guia PES",
+    url: "https://pes-elpagesweb.web.app",
+    tagline: "A trilingual companion site for the FIB software engineering project course: a Duolingo-style course map, deliverables, sprints, UML models and grading.",
+    facts: ["Mock API generator: json-server data, OpenAPI contract, Kotlin and Dart fakes", "Planning poker, burndown charts and a commit message checker", "Catalan, Spanish and English, zero axe violations"],
+    stack: ["JavaScript", "Python", "SVG", "i18n"],
+    image: web("guia-pes"),
+  },
 ];
 
 export const platform = {
