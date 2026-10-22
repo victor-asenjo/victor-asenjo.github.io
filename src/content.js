@@ -213,7 +213,7 @@ export const websites = [
     slug: "guia-pes",
     name: "Guia PES",
     url: "https://pes.elpagesweb.com",
-    tagline: "A trilingual companion site for the FIB software engineering project course: a Duolingo-style course map, deliverables, sprints, UML models and grading.",
+    tagline: "A trilingual companion site for the FIB software engineering project course: an elegant studio design with CSS 3D renders on every page, a course timeline, deliverables, sprints, UML models and grading.",
     facts: ["Hosted Mock API: a json-server compatible REST API per click on Cloudflare Workers and D1, with validation, access keys, export and abuse reports", "virtech setup generator: NAT ports, SSH, systemd units and setup.sh from a machine's IP", "Mockups guide with a draggable CSS 3D product box that unboxes the example app, plus sketch to mockup and screen-state showcases", "Catalan, Spanish and English at translated URLs, calendar feed with reminders, zero axe violations"],
     stack: ["JavaScript", "Cloudflare Workers", "SQL", "GSAP", "three.js", "Python", "i18n"],
     image: web("guia-pes"),
