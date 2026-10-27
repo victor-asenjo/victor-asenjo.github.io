@@ -84,7 +84,7 @@ export const apps = [
     ads: true,
     tagline: "Sweep the whole Moon: 288 seamless sectors, over both poles, with a crew that helps.",
     description:
-      "A stylized 3D first-person cleaning game on a seamless Moon: 288 streamed sectors in 7 real regions, all the way round and over both poles with no loading screen. Sweep with tools that sway and push, watch the canister's LED gauge fill, pour the dust into cargo pods, and let your crew walk off to the next patch of dust on their own. Build conveyor belts, mine helium-3 and ice, launch dust rockets and track it all on an interactive 3D globe. Online rooms let up to 16 players clean together.",
+      "A stylized 3D first-person cleaning game on a seamless Moon: 288 streamed sectors in 7 real regions, all the way round and over both poles with no loading screen. It plays like a lunar mission: a supply lander touches down at your base, Mission Control talks to you on the radio, and old science stations, flags, laser reflectors and crashed probes wait out in the dust. Sweep with tools that sway and push, watch the canister's LED gauge fill, pour the dust into cargo pods, and let your crew walk off to the next patch of dust on their own. Build conveyor belts, mine helium-3 and ice, launch dust rockets and track it all on an interactive 3D globe. Online rooms let up to 16 players clean together.",
     facts: ["3D first person, rendered with three.js inside the Flutter app", "Open world of 288 streamed sectors with seamless pole crossings (mirrored far-side ghosts)", "Co-op rooms for up to 16 players; 3 languages, no account"],
     stack: ["Flutter", "three.js", "WebGL", "Firebase Realtime Database"],
     play: play("com.elpages.lunar_dustup"),
