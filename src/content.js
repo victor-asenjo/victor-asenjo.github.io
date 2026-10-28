@@ -37,8 +37,8 @@ export const apps = [
     ads: true,
     tagline: "A second brain you chat with, backed by serverless kanban boards.",
     description:
-      "Tell it a task, an idea, an update or a question. A private on-device assistant checks every project, then files, updates, completes or answers, with an undo for each change. Each project is a kanban board; sharing is peer to peer and end-to-end encrypted, so there is no account and no server that stores your data.",
-    facts: ["On-device AI with a validated, rule-first harness", "Peer to peer, end-to-end encrypted", "English and Spanish, by text or voice"],
+      "Tell it a task, an idea, an update or a question. A private on-device assistant checks every project, then files, updates, completes or answers, with an undo for each change. It remembers the people, places and facts you mention, so a short \u201cI paid the landlord\u201d is enough, and shows that memory as a graph. Each project is a kanban board; sharing is peer to peer and end-to-end encrypted, so there is no account and no server that stores your data.",
+    facts: ["On-device AI with a validated, rule-first harness", "Local memory with an Obsidian-style graph", "Peer to peer, end-to-end encrypted"],
     stack: ["Flutter", "Dart", "AI", "Encryption", "Firebase"],
     play: play("com.elpages.skein"),
     icon: img("skein", "icon.webp"),
