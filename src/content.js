@@ -82,10 +82,10 @@ export const apps = [
     name: "Lunar Dustup",
     kind: "game",
     ads: true,
-    tagline: "Sweep the whole Moon: 288 seamless sectors, over both poles, with a crew that helps.",
+    tagline: "Sweep, drive and climb the whole Moon: 288 seamless sectors, over both poles.",
     description:
-      "A stylized 3D first-person cleaning game on a seamless Moon: 288 streamed sectors in 7 real regions, all the way round and over both poles with no loading screen. It plays like a lunar mission: a supply lander touches down at your base, Mission Control talks to you on the radio, and old science stations, flags, laser reflectors and crashed probes wait out in the dust. Sweep with tools that sway and push, watch the canister's LED gauge fill, pour the dust into cargo pods, and let your crew walk off to the next patch of dust on their own. Build conveyor belts, mine helium-3 and ice, launch dust rockets and track it all on an interactive 3D globe. Online rooms let up to 16 players clean together.",
-    facts: ["3D first person, rendered with three.js inside the Flutter app", "Open world of 288 streamed sectors with seamless pole crossings (mirrored far-side ghosts)", "Co-op rooms for up to 16 players; 3 languages, no account"],
+      "A stylized 3D first-person cleaning game on a seamless Moon: 288 streamed sectors in 7 real regions, all the way round and over both poles with no loading screen. Walk up to a moon buggy, a rocket hopper or a six-wheel cargo hauler and take the wheel: climb real lunar mountains, fly off their tops in low gravity and land backflips, leaving tyre tracks and boot prints that a brush sweeps away. It plays like a lunar mission: a supply lander touches down at your base with a crate for you, Mission Control talks on the radio, and science stations and core drills wait out in the dust. Sweep with tools from a toothbrush to a regolith harvester, send the dust along curved conveyor belts, let a crew that plans its own paths help out, mine helium-3 and ice, launch dust rockets and track it all on an interactive 3D globe. Online rooms let up to 16 players clean together.",
+    facts: ["3D first person in three.js inside Flutter, with drivable vehicles, lunar-gravity jumps and flips", "Open world of 288 streamed sectors with climbable mountains and seamless pole crossings", "Crew path finding with A*, co-op rooms for up to 16 players, 3 languages"],
     stack: ["Flutter", "three.js", "WebGL", "Firebase Realtime Database"],
     play: play("com.elpages.lunar_dustup"),
     site: "https://lunar-dustup-elpages.web.app",
