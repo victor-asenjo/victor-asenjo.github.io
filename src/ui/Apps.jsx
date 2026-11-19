@@ -27,10 +27,11 @@ function Icon({ app, size = 56 }) {
   );
 }
 
+// Apps with `fan: true` show three real screenshots fanned out on their own brand background (`fanBg`).
 function Media({ app }) {
-  if (app.slug === "impostor") {
+  if (app.fan && app.shots) {
     return (
-      <div className="media media-fan" aria-hidden="true">
+      <div className="media media-fan" aria-hidden="true" style={app.fanBg ? { "--fan-bg": app.fanBg } : undefined}>
         {app.shots.slice(0, 3).map((s, i) => (
           <img key={s} src={s} alt="" loading="lazy" className={`fan fan-${i}`} />
         ))}
@@ -48,7 +49,7 @@ function Media({ app }) {
 }
 
 function Card({ app, span, onOpen }) {
-  const hasMedia = app.slug === "impostor" || app.feature;
+  const hasMedia = (app.fan && app.shots) || app.feature;
   return (
     <motion.li
       layout

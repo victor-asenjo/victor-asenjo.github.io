@@ -599,8 +599,10 @@ kbd {
   transform: scale(1.04);
 }
 .media-fan {
-  height: 240px;
-  background: linear-gradient(160deg, #1a1126, #2b1233);
+  /* Same proportions as the feature banners, so cards in one row line up. */
+  aspect-ratio: 1024 / 500;
+  min-height: 220px;
+  background: var(--fan-bg, linear-gradient(160deg, #1a1126, #2b1233));
 }
 .fan {
   position: absolute;

@@ -28,6 +28,7 @@ export const apps = [
     play: play("com.elpages.impostor"),
     icon: img("impostor", "icon.webp"),
     shots: [1, 2, 3, 4].map((n) => img("impostor", `shot-${n}.webp`)),
+    fan: true,
     featured: true,
   },
   {
@@ -67,11 +68,11 @@ export const apps = [
     name: "Altitude",
     kind: "game",
     ads: true,
-    tagline: "Climb a rope to the Sun, then dig to the center of the Earth.",
+    tagline: "A cartoon climb past real landmarks to the Sun, or down to the Earth's core.",
     description:
-      "A stylized 3D climbing game about the real scale of our world. Pass detailed 3D models of the Eiffel Tower, Everest, the ISS and the Moon, burn up at the Sun, and come back as a Phoenix to dig through the crust and the core.",
-    facts: ["Real heights, from landmarks to the Sun", "Two phases: climb, then dig", "6 languages"],
-    stack: ["Flutter", "three.js", "WebGL", "Firebase"],
+      "A cartoon adventure at the real scale of our world. Swipe up past the Sagrada Família, Everest and the Space Station all the way to the Sun, or swipe down through the catacombs, the Kola borehole and the mantle to the core. Every landmark comes with a fun fact, and the right suit is the only way through the death zone, space, the Sun's heat and molten rock.",
+    facts: ["37 real landmarks, from 0 m to 149.6 million km", "13 worlds and five suits to survive them", "Characters and props rendered in Blender, scenery painted in code", "Offline, no account, 6 languages"],
+    stack: ["Flutter", "Dart", "Blender", "Python"],
     play: play("com.elpages.altitude"),
     icon: img("altitude", "icon.webp"),
     feature: img("altitude", "feature.webp"),
@@ -121,6 +122,9 @@ export const apps = [
     stack: ["Flutter", "Dart", "Web scraping", "WorkManager"],
     play: play("com.elpages.alertas_vpo"),
     icon: img("alertas", "icon.webp"),
+    shots: [1, 2, 3, 4].map((n) => img("alertas", `shot-${n}.webp`)),
+    fan: true,
+    fanBg: "linear-gradient(160deg, #0b2f6b, #2f7fe8)",
   },
   {
     slug: "rarito",
@@ -133,6 +137,9 @@ export const apps = [
     stack: ["Flutter", "Dart"],
     play: play("com.elpages.rarito.el_rarito"),
     icon: img("rarito", "icon.webp"),
+    shots: [1, 2, 3, 4].map((n) => img("rarito", `shot-${n}.webp`)),
+    fan: true,
+    fanBg: "linear-gradient(160deg, #3b3204, #b88a00)",
   },
   {
     slug: "lamp",
