@@ -11,8 +11,9 @@ export default function Websites() {
         <div className="section-head">
           <RevealText className="h2" text="Web tools for everyday questions in Spain." />
           <p className="lede">
-            Static sites built from one shared Python kit. Calculators and PDF generation run in the browser, so nothing typed
-            leaves the device. Consent, legal pages and SEO come built in.
+            Static sites built from one shared Python kit. Official open data from the Ministry of Housing and the INE becomes
+            hand-built maps and charts; calculators and PDF generation run in the browser, so nothing typed leaves the device.
+            Consent, legal pages and SEO come built in.
           </p>
         </div>
         <div className="sites">

@@ -152,35 +152,35 @@ export const apps = [
   },
 ];
 
-// Ad-funded web tools (static sites, shared Python kit). Images are each site's own Open Graph card.
+// Ad-funded web tools (static sites, shared Python kit). Images are cropped product shots of each site's data views.
 const web = (slug) => `${import.meta.env.BASE_URL}web/${slug}.webp`;
 export const websites = [
   {
-    slug: "nomina-clara",
-    name: "Nómina Clara",
-    url: "https://nomina.elpagesweb.com",
-    tagline: "Spanish net salary and severance calculators built on the tax agency's 2026 algorithm and the Workers' Statute.",
-    facts: ["Every step of the calculation shown", "Tested on the official example"],
-    stack: ["JavaScript", "GSAP", "Python", "SEO"],
-    image: web("nomina-clara"),
+    slug: "mapa-vpo",
+    name: "Mapa VPO",
+    url: "https://vpo.elpagesweb.com",
+    tagline: "Protected housing in Spain, region by region: how many homes are started and finished since 1991, what they are appraised at, where they sell and where to apply.",
+    facts: ["Ministry of Housing bulletin and INE API, refreshed by one script", "Hand-built SVG map with a year slider, 19 region pages, a price calculator", "Municipality search, CSV downloads and Dataset structured data", "Funnels Catalan users to Alertas VPO"],
+    stack: ["JavaScript", "Data visualization", "Open data", "Python", "SEO"],
+    image: web("mapa-vpo"),
   },
   {
     slug: "casa-en-cifras",
     name: "Casa en Cifras",
     url: "https://casa.elpagesweb.com",
-    tagline: "Mortgage, purchase taxes for all 17 regions and how much home you can afford.",
-    facts: ["Animated amortization chart", "Regional tax scales"],
-    stack: ["JavaScript", "GSAP", "Python", "SEO"],
+    tagline: "Mortgage, purchase taxes and what homes really cost: price per square metre in all 52 provinces, the INE price index and the mortgages signed.",
+    facts: ["Province price map from official appraisals", "Tax map that recolours as the price changes", "Animated amortization chart", "Regional tax scales, tested engine"],
+    stack: ["JavaScript", "Data visualization", "Open data", "GSAP", "Python", "SEO"],
     image: web("casa-en-cifras"),
   },
   {
-    slug: "mapa-vpo",
-    name: "Mapa VPO",
-    url: "https://vpo.elpagesweb.com",
-    tagline: "Where to apply for protected housing in every Spanish region, on one tile map.",
-    facts: ["Official registries, links checked", "Funnels Catalan users to Alertas VPO"],
-    stack: ["JavaScript", "GSAP", "Python", "SEO"],
-    image: web("mapa-vpo"),
+    slug: "nomina-clara",
+    name: "Nómina Clara",
+    url: "https://nomina.elpagesweb.com",
+    tagline: "Spanish net salary and severance calculators on the tax agency's 2026 algorithm, and where your salary stands against the INE's percentiles in every region.",
+    facts: ["Every step of the calculation shown", "Tested on the official example", "Effective tax curve drawn by the same engine", "Salary map and percentile ladder from the INE API"],
+    stack: ["JavaScript", "Data visualization", "Open data", "Python", "SEO"],
+    image: web("nomina-clara"),
   },
   {
     slug: "vales-imprimibles",
@@ -347,7 +347,7 @@ export const skills = [
   { group: "Mobile", items: ["Flutter", "Dart", "Firebase", "Encryption", "WorkManager"] },
   { group: "AI", items: ["AI", "MCP"] },
   { group: "Cloud & DevOps", items: ["AWS", "Azure", "Cloudflare Workers", "Terraform", "IAM", "Docker", "CI/CD", "Oracle Cloud", "Kubernetes", "Linux"] },
-  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "GSAP", "three.js", "Telegram", "Web scraping", "SEO"] },
+  { group: "Backend & Web", items: ["Python", "Java", "FastAPI", "PostgreSQL", "SQL", "React", "GSAP", "three.js", "Telegram", "Web scraping", "SEO", "Data visualization", "Open data"] },
   { group: "Other languages", items: ["JavaScript", "C++"] },
 ];
 
