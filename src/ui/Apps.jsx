@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { apps, links } from "../content";
@@ -81,7 +81,36 @@ function Card({ app, span, onOpen }) {
   );
 }
 
+// The goose, the chick and the rubber duck from the elPagès apps live in this section. Their code loads only when
+// the section comes near the viewport (dynamic import), so it never weighs on the first paint.
+function useFarm(ref) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return undefined;
+    let stop = null;
+    let cancelled = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        import("../farm/farm.js").then((m) => {
+          if (!cancelled) stop = m.startFarm(el);
+        });
+      },
+      { rootMargin: "300px" }
+    );
+    io.observe(el);
+    return () => {
+      cancelled = true;
+      io.disconnect();
+      if (stop) stop();
+    };
+  }, [ref]);
+}
+
 export default function Apps({ onOpenApp }) {
+  const sectionRef = useRef(null);
+  useFarm(sectionRef);
   const [filter, setFilter] = useState("all");
   const list = useMemo(() => apps.filter((a) => filter === "all" || a.kind === filter), [filter]);
   const counts = useMemo(
@@ -90,11 +119,21 @@ export default function Apps({ onOpenApp }) {
   );
 
   return (
-    <section id="all-apps" className="section">
+    <section id="all-apps" className="section farm-world" ref={sectionRef}>
       <div className="wrap">
         <Reveal className="section-head">
           <RevealText className="h2" text="Every app, one grid" />
           <p className="lede">Filter by type, then open any card for screenshots, details and the Google Play link.</p>
+          <p className="studio">
+            <img src="/brand/elpages-mark.svg" alt="" width="32" height="32" />
+            <span>
+              Published on Google Play as{" "}
+              <a href={links.playStoreDev} target="_blank" rel="noreferrer">
+                elPagès
+              </a>
+              , my small independent studio in Barcelona. The goose, the chick and the rubber duck wandering around here come from its apps.
+            </span>
+          </p>
         </Reveal>
 
         <Reveal className="filters" delay={0.05}>

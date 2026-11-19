@@ -1,19 +1,23 @@
-/* Portfolio styles. One accent (deep teal: the complement of skin tones, so the portrait pops; between the #elPagès
-   green and the web tools' data blues), cool neutral greys, Geist + Geist Mono.
+/* Portfolio styles. One accent (deep teal: the complement of skin tones, so the portrait pops; between the elPagès
+   green and the web tools' data blues), neutrals tinted toward that teal, and the elPagès gold for play only: it owns
+   the Apps section (a deep-teal world where the goose, the chick and the rubber duck live) and the "laugh" marker.
+   Geist + Geist Mono.
    Shape rule: surfaces (cards, dialogs) are 20px, anything you press (buttons, chips, tags) is a pill,
    app icons use a squircle-like 22% radius because that is how they appear on Android. */
 
 :root {
-  --bg: #f5f5f6;
-  --bg-alt: #ececee;
+  --bg: #f2f6f4;
+  --bg-alt: #e6eeea;
   --surface: #ffffff;
-  --surface-2: #f0f0f2;
-  --ink: #121216;
-  --ink-2: #4a4a54;
-  --ink-3: #5f5f6a;   /* 5.3:1 on --bg-alt (was 4.46) */
-  --line: rgba(18, 18, 22, 0.1);
-  --line-strong: rgba(18, 18, 22, 0.2);
-  --accent: #0f6f6a;   /* 5.5:1 on --bg, 5.2:1 on --bg-alt, white on it 6.0:1 */
+  --surface-2: #edf2f0;
+  --ink: #0e1715;
+  --ink-2: #43504c;
+  --ink-3: #55625e;   /* 5.4:1 on --bg-alt */
+  --line: rgba(14, 40, 35, 0.11);
+  --line-strong: rgba(14, 40, 35, 0.22);
+  --accent: #0f6f6a;   /* 5.5:1 on --bg, 5.1:1 on --bg-alt, white on it 6.0:1 */
+  --gold: #ffc000;     /* the elPagès logo; on dark surfaces only, or as a marker under dark text */
+  --gold-mark: rgba(255, 192, 0, 0.42);
   --accent-ink: #ffffff;
   --accent-soft: rgba(15, 111, 106, 0.1);
   --shadow: 0 1px 2px rgba(18, 18, 30, 0.05), 0 12px 32px -12px rgba(18, 18, 40, 0.16);
@@ -28,13 +32,14 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0c0c0f;
-  --bg-alt: #121216;
-  --surface: #17171c;
-  --surface-2: #1e1e24;
-  --ink: #f1f1f3;
-  --ink-2: #b4b4be;
-  --ink-3: #8c8c98;
+  --bg: #0a1110;
+  --bg-alt: #0f1816;
+  --surface: #141e1c;
+  --surface-2: #1b2725;
+  --ink: #eef4f2;
+  --ink-2: #b3c0bc;
+  --ink-3: #8c9a96;   /* 6.2:1 on --bg-alt */
+  --gold-mark: rgba(255, 192, 0, 0.3);
   --line: rgba(255, 255, 255, 0.09);
   --line-strong: rgba(255, 255, 255, 0.2);
   --accent: #3fd6c3;   /* 10.8:1 on --bg; --accent-ink on it 9.4:1 */
@@ -1753,3 +1758,86 @@ html.intro body::after { content: ""; position: fixed; inset: 0; z-index: 89; ba
 .theme-btn .ico-sun { display: none; }
 :root[data-theme="dark"] .theme-btn .ico-sun { display: block; }
 :root[data-theme="dark"] .theme-btn .ico-moon { display: none; }
+
+/* ---------- The elPagès world: the Apps section ----------
+   A deep version of the apps' loading-screen teal with the logo gold as its action colour. Tokens are remapped here,
+   so every card, chip and tag inside follows. Contrast: ink 15:1, ink-3 7.7:1, gold 10:1 on --bg; dark text on gold 10.5:1. */
+.farm-world {
+  --bg: #04231f;
+  --bg-alt: #062b26;
+  --surface: #0b322c;
+  --surface-2: #103a33;
+  --ink: #f1f6f4;
+  --ink-2: #bfd3cd;
+  --ink-3: #9db6af;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --accent: #ffc000;
+  --accent-ink: #231a00;
+  --accent-soft: rgba(255, 192, 0, 0.15);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 16px 40px -14px rgba(0, 0, 0, 0.55);
+  position: relative;
+  color: var(--ink);
+  background:
+    radial-gradient(90% 60% at 88% 0%, rgba(0, 105, 92, 0.55), transparent 70%),
+    radial-gradient(70% 50% at 0% 100%, rgba(255, 192, 0, 0.07), transparent 70%),
+    var(--bg);
+}
+:root[data-theme="dark"] .farm-world {
+  --bg: #031b18;
+  --surface: #092b26;
+  --surface-2: #0d332d;
+}
+.studio {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 64ch;
+  margin: 20px 0 0;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.studio img {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+.studio a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* "laugh." in the manifesto is a button: a gold marker that grows on hover */
+.mf-laugh {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  border: 0;
+  padding: 0 0.04em;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0.08em;
+  background: linear-gradient(to top, var(--gold-mark) 0 0.34em, transparent 0.34em);
+  transition: background-size 0.28s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.2s ease;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media (hover: hover) and (pointer: fine) {
+  .mf-laugh:hover { background-color: color-mix(in srgb, var(--gold-mark) 55%, transparent); }
+}
+.mf-laugh:active { transform: scale(0.97); }
+
+/* the goose has the cursor: the real one hides until the mouse moves again */
+html.farm-stole,
+html.farm-stole * {
+  cursor: none !important;
+}
+
+/* browser surfaces in the palette */
+::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); color: var(--ink); }
+html { scrollbar-color: color-mix(in srgb, var(--ink) 28%, transparent) transparent; }
+input, textarea { caret-color: var(--accent); }

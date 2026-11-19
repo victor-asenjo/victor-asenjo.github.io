@@ -3,13 +3,24 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { manifesto, manifestoAccent } from "../content";
 import { useCinematic } from "./util";
 
+// "laugh." is a button: it sends the goose, the chick and the rubber duck across the screen once (loaded on demand).
+const LAUGH = "laugh.";
+const sendParade = () => import("../farm/farm.js").then((m) => m.parade());
+function Laugh() {
+  return (
+    <button type="button" className="mf-laugh" onClick={sendParade} title="Go on, click it">
+      {LAUGH}
+    </button>
+  );
+}
+
 function Word({ word, i, n, progress, accent }) {
   // Each word lights up in turn as the section scrolls. Motivated: the reader's scroll sets the reading pace.
   const start = 0.05 + (i / n) * 0.8;
   const opacity = useTransform(progress, [start, start + 0.8 / n + 0.04], [accent ? 0.85 : 0.55, 1]); // unlit words keep 3:1 (large text)
   return (
     <motion.span style={{ opacity }} className={accent ? "mf-accent" : undefined}>
-      {word}{" "}
+      {word === LAUGH ? <Laugh /> : word}{" "}
     </motion.span>
   );
 }
@@ -28,7 +39,7 @@ export default function Manifesto() {
             ? words.map((w, i) => <Word key={i} word={w} i={i} n={words.length} progress={scrollYProgress} accent={manifestoAccent.includes(w)} />)
             : words.map((w, i) => (
                 <span key={i} className={manifestoAccent.includes(w) ? "mf-accent" : undefined}>
-                  {w}{" "}
+                  {w === LAUGH ? <Laugh /> : w}{" "}
                 </span>
               ))}
         </p>
