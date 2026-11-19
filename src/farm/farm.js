@@ -143,7 +143,9 @@ export function startFarm(section) {
   const cursorPath = CURSOR();
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const reduce = reduceMotion();
-  const U = fine ? 0.8 : 0.62;
+  // size by screen width (tablets close to the desktop size); touch screens get a calmer walk and longer rests
+  const U = innerWidth < 600 ? 0.6 : fine ? 0.8 : 0.76;
+  const calm = !fine;
   const cv = overlay(30), c = cv.getContext("2d");
   let dpr = 1, vw = 0, vh = 0, box = section.getBoundingClientRect();
   const resize = () => {
@@ -158,12 +160,23 @@ export function startFarm(section) {
   const prints = [], flying = [];
   const ptr = { x: 0, y: 0, inside: false, last: performance.now() };
   let mode = "enter", goal = { x: 0, y: 0 }, goalUntil = 0, lastActivity = performance.now();
-  let holding = null, thing = null, jit = 0, visible = true, raf = 0;
+  let holding = null, thing = null, jit = 0, visible = true, raf = 0, fleeUntil = 0, heldSince = 0;
   const W = () => box.width, H = () => box.height;
   // they walk below the heading, the lede and the filters, over the app grid
   const headEl = section.querySelector(".filters") || section.querySelector(".section-head");
   const minY = () => Math.min(H() - 60, headEl ? headEl.getBoundingClientRect().bottom - box.top + 56 : 150);
-  const roam = () => ({ x: rnd(60, W() - 60), y: rnd(minY(), H() - 50) });
+  // the part of the section on screen (section coordinates), below the nav: they roam where you are looking
+  const band = () => {
+    const top = Math.max(minY(), -box.top + 76), bottom = Math.min(H() - 30, vh - box.top - 30);
+    return bottom - top > 110 ? [top, bottom] : null;
+  };
+  // the next spot is a short stroll from the goose (a tall tablet band made them march across the whole screen)
+  const roam = (far = calm ? 260 : 360) => {
+    const b = band(), top = b ? b[0] : minY(), bottom = b ? b[1] : H() - 50;
+    const ang = Math.random() * Math.PI * 2, r = rnd(far * 0.35, far);
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    return { x: clamp(goose.x + Math.cos(ang) * r, 60, W() - 60), y: clamp(goose.y + Math.sin(ang) * r * 0.6, top, bottom) };
+  };
   const jumpY = (a, now) => (a.jumpUntil > now ? -24 * U * Math.sin(Math.PI * (1 - (a.jumpUntil - now) / 420)) : 0);
   const beak = (a, now) => ({ x: a.x + a.face * U * 46.8, y: a.y - U * 76 + jumpY(a, now) });
   const say = (a, text, now, ms = 1500) => { a.say = text; a.sayFrom = now; a.sayUntil = now + ms; };
@@ -193,7 +206,7 @@ export function startFarm(section) {
   function step(a, tx, ty, vmax, dt) {
     tx = Math.max(30, Math.min(W() - 30, tx)); ty = Math.max(minY(), Math.min(H() - 30, ty)); // never leave the section
     const dx = tx - a.x, dy = ty - a.y, d = Math.hypot(dx, dy);
-    const want = d > 5 ? vmax * (d > 500 ? Math.min(3, d / 320) : 1) * Math.min(1, d / 70) : 0;
+    const want = d > 5 ? vmax * (d > 600 ? Math.min(1.6, d / 600) : 1) * Math.min(1, d / 70) : 0; // catch-up capped at 1.6x
     const ux = d ? dx / d : 0, uy = d ? dy / d : 0, k = Math.min(1, dt * 7);
     a.vx += (ux * want - a.vx) * k; a.vy += (uy * want - a.vy) * k;
     a.x += a.vx * dt; a.y += a.vy * dt;
@@ -232,7 +245,9 @@ export function startFarm(section) {
       holding = thing; thing.el.style.opacity = "0.12";
       say(goose, "Free app!", now, 1800); mode = "flee";
     }
-    goal = roam(); goalUntil = now + 2200;
+    // a short getaway, then the goose calms down with its loot (no endless running)
+    fleeUntil = now + rnd(3500, 5000); heldSince = now;
+    goal = roam(420); goalUntil = now + 2200;
   }
   function giveBack(now) {
     if (!holding) return;
@@ -251,24 +266,40 @@ export function startFarm(section) {
   }
 
   function update(now, dt) {
+    const b = band();
     if (mode === "enter") {
-      goal = { x: Math.min(W() * 0.6, 420), y: minY() + 30 };
+      goal = { x: Math.min(W() * 0.6, 420), y: b ? b[0] + 60 : minY() + 30 };
       if (Math.hypot(goal.x - goose.x, goal.y - goose.y) < 16) { mode = "wander"; goalUntil = now + rnd(1500, 3000); }
+    }
+    // you scrolled away from them: they come back in from the side of the screen instead of sprinting after you
+    if (b && !holding && (mode === "wander" || mode === "tap") && animals.every((a) => a.y < b[0] - 220 || a.y > b[1] + 220)) {
+      const left = Math.random() < 0.5, y = rnd(b[0] + 40, b[1] - 20);
+      animals.forEach((a, i) => {
+        a.x = left ? -70 - i * 80 : W() + 70 + i * 80; a.y = y; a.vx = 0; a.vy = 0; a.face = left ? 1 : -1;
+        a.k = { near: null, far: null }; a.hopK = null;
+      });
+      mode = "wander"; goal = { x: left ? rnd(W() * 0.25, W() * 0.6) : rnd(W() * 0.4, W() * 0.75), y };
+      goalUntil = now + rnd(4000, 6500);
     }
     if (mode === "follow" && !ptr.inside) mode = "wander";
     if (mode === "wander" && fine && ptr.inside) mode = "follow";
     if (fine && mode === "follow" && now - ptr.last > 9000 && !document.hidden) mode = "stealCursor";
-    if (!fine && (mode === "wander" || mode === "tap") && !holding && now - lastActivity > 9000) {
+    if (!fine && (mode === "wander" || mode === "tap") && !holding && now - lastActivity > 15000) {
       thing = pickIcon();
       if (thing) mode = "stealThing"; else lastActivity = now;
     }
     if (mode === "tap" && now > goalUntil) { mode = "wander"; goalUntil = now + rnd(2500, 4500); }
-    if ((mode === "wander" || mode === "flee") && now > goalUntil) { goal = roam(); goalUntil = now + (mode === "flee" ? rnd(1300, 2300) : rnd(2500, 5000)); }
+    if (mode === "flee" && now > fleeUntil) { mode = "wander"; goalUntil = now + rnd(2500, 4000); }
+    if (holding && holding !== "cursor" && now - heldSince > 20000) giveBack(now); // nobody tapped: it gives it back
+    if ((mode === "wander" || mode === "flee") && now > goalUntil) {
+      goal = mode === "flee" ? roam(420) : roam();
+      goalUntil = now + (mode === "flee" ? rnd(1300, 2300) : calm ? rnd(3500, 6500) : rnd(2500, 5000));
+    }
     if (mode === "stealThing") Object.assign(thing, iconSpot(thing.el));
-    const vmax = mode === "flee" ? 240 : mode.startsWith("steal") ? 120 : 155;
+    const vmax = mode === "flee" ? (calm ? 190 : 240) : mode.startsWith("steal") ? 120 : mode === "tap" ? 150 : calm ? 100 : 150;
     animals.forEach((a, i) => {
       const t = target(i, now);
-      const d = step(a, t.x, t.y, i === 0 ? vmax : Math.max(vmax, 165), dt);
+      const d = step(a, t.x, t.y, i === 0 ? vmax : Math.max(vmax * 1.15, calm ? 120 : 165), dt);
       if (i === 0 && d < 9 && mode.startsWith("steal")) grab(now);
       plant(a, now);
     });
@@ -333,7 +364,9 @@ export function startFarm(section) {
     if (mode === "stealCursor") mode = "follow";
     if (holding === "cursor") giveBack(now);
   };
-  const onDown = (e) => {
+  // A click, not a pointerdown: on touch screens every scroll starts with a pointerdown, and treating those as taps
+  // sent the animals running after each swipe. A click only fires for a real tap.
+  const onTap = (e) => {
     const now = performance.now();
     lastActivity = now;
     const x = e.clientX - box.left, y = e.clientY - box.top;
@@ -341,13 +374,13 @@ export function startFarm(section) {
     if (hit) { say(hit, hit.s.say, now); if (!reduce) hit.jumpUntil = now + 420; }
     if (reduce) return;
     if (holding) { giveBack(now); return; }
-    if (e.pointerType !== "mouse" && !hit && inBox(e.clientX, e.clientY) && !e.target.closest("a,button,input,select,textarea,label,[role=button],[role=tab]")) {
+    if (calm && !hit && inBox(e.clientX, e.clientY) && !e.target.closest("a,button,input,select,textarea,label,[role=button],[role=tab]")) {
       mode = "tap"; goal = { x: x - 30, y: y + 40 }; goalUntil = now + 4000;
     }
   };
   const onScroll = () => { lastActivity = performance.now(); };
   addEventListener("pointermove", onMove, { passive: true });
-  addEventListener("pointerdown", onDown, { passive: true });
+  addEventListener("click", onTap, { passive: true });
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", resize);
   const io = new IntersectionObserver((es) => { visible = es[0].isIntersecting; }, { rootMargin: "120px" });
@@ -356,8 +389,10 @@ export function startFarm(section) {
   if (reduce) { // they stand still above the grid
     animals.forEach((a, i) => { a.x = Math.min(W() * 0.7, 460) - i * 95; a.y = minY(); });
   } else {
-    animals.forEach((a) => { a.y = minY() + 30; }); // they walk in at grid level, never across the heading
+    const b0 = band();
+    animals.forEach((a) => { a.y = b0 ? b0[0] + 60 : minY() + 30; }); // they walk in at grid level, never across the heading
   }
+  section.__farmSpeeds = () => animals.map((a) => Math.round(a.sp)); // for tests: how fast they are going
   let last = performance.now();
   const frame = (now) => {
     raf = requestAnimationFrame(frame);
@@ -374,7 +409,7 @@ export function startFarm(section) {
     cancelAnimationFrame(raf);
     io.disconnect();
     removeEventListener("pointermove", onMove);
-    removeEventListener("pointerdown", onDown);
+    removeEventListener("click", onTap);
     removeEventListener("scroll", onScroll);
     removeEventListener("resize", resize);
     document.documentElement.classList.remove("farm-stole");
